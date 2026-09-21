@@ -1,0 +1,11 @@
+# Obsidian local UI state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# Plugin settings may contain secrets (for example, Local REST API's API key)
+.obsidian/plugins/*/data.json
+
+# OS and Obsidian trash files
+.DS_Store
+.trash/
