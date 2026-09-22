@@ -1,0 +1,39 @@
+{
+  "package_name": "coal_furnace_spaceclaim_dialogue_package",
+  "schema_version": "1.0",
+  "language": "zh-CN",
+  "created_at": "2026-09-22",
+  "topic": "传统四角切圆煤粉锅炉 SpaceClaim 几何建模",
+  "downstream_workflow": [
+    "SpaceClaim",
+    "Fluent Meshing",
+    "Fluent"
+  ],
+  "contains_internal_reasoning": false,
+  "contains_tool_logs": false,
+  "artifacts": [
+    {
+      "path": "conversation-summary.md",
+      "type": "summary"
+    },
+    {
+      "path": "dialogue-record.md",
+      "type": "compressed_dialogue"
+    },
+    {
+      "path": "spaceclaim-geometry-workflow.md",
+      "type": "technical_workflow"
+    }
+  ],
+  "reference_model": {
+    "power_class": "300-330 MW",
+    "firing": "four-corner tangential",
+    "furnace_cross_section_m": [
+      12.8,
+      12.8
+    ],
+    "source": "https://doi.org/10.3390/en18102585",
+    "status": "reference_only"
+  },
+  "remote_target": "https://github.com/zbnoop/men.git"
+}
