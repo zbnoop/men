@@ -1,0 +1,5 @@
+/file/start-transcript "m15_mesh_import_probe.trn"
+/file/read-mesh "m15_slab.msh"
+/mesh/check
+/file/write-mesh "m15_slab_fluent.msh"
+/exit yes

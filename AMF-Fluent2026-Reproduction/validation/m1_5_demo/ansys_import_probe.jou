@@ -1,0 +1,6 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m15_ansys_import_probe.trn"
+/file/import/ansys-vol-mesh "m15_slab_ansys.msh"
+/mesh/check
+/file/write-mesh "m15_ansys_imported.msh"
+/exit yes

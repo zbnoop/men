@@ -1,0 +1,10 @@
+/file/start-transcript "m15_rectangle_probe.trn"
+/mesh/primitive/rectangle
+0
+0
+0.1
+0.01
+100
+1
+/file/write-mesh "rectangle_probe.msh"
+/exit yes

@@ -1,0 +1,13 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m15_udf_compile_probe.trn"
+/define/user-defined/compiled-functions
+compile
+m15_batch_lib
+yes
+m15_demo_udf.c
+
+
+/define/user-defined/compiled-functions
+load
+m15_batch_lib
+/exit yes

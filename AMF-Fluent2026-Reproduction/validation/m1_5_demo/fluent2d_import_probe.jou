@@ -1,0 +1,6 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m15_fluent2d_import_probe.trn"
+/file/import/fluent-2d-mesh "m15_slab_fluent2d.msh"
+/mesh/check
+/file/write-case "m15_fluent2d_imported.cas.h5"
+/exit yes

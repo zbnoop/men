@@ -1,0 +1,5 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m15_mesh_import_versioned_probe.trn"
+/file/read-mesh "m15_slab.msh"
+/mesh/check
+/exit yes

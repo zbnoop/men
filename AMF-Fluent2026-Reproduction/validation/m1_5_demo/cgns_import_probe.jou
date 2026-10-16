@@ -1,0 +1,6 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m15_cgns_import_probe.trn"
+/file/import/cgns/mesh "m15_slab.cgns"
+/mesh/check
+/file/write-case "m15_imported_mesh.cas.h5"
+/exit yes

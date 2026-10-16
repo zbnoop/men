@@ -1,0 +1,17 @@
+m15_lib/
+m15_batch_lib/
+*.trn
+*.log
+cleanup-fluent-*.bat
+*.cas.h5
+*.dat.h5
+*.msh
+*.cgns
+*.neu
+m15_energy.csv
+m15_reference_1d.csv
+debug_reference.csv
+*.acmo
+*.wbpj
+workbench_demo*/
+*.step
