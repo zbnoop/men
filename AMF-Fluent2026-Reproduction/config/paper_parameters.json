@@ -1,0 +1,164 @@
+{
+  "bibliography": {
+    "title": "Numerical simulation and optimization of the melting process for the regenerative aluminum melting furnace",
+    "doi": "10.1016/j.applthermaleng.2018.09.060",
+    "year": 2018
+  },
+  "thermal": {
+    "solidus": {
+      "value": 748,
+      "unit": "K",
+      "status": "paper",
+      "source": "§2.3.5"
+    },
+    "liquidus": {
+      "value": 911,
+      "unit": "K",
+      "status": "paper",
+      "source": "§2.3.5"
+    },
+    "conductivity_solid": {
+      "value": 235,
+      "unit": "W/(m K)",
+      "status": "paper",
+      "source": "eq(4)"
+    },
+    "conductivity_liquid": {
+      "value": 62.8,
+      "unit": "W/(m K)",
+      "status": "paper",
+      "source": "eq(4)"
+    },
+    "cp_solid": {
+      "value": null,
+      "unit": "J/(kg K)",
+      "status": "unknown"
+    },
+    "cp_liquid": {
+      "value": null,
+      "unit": "J/(kg K)",
+      "status": "unknown"
+    },
+    "latent_heat": {
+      "value": null,
+      "unit": "J/kg",
+      "status": "unknown"
+    },
+    "density": {
+      "value": null,
+      "unit": "kg/m3",
+      "status": "unknown"
+    }
+  },
+  "init": {
+    "aluminum_T": {
+      "value": 300,
+      "unit": "K",
+      "status": "paper"
+    },
+    "furnace_T": {
+      "value": 1000,
+      "unit": "K",
+      "status": "paper"
+    }
+  },
+  "gas": {
+    "air_primary_mass_flow": {
+      "value": 0.0739,
+      "unit": "kg/s",
+      "status": "paper"
+    },
+    "air_secondary_mass_flow": {
+      "value": 1.4041,
+      "unit": "kg/s",
+      "status": "paper"
+    },
+    "air_primary_T": {
+      "value": 300,
+      "unit": "K",
+      "status": "paper"
+    },
+    "air_secondary_T": {
+      "value": 773,
+      "unit": "K",
+      "status": "paper"
+    },
+    "air_excess_factor": {
+      "value": 1.05,
+      "status": "paper"
+    },
+    "fuel_design_table3": {
+      "value": 400,
+      "unit": "Nm3/h? printed as Nm3/s",
+      "status": "conflict"
+    },
+    "fuel_baseline_table5": {
+      "value": 800,
+      "unit": "Nm3/h",
+      "status": "conflict"
+    }
+  },
+  "oxide": {
+    "thickness": {
+      "value": 0.005,
+      "unit": "m",
+      "status": "paper"
+    },
+    "porosity": {
+      "value": 0.2,
+      "status": "paper"
+    },
+    "emissivity": {
+      "value": 0.33,
+      "status": "paper"
+    },
+    "conductivity": {
+      "value": null,
+      "unit": "W/(m K)",
+      "status": "unknown"
+    }
+  },
+  "wall": {
+    "inside_emissivity": {
+      "value": 0.8,
+      "status": "paper"
+    },
+    "outside_adiabatic": {
+      "value": true,
+      "status": "paper"
+    }
+  },
+  "simulation": {
+    "cells_reported": {
+      "value": 899200,
+      "status": "paper"
+    },
+    "timestep_reported": {
+      "value": 10,
+      "unit": "s",
+      "status": "paper"
+    },
+    "melting_completion_t": {
+      "value": 22640,
+      "unit": "s",
+      "status": "paper"
+    },
+    "switch_period": {
+      "value": null,
+      "unit": "s",
+      "status": "unknown"
+    }
+  },
+  "benchmarks": {
+    "baseline_time": {
+      "value": 6.29,
+      "unit": "h",
+      "status": "paper"
+    },
+    "optimized_time": {
+      "value": 5.25,
+      "unit": "h",
+      "status": "paper"
+    }
+  }
+}
