@@ -1,0 +1,11 @@
+m16_demo_lib*/
+*.trn
+*.log
+cleanup-fluent-*.bat
+*.cas.h5
+*.dat.h5
+*.msh
+*.wbpj
+workbench_m16/
+*.scdocx
+m16_energy.csv

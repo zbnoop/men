@@ -1,0 +1,55 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m16_velocity_prompt2.trn"
+/file/read-case "C:/Users/admin/m16_demo/m16_msh_stage/m16_base.msh"
+/define/boundary-conditions/modify-zones/sep-face-zone-angle
+1
+5
+yes
+c
+keep-all
+/define/boundary-conditions/modify-zones/sep-face-zone-angle
+2
+5
+yes
+c
+keep-all
+/define/boundary-conditions/modify-zones/zone-name
+21
+fluid_inlet
+/define/boundary-conditions/zone-type
+fluid_inlet
+velocity-inlet
+/define/boundary-conditions/velocity-inlet
+fluid_inlet
+
+
+
+
+
+0.01
+
+
+
+
+
+
+
+/define/boundary-conditions/zone-name
+20
+fluid_outlet
+/define/boundary-conditions/zone-type
+fluid_outlet
+pressure-outlet
+/define/boundary-conditions/pressure-outlet
+fluid_outlet
+
+
+
+
+
+
+
+
+
+/file/write-case "m16_bc_prompt2.cas.h5"
+/exit yes

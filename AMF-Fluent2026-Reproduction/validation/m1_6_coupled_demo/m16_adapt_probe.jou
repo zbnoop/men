@@ -1,0 +1,10 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m16_adapt_probe6.trn"
+/file/read-case-data "m16_base_run10.cas.h5"
+/mesh/adapt/cell-registers/add
+all_cells
+type
+volume
+volume-magnitude
+0
+/exit yes

@@ -1,0 +1,11 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m16_separate_probe4.trn"
+/file/read-case "C:/Users/admin/m16_demo/m16_msh_stage/m16_base.msh"
+/define/boundary-conditions/modify-zones/sep-face-zone-angle
+2
+5
+yes
+c
+keep-all
+/define/boundary-conditions/list-zones
+/exit yes

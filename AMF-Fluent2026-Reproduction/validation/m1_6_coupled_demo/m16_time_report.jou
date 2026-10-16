@@ -1,0 +1,13 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m16_time_report.trn"
+/file/read-case-data "m16_time_refined_run.cas.h5"
+/report/fluxes/heat-transfer
+no
+solid_hot_bottom
+coupled_wall_solid
+coupled_wall_fluid
+fluid_inlet
+fluid_outlet
+
+no
+/exit yes

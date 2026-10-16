@@ -1,0 +1,7 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m16_mesh_probe.trn"
+/file/read-case "C:/Users/admin/m16_demo/m16_msh_stage/m16_base.msh"
+/mesh/check
+/boundary/manage/list
+/file/write-case "m16_mesh_loaded.cas.h5"
+/exit yes

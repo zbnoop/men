@@ -1,0 +1,9 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m16_menu_probe.trn"
+/mesh/modify-zones
+?
+/define/boundary-conditions
+?
+/report
+?
+/exit yes

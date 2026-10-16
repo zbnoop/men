@@ -1,0 +1,9 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m16_wall_geometry_repo.trn"
+/file/read-case "C:/Users/admin/m16_demo/m16_msh_stage/m16_base.msh"
+/define/user-defined/compiled-functions
+load
+m16_demo_lib5
+/define/user-defined/execute-on-demand
+m16_wall_geometry_probe::m16_demo_lib5
+/exit yes

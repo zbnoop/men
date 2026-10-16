@@ -1,0 +1,18 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m16_time_refined_run.trn"
+/file/read-case "m16_base_run10.cas.h5"
+/solve/set/transient-controls/fixed-user-specified
+yes
+/solve/set/transient-controls/time-step-size
+0.005
+/solve/set/transient-controls/number-of-time-steps
+100
+/solve/set/transient-controls/max-iterations-per-time-step
+20
+/solve/initialize/initialize-flow
+/solve/dual-time-iterate
+100
+20
+/file/write-case "m16_time_refined_run.cas.h5"
+/file/write-data "m16_time_refined_run.dat.h5"
+/exit yes
