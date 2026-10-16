@@ -1,0 +1,13 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m17_udf_compile.trn"
+/define/user-defined/compiled-functions
+compile
+m17_demo_lib
+yes
+m17_gas_solid_udf.c
+
+
+/define/user-defined/compiled-functions
+load
+m17_demo_lib
+/exit yes

@@ -1,0 +1,18 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m17_base_dt001.trn"
+/file/read-case "C:/Users/admin/m17_demo/m17_setup.cas.h5"
+/solve/set/transient-controls/fixed-user-specified
+yes
+/solve/set/transient-controls/time-step-size
+0.01
+/solve/set/transient-controls/number-of-time-steps
+50
+/solve/set/transient-controls/max-iterations-per-time-step
+20
+/solve/initialize/initialize-flow
+/solve/dual-time-iterate
+50
+20
+/file/write-case "m17_base_dt001.cas.h5"
+/file/write-data "m17_base_dt001.dat.h5"
+/exit yes

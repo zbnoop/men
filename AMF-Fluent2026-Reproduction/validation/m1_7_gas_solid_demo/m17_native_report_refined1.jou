@@ -1,0 +1,14 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m17_native_report_refined1.trn"
+/file/read-case "C:/Users/admin/m17_demo/m17_refined1_dt001.cas.h5"
+/file/read-data "C:/Users/admin/m17_demo/m17_refined1_dt001.dat.h5"
+/report/fluxes/heat-transfer
+no
+solid_hot_bottom
+coupled_wall_solid
+coupled_wall_fluid
+fluid_inlet
+fluid_outlet
+
+no
+/exit yes

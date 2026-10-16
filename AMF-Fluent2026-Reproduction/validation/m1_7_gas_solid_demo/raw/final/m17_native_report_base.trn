@@ -1,0 +1,134 @@
+Transcript Start Time:  19:36:15, 16 Oct 2026 中国标准时间 
+Current Directory: "C:\Users\admin\m17_demo"
+
+Build Time: Feb  2 2026 16:32:00 EST  Build Id: 10262 
+Executable Path: C:/PROGRA~1/ANSYSI~1/v261/fluent/ntbin/win64/fluent.exe
+
+---------------------------------------------------------------------------------------
+ID    Hostname         Core   O.S.         PID   CPU Model Name                       
+---------------------------------------------------------------------------------------
+n0*   DESKTOP-5FQBFCG  1/104  Windows-x64  7888  Intel(R) Xeon(R) Platinum 8269CY     
+host  DESKTOP-5FQBFCG         Windows-x64  4752  Intel(R) Xeon(R) Platinum 8269CY     
+
+MPI Option Selected: intel
+Selected system interconnect: default
+---------------------------------------------------------------------------------------
+
+Cortex Process ID: 50248 
+License Server Path: 1055@localhost 
+
+
+> /file/read-case "C:/Users/admin/m17_demo/m17_base_final_dt001.cas.h5"Fast-loading "C:\PROGRA~1\ANSYSI~1\v261\fluent\fluent26.1.0\\addons\afd\lib\hdfio.bin"
+Done.
+
+Reading from DESKTOP-5FQBFCG:"C:/Users/admin/m17_demo/m17_base_final_dt001.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+         228 cells,     2 cell zones ...
+             76 hexahedral cells,  zone id: 5
+            152 hexahedral cells,  zone id: 6
+         962 faces,    16 face zones ...
+             38 mixed wall faces,  zone id: 8
+             38 mixed wall faces,  zone id: 13
+             38 quadrilateral wall faces,  zone id: 1
+              4 quadrilateral wall faces,  zone id: 17
+             38 quadrilateral wall faces,  zone id: 16
+              4 quadrilateral wall faces,  zone id: 15
+             38 quadrilateral wall faces,  zone id: 14
+             76 quadrilateral wall faces,  zone id: 2
+              8 quadrilateral velocity-inlet faces,  zone id: 21
+              8 quadrilateral pressure-outlet faces,  zone id: 20
+             38 quadrilateral wall faces,  zone id: 19
+             76 quadrilateral wall faces,  zone id: 18
+            148 quadrilateral interior faces,  zone id: 3
+            334 quadrilateral interior faces,  zone id: 4
+             38 quadrilateral interface faces,  zone id: 9
+             38 quadrilateral interface faces,  zone id: 10
+         480 nodes,     1 node zone  ...
+  Done.
+
+
+Checking the existence of compiled "m17_demo_lib" UDF library for current platform.
+If needed will attempt auto-compilation...
+
+ 	 Make sure that UDF source files are in the directory 
+ 	 that contains your case and data files. If you have 
+ 	 an existing m17_demo_lib directory, please remove this 
+ 	 directory to ensure that latest files are used. 
+  
+Could not find input files. Found "m17_demo_lib" library, loading it...
+DESKTOP-5FQBFCG: Opening library "C:\\Users\\admin\\m17_demo\\m17_demo_lib"...
+Done.
+
+DESKTOP-5FQBFCG: Opening library "C:\\Users\\admin\\m17_demo\\m17_demo_lib"...
+	m17_equivalent_cp
+	m17_thermal_conductivity
+	m17_gas_solid_energy_audit
+Done.
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	____-trg
+	____-src
+	interior-m16_two_region_v2_fluiddomain
+	interior-m16_two_region_v2_soliddomain
+	fluid_back_side
+	solid_hot_bottom
+	wall-11
+	wall-12
+	coupled_wall_solid
+	coupled_wall_fluid
+	solid_inlet_side
+	solid_front_side
+	solid_outlet_side
+	solid_back_side
+	fluid_top
+	fluid_front_side
+	fluid_inlet
+	fluid_outlet
+	fluid_zone
+	solid_zone
+     mesh interfaces,
+     parallel,
+
+Info: At least one many-to-many mesh interface is found in the case file. Such mesh interfaces will not be available in a future release of Fluent. It is recommended to convert to the current default one-to-one mesh interfaces with the following text command:
+/define/mesh-interfaces/one-to-one-pairing? yes
+
+Done.
+
+
+> /file/read-data "C:/Users/admin/m17_demo/m17_base_final_dt001.dat.h5"
+Reading from DESKTOP-5FQBFCG:"C:/Users/admin/m17_demo/m17_base_final_dt001.dat.h5" in NODE0 mode ...
+
+
+  Reading results.
+Parallel variables...
+Done.
+
+
+> /report/fluxes/heat-transfer
+All boundary/interior zones [yes] no
+Zone(1) [()] solid_hot_bottom
+Zone(2) [()] coupled_wall_solid
+Zone(3) [()] coupled_wall_fluid
+Zone(4) [()] fluid_inlet
+Zone(5) [()] fluid_outlet
+Zone(6) [()] 
+Write to file? [no] no
+
+        Total Heat Transfer Rate                  [W]
+-------------------------------- --------------------
+              coupled_wall_fluid          -0.61708297
+              coupled_wall_solid           0.61708297
+                     fluid_inlet            2.5205772
+                    fluid_outlet        -0.0045616456
+                solid_hot_bottom                   -0
+                ---------------- --------------------
+                             Net            2.5160156
+
+> /exit Transcript Stop Time:  19:36:25, 16 Oct 2026 中国标准时间 
+Total Transcript Time: 0 Minute 10 Second.

@@ -1,0 +1,13 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m17_m16_dependency_compile.trn"
+/define/user-defined/compiled-functions
+compile
+m16_demo_lib8
+yes
+m16_combined_udf.c
+
+
+/define/user-defined/compiled-functions
+load
+m16_demo_lib8
+/exit yes

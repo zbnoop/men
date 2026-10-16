@@ -1,0 +1,37 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m17_refined2_dt0005.trn"
+/file/read-case "C:/Users/admin/m17_demo/m17_setup_diffusion_yes.cas.h5"
+/mesh/adapt/cell-registers/add
+all_cells_r1
+type
+volume
+volume-magnitude
+0
+q
+/mesh/adapt/cell-registers/refine
+all_cells_r1
+/mesh/adapt/cell-registers/add
+all_cells_r2
+type
+volume
+volume-magnitude
+0
+q
+/mesh/adapt/cell-registers/refine
+all_cells_r2
+/mesh/check
+/solve/set/transient-controls/fixed-user-specified
+yes
+/solve/set/transient-controls/time-step-size
+0.005
+/solve/set/transient-controls/number-of-time-steps
+100
+/solve/set/transient-controls/max-iterations-per-time-step
+20
+/solve/initialize/initialize-flow
+/solve/dual-time-iterate
+100
+20
+/file/write-case "m17_refined2_dt0005.cas.h5"
+/file/write-data "m17_refined2_dt0005.dat.h5"
+/exit yes

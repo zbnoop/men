@@ -1,0 +1,60 @@
+Transcript Start Time:  19:23:34, 16 Oct 2026 中国标准时间 
+Current Directory: "C:\Users\admin\m17_demo"
+
+Build Time: Feb  2 2026 16:32:00 EST  Build Id: 10262 
+Executable Path: C:/PROGRA~1/ANSYSI~1/v261/fluent/ntbin/win64/fluent.exe
+
+----------------------------------------------------------------------------------------
+ID    Hostname         Core   O.S.         PID    CPU Model Name                       
+----------------------------------------------------------------------------------------
+n0*   DESKTOP-5FQBFCG  1/104  Windows-x64  11432  Intel(R) Xeon(R) Platinum 8269CY     
+host  DESKTOP-5FQBFCG         Windows-x64  23784  Intel(R) Xeon(R) Platinum 8269CY     
+
+MPI Option Selected: intel
+Selected system interconnect: default
+----------------------------------------------------------------------------------------
+
+Cortex Process ID: 45468 
+License Server Path: 1055@localhost 
+
+
+> /define/user-defined/compiled-functions
+
+load/unload/compile? [load]> compile
+
+Compiled UDF library name: ["libudf"] m17_demo_lib
+
+ 	 Make sure that UDF source files are in the directory 
+ 	 that contains your case and data files. If you have 
+ 	 an existing m17_demo_lib directory, please remove this 
+ 	 directory to ensure that latest files are used. 
+ Continue? [yes] yes
+
+ Give C-Source file names:
+First file name: [""] m17_gas_solid_udf.c
+Next  file name: [""] 
+
+ Give header file names:
+First file name: [""] 
+Copy "m17_gas_solid_udf.c" to "C:\Users\admin\m17_demo\\m17_demo_lib\\src"
+Files udf_names.c and user_nt.udf in 3ddp_host are up-to-date.
+Files udf_names.c and user_nt.udf in 3ddp_node are up-to-date.
+
+Done.
+
+> /define/user-defined/compiled-functions
+
+load/unload/compile? [load]> load
+UDF Library Name ["m17_demo_lib"] m17_demo_lib
+
+DESKTOP-5FQBFCG: Opening library "C:\\Users\\admin\\m17_demo\\m17_demo_lib"...
+Done.
+
+DESKTOP-5FQBFCG: Opening library "C:\\Users\\admin\\m17_demo\\m17_demo_lib"...
+	m17_equivalent_cp
+	m17_thermal_conductivity
+	m17_gas_solid_energy_audit
+Done.
+
+> /exit Transcript Stop Time:  19:23:45, 16 Oct 2026 中国标准时间 
+Total Transcript Time: 0 Minute 11 Second.

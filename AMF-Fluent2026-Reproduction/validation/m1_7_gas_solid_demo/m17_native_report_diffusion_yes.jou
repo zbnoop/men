@@ -1,0 +1,14 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m17_native_report_diffusion_yes.trn"
+/file/read-case "C:/Users/admin/m17_demo/m17_base_dt001_diffusion_yes.cas.h5"
+/file/read-data "C:/Users/admin/m17_demo/m17_base_dt001_diffusion_yes.dat.h5"
+/report/fluxes/heat-transfer
+no
+solid_hot_bottom
+coupled_wall_solid
+coupled_wall_fluid
+fluid_inlet
+fluid_outlet
+
+no
+/exit yes

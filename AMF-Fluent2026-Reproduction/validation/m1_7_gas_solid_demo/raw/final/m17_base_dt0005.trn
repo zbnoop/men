@@ -1,0 +1,1586 @@
+Transcript Start Time:  19:28:30, 16 Oct 2026 中国标准时间 
+Current Directory: "C:\Users\admin\m17_demo"
+
+Build Time: Feb  2 2026 16:32:00 EST  Build Id: 10262 
+Executable Path: C:/PROGRA~1/ANSYSI~1/v261/fluent/ntbin/win64/fluent.exe
+
+----------------------------------------------------------------------------------------
+ID    Hostname         Core   O.S.         PID    CPU Model Name                       
+----------------------------------------------------------------------------------------
+n0*   DESKTOP-5FQBFCG  1/104  Windows-x64  51152  Intel(R) Xeon(R) Platinum 8269CY     
+host  DESKTOP-5FQBFCG         Windows-x64  42668  Intel(R) Xeon(R) Platinum 8269CY     
+
+MPI Option Selected: intel
+Selected system interconnect: default
+----------------------------------------------------------------------------------------
+
+Cortex Process ID: 52400 
+License Server Path: 1055@localhost 
+
+
+> /file/read-case "C:/Users/admin/m17_demo/m17_setup_diffusion_yes.cas.h5"Fast-loading "C:\PROGRA~1\ANSYSI~1\v261\fluent\fluent26.1.0\\addons\afd\lib\hdfio.bin"
+Done.
+
+Reading from DESKTOP-5FQBFCG:"C:/Users/admin/m17_demo/m17_setup_diffusion_yes.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+         228 cells,     2 cell zones ...
+             76 hexahedral cells,  zone id: 5
+            152 hexahedral cells,  zone id: 6
+         962 faces,    16 face zones ...
+             38 mixed wall faces,  zone id: 8
+             38 mixed wall faces,  zone id: 13
+             38 quadrilateral wall faces,  zone id: 1
+              4 quadrilateral wall faces,  zone id: 17
+             38 quadrilateral wall faces,  zone id: 16
+              4 quadrilateral wall faces,  zone id: 15
+             38 quadrilateral wall faces,  zone id: 14
+             76 quadrilateral wall faces,  zone id: 2
+              8 quadrilateral velocity-inlet faces,  zone id: 21
+              8 quadrilateral pressure-outlet faces,  zone id: 20
+             38 quadrilateral wall faces,  zone id: 19
+             76 quadrilateral wall faces,  zone id: 18
+            148 quadrilateral interior faces,  zone id: 3
+            334 quadrilateral interior faces,  zone id: 4
+             38 quadrilateral interface faces,  zone id: 9
+             38 quadrilateral interface faces,  zone id: 10
+         480 nodes,     1 node zone  ...
+  Done.
+
+
+Checking the existence of compiled "m17_demo_lib" UDF library for current platform.
+If needed will attempt auto-compilation...
+
+ 	 Make sure that UDF source files are in the directory 
+ 	 that contains your case and data files. If you have 
+ 	 an existing m17_demo_lib directory, please remove this 
+ 	 directory to ensure that latest files are used. 
+  
+Could not find input files. Found "m17_demo_lib" library, loading it...
+DESKTOP-5FQBFCG: Opening library "C:\\Users\\admin\\m17_demo\\m17_demo_lib"...
+Done.
+
+DESKTOP-5FQBFCG: Opening library "C:\\Users\\admin\\m17_demo\\m17_demo_lib"...
+	m17_equivalent_cp
+	m17_thermal_conductivity
+	m17_gas_solid_energy_audit
+Done.
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	____-trg
+	____-src
+	interior-m16_two_region_v2_fluiddomain
+	interior-m16_two_region_v2_soliddomain
+	fluid_back_side
+	solid_hot_bottom
+	wall-11
+	wall-12
+	coupled_wall_solid
+	coupled_wall_fluid
+	solid_inlet_side
+	solid_front_side
+	solid_outlet_side
+	solid_back_side
+	fluid_top
+	fluid_front_side
+	fluid_inlet
+	fluid_outlet
+	fluid_zone
+	solid_zone
+     mesh interfaces,
+     parallel,
+
+Info: At least one many-to-many mesh interface is found in the case file. Such mesh interfaces will not be available in a future release of Fluent. It is recommended to convert to the current default one-to-one mesh interfaces with the following text command:
+/define/mesh-interfaces/one-to-one-pairing? yes
+
+Done.
+
+
+> /solve/set/transient-controls/fixed-user-specified
+Enable User-specifed Fixed Time Stepping? [yes] yes
+
+> /solve/set/transient-controls/time-step-size
+Time step size (constant or expression) (in [s]) [1] 0.005
+
+> /solve/set/transient-controls/number-of-time-steps
+Number of Time Steps [0] 100
+
+> /solve/set/transient-controls/max-iterations-per-time-step
+Max Iterations/Time Step [20] 20
+
+> /solve/initialize/initialize-flow
+
+> /solve/dual-time-iterate
+Number of Time Steps [100] 100
+Maximum Number of iterations per time step [20] 20
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+     1  1.0000e+00  1.3965e-03  0.0000e+00  0.0000e+00  3.2394e-02  8.8473e-04  0.0000e+00  0:00:00   19
+     2  1.0000e+00  1.4387e+02  5.6025e-03  7.2938e-04  2.2355e-03  2.6708e-01  0.0000e+00  0:00:00   18
+
+ Reversed flow on 4 faces (50.0% area) of pressure-outlet 20.
+     3  6.5936e-01  1.1043e+01  4.6814e-03  7.5635e-04  2.8776e-05  5.8788e-02  0.0000e+00  0:00:00   17
+
+ Reversed flow on 4 faces (50.0% area) of pressure-outlet 20.
+     4  4.1884e-01  6.4392e+00  4.1524e-03  3.7087e-04  1.7246e-06  6.5535e-03  0.0000e+00  0:00:00   16
+
+ Reversed flow on 4 faces (50.0% area) of pressure-outlet 20.
+     5  2.6108e-01  5.1084e+00  4.0021e-03  3.1157e-04  2.4112e-07  9.1495e-04  0.0000e+00  0:00:00   15
+
+ Reversed flow on 4 faces (50.0% area) of pressure-outlet 20.
+     6  1.6350e-01  4.7381e+00  3.6457e-03  3.6948e-04  1.6110e-07  2.4162e-04  0.0000e+00  0:00:00   14
+
+ Reversed flow on 4 faces (50.0% area) of pressure-outlet 20.
+     7  9.9481e-02  4.6463e+00  3.3422e-03  4.2343e-04  1.0454e-07  1.7630e-04  0.0000e+00  0:00:00   13
+
+ Reversed flow on 4 faces (50.0% area) of pressure-outlet 20.
+     8  6.1388e-02  4.4737e+00  3.2760e-03  4.6108e-04  8.5989e-08  9.4807e-05  0.0000e+00  0:00:00   12
+     9  3.6235e-02  3.7328e+00  3.2389e-03  5.3514e-04  9.7906e-08  2.3221e-05  0.0000e+00  0:00:00   11
+    10  2.4025e-02  2.7531e+00  3.3716e-03  4.9464e-04  2.3719e-08  1.1282e-05  0.0000e+00  0:00:00   10
+    11  1.7154e-02  1.9414e+00  3.2758e-03  4.8264e-04  1.4439e-08  7.0353e-06  0.0000e+00  0:00:00    9
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    12  1.1988e-02  1.3173e+00  3.1085e-03  4.4118e-04  8.7797e-09  4.4086e-06  0.0000e+00  0:00:00    8
+    13  8.3851e-03  8.7512e-01  2.8080e-03  3.8658e-04  5.3648e-09  2.4937e-06  0.0000e+00  0:00:00    7
+    14  5.8951e-03  5.6695e-01  2.3960e-03  3.2243e-04  2.9411e-09  1.6068e-06  0.0000e+00  0:00:00    6
+    15  4.1878e-03  3.5828e-01  1.9350e-03  2.6401e-04  1.9482e-09  1.0483e-06  0.0000e+00  0:00:00    5
+    16  2.9908e-03  2.2609e-01  1.4960e-03  2.1767e-04  1.4719e-09  6.6840e-07  0.0000e+00  0:00:00    4
+    17  2.1326e-03  1.4260e-01  1.1112e-03  1.6735e-04  1.0038e-09  4.3615e-07  0.0000e+00  0:00:00    3
+    18  1.5189e-03  8.9863e-02  8.0277e-04  1.2497e-04  6.6542e-10  2.8897e-07  0.0000e+00  0:00:00    2
+    19  1.0809e-03  5.6589e-02  5.6891e-04  9.2216e-05  4.4220e-10  1.9434e-07  0.0000e+00  0:00:00    1
+    20  7.6899e-04  3.5612e-02  3.9879e-04  6.7261e-05  2.9569e-10  1.3231e-07  0.0000e+00  0:00:00    0
+M17 audit: t=0.005 s, solid sensible=0.0017075 J, latent=0 J, fluid=0.201226 J, inletH=0.348992 W, outletH=0 W, nativeIn=0.00101477 W, nativeOut=-1.14181e-07 W, nativeResidual=0.202929 J, liquid_Vf=0, solid Tmax=300.002 K
+Flow time = 0.005s, time step = 1
+99 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    20  7.6899e-04  3.5612e-02  3.9879e-04  6.7261e-05  2.9569e-10  1.3231e-07  0.0000e+00  0:00:01   20
+    21  2.8255e-03  5.0748e-01  2.9363e-04  1.9803e-04  2.5937e-05  2.5469e-01  0.0000e+00  0:00:01   19
+    22  1.9371e-03  3.3673e-01  2.0170e-04  1.1541e-04  3.9847e-06  4.7672e-02  0.0000e+00  0:00:01   18
+    23  1.3517e-03  2.1743e-01  1.4114e-04  3.9120e-05  9.1264e-08  5.2690e-03  0.0000e+00  0:00:01   17
+    24  9.5989e-04  1.3978e-01  1.0201e-04  3.0483e-05  1.3784e-07  5.5248e-04  0.0000e+00  0:00:00   16
+    25  6.8658e-04  8.9762e-02  7.7255e-05  4.7855e-05  4.1732e-08  5.6442e-05  0.0000e+00  0:00:00   15
+    26  4.8986e-04  5.7617e-02  6.2151e-05  4.5178e-05  7.9529e-09  5.6863e-06  0.0000e+00  0:00:00   14
+    27  3.4781e-04  3.6970e-02  5.0393e-05  3.5819e-05  1.4605e-09  5.8479e-07  0.0000e+00  0:00:00   13
+    28  2.4609e-04  2.3715e-02  3.9218e-05  2.5946e-05  3.4535e-10  9.9616e-08  0.0000e+00  0:00:00   12
+    29  1.7363e-04  1.5207e-02  2.9691e-05  1.7789e-05  1.5363e-10  5.4810e-08  0.0000e+00  0:00:00   11
+    30  1.2226e-04  9.7527e-03  2.3606e-05  1.1757e-05  1.0305e-10  3.6573e-08  0.0000e+00  0:00:00   10
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    31  8.5935e-05  6.2574e-03  1.9136e-05  7.6300e-06  6.8794e-11  2.4056e-08  0.0000e+00  0:00:00    9
+    32  6.0287e-05  4.0176e-03  1.5268e-05  4.9656e-06  4.3696e-11  1.5850e-08  0.0000e+00  0:00:00    8
+    33  4.2215e-05  2.5822e-03  1.2031e-05  3.2545e-06  2.6832e-11  1.0491e-08  0.0000e+00  0:00:00    7
+    34  2.9514e-05  1.6622e-03  9.3454e-06  2.1681e-06  1.6630e-11  6.9723e-09  0.0000e+00  0:00:00    6
+    35  2.0602e-05  1.0724e-03  7.2042e-06  1.4698e-06  1.0351e-11  4.6603e-09  0.0000e+00  0:00:00    5
+    36  1.4360e-05  6.9405e-04  5.5489e-06  1.0016e-06  6.3886e-12  3.1289e-09  0.0000e+00  0:00:00    4
+!   36 solution is converged
+M17 audit: t=0.01 s, solid sensible=0.00416819 J, latent=0 J, fluid=0.346816 J, inletH=0.581171 W, outletH=0 W, nativeIn=0.000740365 W, nativeOut=-1.14047e-07 W, nativeResidual=0.350975 J, liquid_Vf=0, solid Tmax=300.006 K
+Flow time = 0.01s, time step = 2
+98 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    36  1.4360e-05  6.9405e-04  5.5489e-06  1.0016e-06  6.3886e-12  3.1289e-09  0.0000e+00  0:00:01   20
+!   36 solution is converged
+    37  3.6154e-05  7.7116e-03  2.0153e-04  1.3335e-04  1.8923e-05  2.2847e-01  0.0000e+00  0:00:01   19
+    38  4.7087e-05  2.7543e-03  7.5669e-05  4.0090e-05  2.5611e-06  4.2067e-02  0.0000e+00  0:00:01   18
+    39  3.4621e-05  1.8913e-03  3.2340e-05  1.6140e-05  7.1106e-08  5.0926e-03  0.0000e+00  0:00:01   17
+    40  2.3764e-05  1.2432e-03  1.6157e-05  7.5809e-06  8.5994e-08  5.8552e-04  0.0000e+00  0:00:01   16
+    41  1.6342e-05  8.0561e-04  9.5175e-06  3.2866e-06  2.6735e-08  6.6723e-05  0.0000e+00  0:00:01   15
+!   41 solution is converged
+M17 audit: t=0.015 s, solid sensible=0.00695915 J, latent=0 J, fluid=0.458305 J, inletH=0.745801 W, outletH=1.70687e-17 W, nativeIn=0.00057161 W, nativeOut=-1.14047e-07 W, nativeResidual=0.465253 J, liquid_Vf=0, solid Tmax=300.009 K
+Flow time = 0.015s, time step = 3
+97 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    41  1.6342e-05  8.0561e-04  9.5175e-06  3.2866e-06  2.6735e-08  6.6723e-05  0.0000e+00  0:00:01   20
+    42  2.3767e-05  5.6418e-03  1.4698e-04  6.3848e-05  1.4612e-05  2.0644e-01  0.0000e+00  0:00:01   19
+    43  3.1861e-05  2.3192e-03  5.1682e-05  2.6892e-05  1.7403e-06  3.7800e-02  0.0000e+00  0:00:01   18
+    44  2.4208e-05  1.6718e-03  2.0704e-05  1.1243e-05  5.8949e-08  4.9078e-03  0.0000e+00  0:00:01   17
+    45  1.6827e-05  1.1110e-03  9.6389e-06  5.5244e-06  5.6742e-08  6.0573e-04  0.0000e+00  0:00:01   16
+    46  1.1680e-05  7.2950e-04  5.5431e-06  2.3169e-06  1.7944e-08  7.4651e-05  0.0000e+00  0:00:00   15
+!   46 solution is converged
+M17 audit: t=0.02 s, solid sensible=0.0098805 J, latent=0 J, fluid=0.547484 J, inletH=0.868503 W, outletH=0 W, nativeIn=0.000460665 W, nativeOut=-1.14045e-07 W, nativeResidual=0.55735 J, liquid_Vf=0, solid Tmax=300.012 K
+Flow time = 0.02s, time step = 4
+96 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    46  1.1680e-05  7.2950e-04  5.5431e-06  2.3169e-06  1.7944e-08  7.4651e-05  0.0000e+00  0:00:01   20
+    47  1.5937e-05  4.2991e-03  1.1801e-04  3.2141e-05  1.1776e-05  1.8785e-01  0.0000e+00  0:00:01   19
+    48  2.2861e-05  1.8820e-03  4.2514e-05  2.5012e-05  1.2434e-06  3.4403e-02  0.0000e+00  0:00:01   18
+    49  1.7548e-05  1.3663e-03  1.6668e-05  1.0270e-05  4.8482e-08  4.7198e-03  0.0000e+00  0:00:01   17
+    50  1.2254e-05  9.1921e-04  7.6944e-06  4.9884e-06  3.9074e-08  6.1973e-04  0.0000e+00  0:00:00   16
+!   50 solution is converged
+M17 audit: t=0.025 s, solid sensible=0.0128339 J, latent=0 J, fluid=0.621134 J, inletH=0.963463 W, outletH=0 W, nativeIn=0.000383232 W, nativeOut=-1.14045e-07 W, nativeResidual=0.633952 J, liquid_Vf=0, solid Tmax=300.016 K
+Flow time = 0.025s, time step = 5
+95 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    50  1.2254e-05  9.1921e-04  7.6944e-06  4.9884e-06  3.9074e-08  6.1973e-04  0.0000e+00  0:00:01   20
+    51  1.3757e-05  3.3890e-03  1.0041e-04  3.8194e-05  9.8044e-06  1.7208e-01  0.0000e+00  0:00:01   19
+    52  1.8165e-05  1.6528e-03  3.5793e-05  2.1230e-05  9.1094e-07  3.1609e-02  0.0000e+00  0:00:01   18
+    53  1.3837e-05  1.2165e-03  1.3761e-05  7.7800e-06  4.0227e-08  4.5328e-03  0.0000e+00  0:00:01   17
+    54  9.6485e-06  8.2513e-04  6.3385e-06  3.7652e-06  2.7915e-08  6.2556e-04  0.0000e+00  0:00:00   16
+!   54 solution is converged
+M17 audit: t=0.03 s, solid sensible=0.0157719 J, latent=0 J, fluid=0.683668 J, inletH=1.03941 W, outletH=0 W, nativeIn=0.00032754 W, nativeOut=-1.14044e-07 W, nativeResidual=0.699423 J, liquid_Vf=0, solid Tmax=300.019 K
+Flow time = 0.03s, time step = 6
+94 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    54  9.6485e-06  8.2513e-04  6.3385e-06  3.7652e-06  2.7915e-08  6.2556e-04  0.0000e+00  0:00:01   20
+    55  1.0342e-05  2.7499e-03  8.4986e-05  3.9736e-05  8.3782e-06  1.5859e-01  0.0000e+00  0:00:01   19
+    56  1.3585e-05  1.3890e-03  2.9453e-05  1.6787e-05  6.9211e-07  2.9263e-02  0.0000e+00  0:00:01   18
+    57  1.0438e-05  1.0323e-03  1.1836e-05  6.2148e-06  3.3985e-08  4.3513e-03  0.0000e+00  0:00:01   17
+    58  7.2936e-06  7.0555e-04  5.4860e-06  3.1007e-06  2.0439e-08  6.2533e-04  0.0000e+00  0:00:00   16
+!   58 solution is converged
+M17 audit: t=0.035 s, solid sensible=0.018673 J, latent=0 J, fluid=0.737891 J, inletH=1.10171 W, outletH=0 W, nativeIn=0.000285774 W, nativeOut=-1.14043e-07 W, nativeResidual=0.756545 J, liquid_Vf=0, solid Tmax=300.022 K
+Flow time = 0.035s, time step = 7
+93 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    58  7.2936e-06  7.0555e-04  5.4860e-06  3.1007e-06  2.0439e-08  6.2533e-04  0.0000e+00  0:00:01   20
+    59  7.6951e-06  2.2882e-03  7.2096e-05  4.0320e-05  7.3088e-06  1.4696e-01  0.0000e+00  0:00:01   19
+    60  1.0471e-05  1.1681e-03  2.5845e-05  1.4929e-05  5.3908e-07  2.7258e-02  0.0000e+00  0:00:01   18
+    61  8.1132e-06  8.7353e-04  1.0390e-05  5.4576e-06  2.9033e-08  4.1773e-03  0.0000e+00  0:00:01   17
+    62  5.6815e-06  6.0111e-04  4.7654e-06  2.7054e-06  1.5304e-08  6.2078e-04  0.0000e+00  0:00:00   16
+!   62 solution is converged
+M17 audit: t=0.04 s, solid sensible=0.0215301 J, latent=0 J, fluid=0.785718 J, inletH=1.15392 W, outletH=1.67899e-17 W, nativeIn=0.00025356 W, nativeOut=-1.14043e-07 W, nativeResidual=0.807228 J, liquid_Vf=0, solid Tmax=300.024 K
+Flow time = 0.04s, time step = 8
+92 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    62  5.6815e-06  6.0111e-04  4.7654e-06  2.7054e-06  1.5304e-08  6.2078e-04  0.0000e+00  0:00:01   20
+    63  5.8984e-06  1.9443e-03  6.2362e-05  3.9492e-05  6.4840e-06  1.3687e-01  0.0000e+00  0:00:01   19
+    64  8.2722e-06  9.8845e-04  2.2999e-05  1.3357e-05  4.2878e-07  2.5523e-02  0.0000e+00  0:00:01   18
+    65  6.4609e-06  7.4336e-04  9.2562e-06  4.8592e-06  2.5060e-08  4.0121e-03  0.0000e+00  0:00:01   17
+    66  4.5344e-06  5.1467e-04  4.1820e-06  2.3871e-06  1.1677e-08  6.1327e-04  0.0000e+00  0:00:00   16
+!   66 solution is converged
+M17 audit: t=0.045 s, solid sensible=0.0243441 J, latent=0 J, fluid=0.828502 J, inletH=1.19844 W, outletH=1.67546e-17 W, nativeIn=0.000228125 W, nativeOut=-1.14042e-07 W, nativeResidual=0.852825 J, liquid_Vf=0, solid Tmax=300.027 K
+Flow time = 0.045s, time step = 9
+91 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    66  4.5344e-06  5.1467e-04  4.1820e-06  2.3871e-06  1.1677e-08  6.1327e-04  0.0000e+00  0:00:01   20
+    67  4.6540e-06  1.6824e-03  5.4886e-05  3.7799e-05  5.8328e-06  1.2806e-01  0.0000e+00  0:00:01   19
+    68  6.6661e-06  8.4228e-04  2.0684e-05  1.2030e-05  3.4718e-07  2.4005e-02  0.0000e+00  0:00:01   18
+    69  5.2458e-06  6.3660e-04  8.3058e-06  4.3959e-06  2.1773e-08  3.8563e-03  0.0000e+00  0:00:01   17
+    70  3.6893e-06  4.4320e-04  3.6971e-06  2.1360e-06  9.0502e-09  6.0376e-04  0.0000e+00  0:00:00   16
+!   70 solution is converged
+M17 audit: t=0.05 s, solid sensible=0.027121 J, latent=0 J, fluid=0.867228 J, inletH=1.23698 W, outletH=1.67228e-17 W, nativeIn=0.000207641 W, nativeOut=-1.14042e-07 W, nativeResidual=0.894327 J, liquid_Vf=0, solid Tmax=300.029 K
+Flow time = 0.05s, time step = 10
+90 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    70  3.6893e-06  4.4320e-04  3.6971e-06  2.1360e-06  9.0502e-09  6.0376e-04  0.0000e+00  0:00:01   20
+    71  3.7929e-06  1.4793e-03  4.9003e-05  3.5743e-05  5.3084e-06  1.2031e-01  0.0000e+00  0:00:01   19
+    72  5.4855e-06  7.2211e-04  1.8784e-05  1.0905e-05  2.8545e-07  2.2667e-02  0.0000e+00  0:00:01   18
+    73  4.3280e-06  5.4820e-04  7.5027e-06  4.0347e-06  1.9039e-08  3.7100e-03  0.0000e+00  0:00:01   17
+    74  3.0546e-06  3.8361e-04  3.2989e-06  1.9367e-06  7.1076e-09  5.9299e-04  0.0000e+00  0:00:00   16
+!   74 solution is converged
+M17 audit: t=0.055 s, solid sensible=0.0298697 J, latent=0 J, fluid=0.902628 J, inletH=1.27076 W, outletH=1.66938e-17 W, nativeIn=0.000190866 W, nativeOut=-1.14042e-07 W, nativeResidual=0.932474 J, liquid_Vf=0, solid Tmax=300.032 K
+Flow time = 0.055s, time step = 11
+89 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    74  3.0546e-06  3.8361e-04  3.2989e-06  1.9367e-06  7.1076e-09  5.9299e-04  0.0000e+00  0:00:01   20
+    75  3.1332e-06  1.3195e-03  4.4455e-05  3.3627e-05  4.8790e-06  1.1346e-01  0.0000e+00  0:00:01   19
+    76  4.5943e-06  6.2219e-04  1.7203e-05  9.9249e-06  2.3785e-07  2.1478e-02  0.0000e+00  0:00:01   18
+    77  3.6424e-06  4.7423e-04  6.8222e-06  3.7251e-06  1.6761e-08  3.5732e-03  0.0000e+00  0:00:00   17
+    78  2.5775e-06  3.3343e-04  2.9599e-06  1.7620e-06  5.6274e-09  5.8145e-04  0.0000e+00  0:00:00   16
+!   78 solution is converged
+M17 audit: t=0.06 s, solid sensible=0.0326011 J, latent=0 J, fluid=0.935258 J, inletH=1.30068 W, outletH=3.33339e-17 W, nativeIn=0.000176928 W, nativeOut=-1.14042e-07 W, nativeResidual=0.967835 J, liquid_Vf=0, solid Tmax=300.034 K
+Flow time = 0.06s, time step = 12
+88 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    78  2.5775e-06  3.3343e-04  2.9599e-06  1.7620e-06  5.6274e-09  5.8145e-04  0.0000e+00  0:00:01   20
+    79  2.6075e-06  1.1924e-03  4.1076e-05  3.1634e-05  4.5222e-06  1.0735e-01  0.0000e+00  0:00:01   19
+    80  3.8698e-06  5.3829e-04  1.5880e-05  9.0667e-06  2.0051e-07  2.0415e-02  0.0000e+00  0:00:01   18
+    81  3.0827e-06  4.1175e-04  6.2419e-06  3.4628e-06  1.4844e-08  3.4453e-03  0.0000e+00  0:00:00   17
+    82  2.1861e-06  2.9083e-04  2.6702e-06  1.6078e-06  4.4426e-09  5.6952e-04  0.0000e+00  0:00:00   16
+!   82 solution is converged
+M17 audit: t=0.065 s, solid sensible=0.0353262 J, latent=0 J, fluid=0.965549 J, inletH=1.32744 W, outletH=4.99256e-17 W, nativeIn=0.000165199 W, nativeOut=-1.14042e-07 W, nativeResidual=1.00085 J, liquid_Vf=0, solid Tmax=300.036 K
+Flow time = 0.065s, time step = 13
+87 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    82  2.1861e-06  2.9083e-04  2.6702e-06  1.6078e-06  4.4426e-09  5.6952e-04  0.0000e+00  0:00:01   20
+    83  2.1839e-06  1.0905e-03  3.8376e-05  2.9833e-05  4.2221e-06  1.0190e-01  0.0000e+00  0:00:01   19
+    84  3.2788e-06  4.6724e-04  1.4775e-05  8.3368e-06  1.7077e-07  1.9460e-02  0.0000e+00  0:00:01   18
+    85  2.6231e-06  3.5860e-04  5.7465e-06  3.2415e-06  1.3218e-08  3.3258e-03  0.0000e+00  0:00:00   17
+    86  1.8633e-06  2.5442e-04  2.4214e-06  1.4759e-06  3.5253e-09  5.5747e-04  0.0000e+00  0:00:00   16
+!   86 solution is converged
+M17 audit: t=0.07 s, solid sensible=0.0380529 J, latent=0 J, fluid=0.993843 J, inletH=1.35156 W, outletH=8.3092e-17 W, nativeIn=0.000155223 W, nativeOut=-1.14042e-07 W, nativeResidual=1.03187 J, liquid_Vf=0, solid Tmax=300.038 K
+Flow time = 0.07000000000000001s, time step = 14
+86 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    86  1.8633e-06  2.5442e-04  2.4214e-06  1.4759e-06  3.5253e-09  5.5747e-04  0.0000e+00  0:00:01   20
+    87  1.8403e-06  1.0081e-03  3.6164e-05  2.8206e-05  3.9668e-06  9.6994e-02  0.0000e+00  0:00:01   19
+    88  2.7888e-06  4.0668e-04  1.3848e-05  7.7027e-06  1.4675e-07  1.8597e-02  0.0000e+00  0:00:01   18
+    89  2.2336e-06  3.1312e-04  5.3279e-06  3.0050e-06  1.1829e-08  3.2144e-03  0.0000e+00  0:00:00   17
+    90  1.5878e-06  2.2312e-04  2.2107e-06  1.3469e-06  2.8096e-09  5.4548e-04  0.0000e+00  0:00:00   16
+!   90 solution is converged
+M17 audit: t=0.075 s, solid sensible=0.0407837 J, latent=0 J, fluid=1.02042 J, inletH=1.37346 W, outletH=9.95777e-17 W, nativeIn=0.000146653 W, nativeOut=-1.14042e-07 W, nativeResidual=1.06118 J, liquid_Vf=0, solid Tmax=300.04 K
+Flow time = 0.075s, time step = 15
+85 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    90  1.5878e-06  2.2312e-04  2.2107e-06  1.3469e-06  2.8096e-09  5.4548e-04  0.0000e+00  0:00:01   20
+    91  1.5542e-06  9.4125e-04  3.4359e-05  2.6602e-05  3.7475e-06  9.2567e-02  0.0000e+00  0:00:01   19
+    92  2.3776e-06  3.5545e-04  1.3071e-05  7.1434e-06  1.2714e-07  1.7814e-02  0.0000e+00  0:00:01   18
+    93  1.9046e-06  2.7398e-04  4.9724e-06  2.7941e-06  1.0635e-08  3.1103e-03  0.0000e+00  0:00:01   17
+    94  1.3545e-06  1.9609e-04  2.0313e-06  1.2305e-06  2.2475e-09  5.3369e-04  0.0000e+00  0:00:00   16
+!   94 solution is converged
+M17 audit: t=0.08 s, solid sensible=0.0435149 J, latent=0 J, fluid=1.04551 J, inletH=1.39348 W, outletH=1.16022e-16 W, nativeIn=0.000139228 W, nativeOut=-1.14041e-07 W, nativeResidual=1.089 J, liquid_Vf=0, solid Tmax=300.042 K
+Flow time = 0.08s, time step = 16
+84 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    94  1.3545e-06  1.9609e-04  2.0313e-06  1.2305e-06  2.2475e-09  5.3369e-04  0.0000e+00  0:00:01   20
+    95  1.3164e-06  8.8672e-04  3.2886e-05  2.5053e-05  3.5575e-06  8.8553e-02  0.0000e+00  0:00:01   19
+    96  2.0347e-06  3.1301e-04  1.2417e-05  6.6419e-06  1.1096e-07  1.7101e-02  0.0000e+00  0:00:01   18
+    97  1.6283e-06  2.4021e-04  4.6687e-06  2.5986e-06  9.6002e-09  3.0130e-03  0.0000e+00  0:00:01   17
+    98  1.1581e-06  1.7269e-04  1.8770e-06  1.1303e-06  1.8017e-09  5.2217e-04  0.0000e+00  0:00:00   16
+!   98 solution is converged
+M17 audit: t=0.085 s, solid sensible=0.0462383 J, latent=0 J, fluid=1.06931 J, inletH=1.41191 W, outletH=9.93197e-17 W, nativeIn=0.000132743 W, nativeOut=-1.14041e-07 W, nativeResidual=1.11552 J, liquid_Vf=0, solid Tmax=300.043 K
+Flow time = 0.08500000000000001s, time step = 17
+83 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+    98  1.1581e-06  1.7269e-04  1.8770e-06  1.1303e-06  1.8017e-09  5.2217e-04  0.0000e+00  0:00:01   20
+    99  1.1188e-06  8.4214e-04  3.1684e-05  2.3575e-05  3.3916e-06  8.4901e-02  0.0000e+00  0:00:01   19
+   100  1.7482e-06  2.8894e-04  1.1865e-05  6.1798e-06  9.7446e-08  1.6449e-02  0.0000e+00  0:00:01   18
+   101  1.3961e-06  2.1101e-04  4.4089e-06  2.4145e-06  8.6989e-09  2.9221e-03  0.0000e+00  0:00:01   17
+   102  9.9268e-07  1.5241e-04  1.7442e-06  1.0388e-06  1.4430e-09  5.1100e-04  0.0000e+00  0:00:00   16
+!  102 solution is converged
+M17 audit: t=0.09 s, solid sensible=0.0489454 J, latent=0 J, fluid=1.09199 J, inletH=1.42897 W, outletH=8.26665e-17 W, nativeIn=0.000127038 W, nativeOut=-1.14041e-07 W, nativeResidual=1.14091 J, liquid_Vf=0, solid Tmax=300.045 K
+Flow time = 0.09s, time step = 18
+82 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   102  9.9268e-07  1.5241e-04  1.7442e-06  1.0388e-06  1.4430e-09  5.1100e-04  0.0000e+00  0:00:01   20
+   103  9.5391e-07  8.0565e-04  3.0706e-05  2.2166e-05  3.2456e-06  8.1566e-02  0.0000e+00  0:00:01   19
+   104  1.5086e-06  2.7624e-04  1.1400e-05  5.7568e-06  8.6087e-08  1.5851e-02  0.0000e+00  0:00:01   18
+   105  1.2003e-06  1.8574e-04  4.1872e-06  2.2420e-06  7.9080e-09  2.8370e-03  0.0000e+00  0:00:01   17
+   106  8.5293e-07  1.3481e-04  1.6297e-06  9.5369e-07  1.1506e-09  5.0019e-04  0.0000e+00  0:00:01   16
+!  106 solution is converged
+M17 audit: t=0.095 s, solid sensible=0.0516302 J, latent=0 J, fluid=1.11368 J, inletH=1.44486 W, outletH=9.90814e-17 W, nativeIn=0.000121988 W, nativeOut=-1.14041e-07 W, nativeResidual=1.16528 J, liquid_Vf=0, solid Tmax=300.047 K
+Flow time = 0.095s, time step = 19
+81 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   106  8.5293e-07  1.3481e-04  1.6297e-06  9.5369e-07  1.1506e-09  5.0019e-04  0.0000e+00  0:00:01   20
+   107  8.1567e-07  7.7575e-04  2.9915e-05  2.0823e-05  3.1164e-06  7.8509e-02  0.0000e+00  0:00:01   19
+   108  1.3072e-06  2.6724e-04  1.1007e-05  5.3676e-06  7.6506e-08  1.5300e-02  0.0000e+00  0:00:01   18
+   109  1.0353e-06  1.6384e-04  7.4149e-06  3.0601e-06  7.2124e-09  2.7572e-03  0.0000e+00  0:00:01   17
+   110  7.3867e-07  1.1953e-04  2.3100e-06  1.1022e-06  9.1620e-10  4.8978e-04  0.0000e+00  0:00:00   16
+!  110 solution is converged
+M17 audit: t=0.1 s, solid sensible=0.0542915 J, latent=0 J, fluid=1.13449 J, inletH=1.45971 W, outletH=9.89623e-17 W, nativeIn=0.000117491 W, nativeOut=-1.14041e-07 W, nativeResidual=1.18876 J, liquid_Vf=0, solid Tmax=300.048 K
+Flow time = 0.1s, time step = 20
+80 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   110  7.3867e-07  1.1953e-04  2.3100e-06  1.1022e-06  9.1620e-10  4.8978e-04  0.0000e+00  0:00:01   20
+   111  6.9911e-07  7.5346e-04  2.9259e-05  1.9741e-05  3.0014e-06  7.5700e-02  0.0000e+00  0:00:01   19
+   112  1.1364e-06  2.6081e-04  1.0695e-05  5.1071e-06  6.8297e-08  1.4792e-02  0.0000e+00  0:00:01   18
+   113  1.7847e-06  1.4476e-04  1.1416e-05  4.7230e-06  6.5964e-09  2.6825e-03  0.0000e+00  0:00:02   17
+   114  1.2520e-06  1.0577e-04  3.9387e-06  1.5769e-06  7.2360e-10  4.7977e-04  0.0000e+00  0:00:02   16
+!  114 solution is converged
+M17 audit: t=0.105 s, solid sensible=0.0569326 J, latent=0 J, fluid=1.15452 J, inletH=1.47366 W, outletH=1.15321e-16 W, nativeIn=0.000113468 W, nativeOut=-1.14041e-07 W, nativeResidual=1.21143 J, liquid_Vf=0, solid Tmax=300.05 K
+Flow time = 0.105s, time step = 21
+79 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   114  1.2520e-06  1.0577e-04  3.9387e-06  1.5769e-06  7.2360e-10  4.7977e-04  0.0000e+00  0:00:02   20
+   115  9.7510e-07  7.3674e-04  2.5367e-05  1.6749e-05  2.8985e-06  7.3111e-02  0.0000e+00  0:00:02   19
+   116  1.1243e-06  2.5516e-04  9.3900e-06  4.4062e-06  6.1201e-08  1.4322e-02  0.0000e+00  0:00:01   18
+   117  8.4201e-07  1.2807e-04  3.8614e-06  1.7561e-06  6.0497e-09  2.6123e-03  0.0000e+00  0:00:01   17
+   118  5.9429e-07  9.4340e-05  1.7777e-06  7.3564e-07  5.6052e-10  4.7016e-04  0.0000e+00  0:00:01   16
+!  118 solution is converged
+M17 audit: t=0.11 s, solid sensible=0.0595611 J, latent=0 J, fluid=1.17384 J, inletH=1.48679 W, outletH=1.31642e-16 W, nativeIn=0.000109851 W, nativeOut=-1.14041e-07 W, nativeResidual=1.23337 J, liquid_Vf=0, solid Tmax=300.051 K
+Flow time = 0.11s, time step = 22
+78 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   118  5.9429e-07  9.4340e-05  1.7777e-06  7.3564e-07  5.6052e-10  4.7016e-04  0.0000e+00  0:00:01   20
+   119  5.3695e-07  7.2327e-04  2.3770e-05  1.5932e-05  2.8060e-06  7.0718e-02  0.0000e+00  0:00:01   19
+   120  8.7783e-07  2.5116e-04  8.4091e-06  4.1700e-06  5.5064e-08  1.3886e-02  0.0000e+00  0:00:01   18
+   121  6.8253e-07  1.1344e-04  3.0041e-06  1.6465e-06  5.5611e-09  2.5463e-03  0.0000e+00  0:00:01   17
+   122  4.8322e-07  8.4087e-05  1.1599e-06  6.7620e-07  4.2366e-10  4.6095e-04  0.0000e+00  0:00:01   16
+!  122 solution is converged
+M17 audit: t=0.115 s, solid sensible=0.0621866 J, latent=0 J, fluid=1.19251 J, inletH=1.49917 W, outletH=1.64365e-16 W, nativeIn=0.000106588 W, nativeOut=-1.14041e-07 W, nativeResidual=1.25467 J, liquid_Vf=0, solid Tmax=300.053 K
+Flow time = 0.115s, time step = 23
+77 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   122  4.8322e-07  8.4087e-05  1.1599e-06  6.7620e-07  4.2366e-10  4.6095e-04  0.0000e+00  0:00:01   20
+   123  4.4451e-07  7.1221e-04  2.2878e-05  1.5111e-05  2.7225e-06  6.8501e-02  0.0000e+00  0:00:01   19
+   124  7.5790e-07  2.4763e-04  8.0522e-06  3.9409e-06  4.9727e-08  1.3481e-02  0.0000e+00  0:00:01   18
+   125  6.0323e-07  1.0104e-04  2.8215e-06  1.5548e-06  5.1235e-09  2.4841e-03  0.0000e+00  0:00:01   17
+   126  4.3574e-07  7.5392e-05  1.0554e-06  6.1854e-07  3.0601e-10  4.5212e-04  0.0000e+00  0:00:01   16
+!  126 solution is converged
+M17 audit: t=0.12 s, solid sensible=0.0648203 J, latent=0 J, fluid=1.21058 J, inletH=1.51088 W, outletH=1.64174e-16 W, nativeIn=0.000103632 W, nativeOut=-1.14041e-07 W, nativeResidual=1.27537 J, liquid_Vf=0, solid Tmax=300.054 K
+Flow time = 0.12s, time step = 24
+76 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   126  4.3574e-07  7.5392e-05  1.0554e-06  6.1854e-07  3.0601e-10  4.5212e-04  0.0000e+00  0:00:01   20
+   127  3.7988e-07  7.0333e-04  2.2186e-05  1.4304e-05  2.6469e-06  6.6442e-02  0.0000e+00  0:00:01   19
+   128  6.6495e-07  2.4463e-04  7.7690e-06  3.7449e-06  4.5061e-08  1.3103e-02  0.0000e+00  0:00:01   18
+   129  5.3483e-07  9.0929e-05  2.7238e-06  1.4744e-06  4.7300e-09  2.4256e-03  0.0000e+00  0:00:01   17
+   130  3.8611e-07  6.7861e-05  1.0000e-06  5.6783e-07  2.0606e-10  4.4368e-04  0.0000e+00  0:00:01   16
+!  130 solution is converged
+M17 audit: t=0.125 s, solid sensible=0.0674728 J, latent=0 J, fluid=1.2281 J, inletH=1.52197 W, outletH=1.80386e-16 W, nativeIn=0.000100946 W, nativeOut=-1.14041e-07 W, nativeResidual=1.29554 J, liquid_Vf=0, solid Tmax=300.055 K
+Flow time = 0.125s, time step = 25
+75 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   130  3.8611e-07  6.7861e-05  1.0000e-06  5.6783e-07  2.0606e-10  4.4368e-04  0.0000e+00  0:00:01   20
+   131  3.2911e-07  6.9627e-04  2.1641e-05  1.3519e-05  2.5782e-06  6.4525e-02  0.0000e+00  0:00:01   19
+   132  5.8854e-07  2.4212e-04  7.5879e-06  3.5741e-06  4.1182e-08  1.2751e-02  0.0000e+00  0:00:01   18
+   133  4.8627e-07  8.8286e-05  2.6726e-06  1.4133e-06  4.4137e-09  2.3704e-03  0.0000e+00  0:00:01   17
+   134  3.5428e-07  6.0812e-05  9.6165e-07  5.3129e-07  1.4496e-10  4.3560e-04  0.0000e+00  0:00:00   16
+!  134 solution is converged
+M17 audit: t=0.13 s, solid sensible=0.0701537 J, latent=0 J, fluid=1.24509 J, inletH=1.53247 W, outletH=1.98842e-16 W, nativeIn=9.84985e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.31521 J, liquid_Vf=0, solid Tmax=300.057 K
+Flow time = 0.13s, time step = 26
+74 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   134  3.5428e-07  6.0812e-05  9.6165e-07  5.3129e-07  1.4496e-10  4.3560e-04  0.0000e+00  0:00:01   20
+   135  3.0029e-07  6.9071e-04  2.1537e-05  1.2754e-05  2.5156e-06  6.2737e-02  0.0000e+00  0:00:01   19
+   136  5.3446e-07  2.4130e-04  7.5525e-06  3.4402e-06  3.7869e-08  1.2421e-02  0.0000e+00  0:00:01   18
+   137  4.4031e-07  8.6988e-05  2.6210e-06  1.3658e-06  4.1389e-09  2.3183e-03  0.0000e+00  0:00:01   17
+   138  3.2069e-07  5.5865e-05  9.3024e-07  5.0279e-07  1.0527e-10  4.2787e-04  0.0000e+00  0:00:00   16
+!  138 solution is converged
+M17 audit: t=0.135 s, solid sensible=0.0728705 J, latent=0 J, fluid=1.2616 J, inletH=1.54245 W, outletH=2.31376e-16 W, nativeIn=9.62612e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.33444 J, liquid_Vf=0, solid Tmax=300.058 K
+Flow time = 0.135s, time step = 27
+73 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   138  3.2069e-07  5.5865e-05  9.3024e-07  5.0279e-07  1.0527e-10  4.2787e-04  0.0000e+00  0:00:01   20
+   139  2.6017e-07  6.8632e-04  2.1668e-05  1.2054e-05  2.4583e-06  6.1066e-02  0.0000e+00  0:00:01   19
+   140  4.7413e-07  2.4118e-04  7.5313e-06  3.3427e-06  3.4860e-08  1.2111e-02  0.0000e+00  0:00:01   18
+   141  3.8904e-07  8.6419e-05  2.5846e-06  1.3247e-06  3.8840e-09  2.2690e-03  0.0000e+00  0:00:00   17
+   142  2.8289e-07  5.0849e-05  9.0715e-07  4.8612e-07  1.1093e-10  4.2047e-04  0.0000e+00  0:00:00   16
+!  142 solution is converged
+M17 audit: t=0.14 s, solid sensible=0.0756281 J, latent=0 J, fluid=1.27767 J, inletH=1.55193 W, outletH=2.4985e-16 W, nativeIn=9.42108e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.35326 J, liquid_Vf=0, solid Tmax=300.059 K
+Flow time = 0.14s, time step = 28
+72 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   142  2.8289e-07  5.0849e-05  9.0715e-07  4.8612e-07  1.1093e-10  4.2047e-04  0.0000e+00  0:00:01   20
+   143  2.2875e-07  6.8476e-04  2.1803e-05  1.1521e-05  2.4059e-06  5.9501e-02  0.0000e+00  0:00:01   19
+   144  4.2354e-07  2.4114e-04  7.5184e-06  3.2644e-06  3.2079e-08  1.1821e-02  0.0000e+00  0:00:01   18
+   145  3.4583e-07  8.6193e-05  2.5541e-06  1.2866e-06  3.6317e-09  2.2224e-03  0.0000e+00  0:00:00   17
+   146  2.5115e-07  4.6648e-05  8.8784e-07  4.7068e-07  1.4070e-10  4.1339e-04  0.0000e+00  0:00:00   16
+!  146 solution is converged
+M17 audit: t=0.145 s, solid sensible=0.0784283 J, latent=0 J, fluid=1.29331 J, inletH=1.56095 W, outletH=3.17333e-16 W, nativeIn=9.23267e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.3717 J, liquid_Vf=0, solid Tmax=300.061 K
+Flow time = 0.145s, time step = 29
+71 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   146  2.5115e-07  4.6648e-05  8.8784e-07  4.7068e-07  1.4070e-10  4.1339e-04  0.0000e+00  0:00:01   20
+   147  2.0230e-07  6.8675e-04  2.1938e-05  1.1052e-05  2.3577e-06  5.8034e-02  0.0000e+00  0:00:01   19
+   148  3.8002e-07  2.4117e-04  7.5104e-06  3.1917e-06  2.9474e-08  1.1548e-02  0.0000e+00  0:00:01   18
+   149  3.0862e-07  8.6002e-05  2.5284e-06  1.2514e-06  3.3781e-09  2.1782e-03  0.0000e+00  0:00:00   17
+   150  2.2383e-07  4.3031e-05  8.7197e-07  4.5651e-07  1.7678e-10  4.0662e-04  0.0000e+00  0:00:00   16
+!  150 solution is converged
+M17 audit: t=0.15 s, solid sensible=0.0812695 J, latent=0 J, fluid=1.30856 J, inletH=1.56956 W, outletH=3.33394e-16 W, nativeIn=9.05911e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.3898 J, liquid_Vf=0, solid Tmax=300.062 K
+Flow time = 0.15s, time step = 30
+70 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   150  2.2383e-07  4.3031e-05  8.7197e-07  4.5651e-07  1.7678e-10  4.0662e-04  0.0000e+00  0:00:01   20
+   151  1.7939e-07  6.8890e-04  2.2075e-05  1.0772e-05  2.3133e-06  5.6655e-02  0.0000e+00  0:00:01   19
+   152  3.4211e-07  2.4123e-04  7.5068e-06  3.1245e-06  2.7019e-08  1.1291e-02  0.0000e+00  0:00:01   18
+   153  2.7608e-07  8.5872e-05  2.5098e-06  1.2188e-06  3.1415e-09  2.1363e-03  0.0000e+00  0:00:00   17
+   154  2.0049e-07  3.9926e-05  8.5709e-07  4.4410e-07  1.8559e-10  4.0014e-04  0.0000e+00  0:00:00   16
+!  154 solution is converged
+M17 audit: t=0.155 s, solid sensible=0.0841476 J, latent=0 J, fluid=1.32346 J, inletH=1.5778 W, outletH=3.68172e-16 W, nativeIn=8.89882e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.40757 J, liquid_Vf=0, solid Tmax=300.064 K
+Flow time = 0.155s, time step = 31
+69 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   154  2.0049e-07  3.9926e-05  8.5709e-07  4.4410e-07  1.8559e-10  4.0014e-04  0.0000e+00  0:00:01   20
+   155  1.5941e-07  6.9112e-04  2.2209e-05  1.0540e-05  2.2723e-06  5.5358e-02  0.0000e+00  0:00:01   19
+   156  3.0887e-07  2.4129e-04  7.5055e-06  3.0622e-06  2.4703e-08  1.1049e-02  0.0000e+00  0:00:01   18
+   157  2.4817e-07  8.5890e-05  2.4954e-06  1.1883e-06  2.9089e-09  2.0965e-03  0.0000e+00  0:00:00   17
+   158  1.8051e-07  3.7403e-05  8.4418e-07  4.3141e-07  1.8404e-10  3.9393e-04  0.0000e+00  0:00:00   16
+!  158 solution is converged
+M17 audit: t=0.16 s, solid sensible=0.0870557 J, latent=0 J, fluid=1.33803 J, inletH=1.5857 W, outletH=3.8668e-16 W, nativeIn=8.75043e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.42505 J, liquid_Vf=0, solid Tmax=300.065 K
+Flow time = 0.16s, time step = 32
+68 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   158  1.8051e-07  3.7403e-05  8.4418e-07  4.3141e-07  1.8404e-10  3.9393e-04  0.0000e+00  0:00:01   20
+   159  1.4190e-07  6.9334e-04  2.2338e-05  1.0322e-05  2.2344e-06  5.4136e-02  0.0000e+00  0:00:01   19
+   160  2.7974e-07  2.4136e-04  7.5054e-06  2.9887e-06  2.2746e-08  1.0820e-02  0.0000e+00  0:00:01   18
+   161  2.2401e-07  8.5898e-05  2.4829e-06  1.1527e-06  2.7259e-09  2.0588e-03  0.0000e+00  0:00:00   17
+   162  1.6319e-07  3.6987e-05  8.3344e-07  4.1857e-07  1.8689e-10  3.8799e-04  0.0000e+00  0:00:00   16
+!  162 solution is converged
+M17 audit: t=0.165 s, solid sensible=0.0899855 J, latent=0 J, fluid=1.3523 J, inletH=1.59329 W, outletH=3.83892e-16 W, nativeIn=8.61271e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.44225 J, liquid_Vf=0, solid Tmax=300.066 K
+Flow time = 0.165s, time step = 33
+67 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   162  1.6319e-07  3.6987e-05  8.3344e-07  4.1857e-07  1.8689e-10  3.8799e-04  0.0000e+00  0:00:01   20
+   163  1.2652e-07  6.9550e-04  2.2463e-05  1.0101e-05  2.1992e-06  5.2982e-02  0.0000e+00  0:00:01   19
+   164  2.5391e-07  2.4140e-04  7.5068e-06  2.9305e-06  2.0972e-08  1.0604e-02  0.0000e+00  0:00:01   18
+   165  2.0297e-07  8.5892e-05  2.4718e-06  1.1230e-06  2.5518e-09  2.0229e-03  0.0000e+00  0:00:00   17
+   166  1.4798e-07  3.6806e-05  8.2386e-07  4.0676e-07  1.8722e-10  3.8230e-04  0.0000e+00  0:00:00   16
+!  166 solution is converged
+M17 audit: t=0.17 s, solid sensible=0.092928 J, latent=0 J, fluid=1.36631 J, inletH=1.60062 W, outletH=4.53691e-16 W, nativeIn=8.48461e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.4592 J, liquid_Vf=0, solid Tmax=300.068 K
+Flow time = 0.17s, time step = 34
+66 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   166  1.4798e-07  3.6806e-05  8.2386e-07  4.0676e-07  1.8722e-10  3.8230e-04  0.0000e+00  0:00:01   20
+   167  1.1304e-07  6.9755e-04  2.2583e-05  9.8913e-06  2.1664e-06  5.1892e-02  0.0000e+00  0:00:01   19
+   168  2.3113e-07  2.4142e-04  7.5092e-06  2.8606e-06  1.9390e-08  1.0399e-02  0.0000e+00  0:00:01   18
+   169  1.8448e-07  8.5871e-05  2.4616e-06  1.0916e-06  2.4059e-09  1.9887e-03  0.0000e+00  0:00:00   17
+   170  1.3456e-07  3.6711e-05  8.1504e-07  3.9512e-07  1.8901e-10  3.7684e-04  0.0000e+00  0:00:00   16
+!  170 solution is converged
+M17 audit: t=0.175 s, solid sensible=0.0958746 J, latent=0 J, fluid=1.38007 J, inletH=1.6077 W, outletH=5.55911e-16 W, nativeIn=8.3652e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.4759 J, liquid_Vf=0, solid Tmax=300.069 K
+Flow time = 0.175s, time step = 35
+65 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   170  1.3456e-07  3.6711e-05  8.1504e-07  3.9512e-07  1.8901e-10  3.7684e-04  0.0000e+00  0:00:01   20
+   171  1.0121e-07  6.9946e-04  2.2695e-05  9.6803e-06  2.1359e-06  5.0861e-02  0.0000e+00  0:00:01   19
+   172  2.1092e-07  2.4140e-04  7.5131e-06  2.8024e-06  1.8009e-08  1.0205e-02  0.0000e+00  0:00:01   18
+   173  1.6811e-07  8.5834e-05  2.4524e-06  1.0669e-06  2.2715e-09  1.9561e-03  0.0000e+00  0:00:00   17
+   174  1.2268e-07  3.6621e-05  8.0696e-07  3.8644e-07  1.8974e-10  3.7161e-04  0.0000e+00  0:00:00   16
+!  174 solution is converged
+M17 audit: t=0.18 s, solid sensible=0.0988176 J, latent=0 J, fluid=1.39361 J, inletH=1.61458 W, outletH=6.28329e-16 W, nativeIn=8.25367e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.49239 J, liquid_Vf=0, solid Tmax=300.07 K
+Flow time = 0.18s, time step = 36
+64 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   174  1.2268e-07  3.6621e-05  8.0696e-07  3.8644e-07  1.8974e-10  3.7161e-04  0.0000e+00  0:00:01   20
+   175  9.1204e-08  7.0119e-04  2.2797e-05  9.4827e-06  2.1073e-06  4.9884e-02  0.0000e+00  0:00:01   19
+   176  1.9310e-07  2.4134e-04  7.5308e-06  2.7524e-06  1.6749e-08  1.0021e-02  0.0000e+00  0:00:01   18
+   177  1.5348e-07  8.5779e-05  2.4441e-06  1.0456e-06  2.1463e-09  1.9251e-03  0.0000e+00  0:00:00   17
+   178  1.1207e-07  3.6535e-05  7.9968e-07  3.7893e-07  1.8939e-10  3.6660e-04  0.0000e+00  0:00:00   16
+!  178 solution is converged
+M17 audit: t=0.185 s, solid sensible=0.101751 J, latent=0 J, fluid=1.40695 J, inletH=1.62125 W, outletH=6.79258e-16 W, nativeIn=8.14931e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.50866 J, liquid_Vf=0, solid Tmax=300.072 K
+Flow time = 0.185s, time step = 37
+63 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   178  1.1207e-07  3.6535e-05  7.9968e-07  3.7893e-07  1.8939e-10  3.6660e-04  0.0000e+00  0:00:01   20
+   179  8.2994e-08  7.0274e-04  2.2917e-05  9.3023e-06  2.0806e-06  4.8958e-02  0.0000e+00  0:00:01   19
+   180  1.7764e-07  2.4123e-04  7.5474e-06  2.7067e-06  1.5598e-08  9.8459e-03  0.0000e+00  0:00:01   18
+   181  1.4054e-07  8.5707e-05  2.4370e-06  1.0261e-06  2.0371e-09  1.8955e-03  0.0000e+00  0:00:01   17
+   182  1.0269e-07  3.6452e-05  7.9323e-07  3.7205e-07  1.8814e-10  3.6179e-04  0.0000e+00  0:00:00   16
+!  182 solution is converged
+M17 audit: t=0.19 s, solid sensible=0.10467 J, latent=0 J, fluid=1.42011 J, inletH=1.62775 W, outletH=7.11261e-16 W, nativeIn=8.0515e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.52474 J, liquid_Vf=0, solid Tmax=300.073 K
+Flow time = 0.19s, time step = 38
+62 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   182  1.0269e-07  3.6452e-05  7.9323e-07  3.7205e-07  1.8814e-10  3.6179e-04  0.0000e+00  0:00:01   20
+   183  7.5733e-08  7.0407e-04  2.3047e-05  9.1371e-06  2.0556e-06  4.8079e-02  0.0000e+00  0:00:01   19
+   184  1.6131e-07  2.4107e-04  7.5637e-06  2.6649e-06  1.4543e-08  9.6796e-03  0.0000e+00  0:00:01   18
+   185  1.2890e-07  8.5617e-05  2.4352e-06  1.0080e-06  1.9410e-09  1.8672e-03  0.0000e+00  0:00:00   17
+   186  9.4238e-08  3.6371e-05  7.8783e-07  3.6567e-07  1.8616e-10  3.5717e-04  0.0000e+00  0:00:00   16
+!  186 solution is converged
+M17 audit: t=0.195 s, solid sensible=0.107572 J, latent=0 J, fluid=1.43311 J, inletH=1.63409 W, outletH=7.43191e-16 W, nativeIn=7.95969e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.54064 J, liquid_Vf=0, solid Tmax=300.074 K
+Flow time = 0.195s, time step = 39
+61 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   186  9.4238e-08  3.6371e-05  7.8783e-07  3.6567e-07  1.8616e-10  3.5717e-04  0.0000e+00  0:00:01   20
+   187  6.9344e-08  7.0519e-04  2.3171e-05  8.9855e-06  2.0322e-06  4.7243e-02  0.0000e+00  0:00:01   19
+   188  1.4682e-07  2.4085e-04  7.5873e-06  2.6265e-06  1.3574e-08  9.5213e-03  0.0000e+00  0:00:01   18
+   189  1.1844e-07  8.5506e-05  2.4330e-06  9.9129e-07  1.8504e-09  1.8402e-03  0.0000e+00  0:00:00   17
+   190  8.6643e-08  3.6330e-05  7.8344e-07  3.5980e-07  1.8358e-10  3.5274e-04  0.0000e+00  0:00:00   16
+!  190 solution is converged
+M17 audit: t=0.2 s, solid sensible=0.110456 J, latent=0 J, fluid=1.44595 J, inletH=1.64027 W, outletH=7.77851e-16 W, nativeIn=7.87341e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.55636 J, liquid_Vf=0, solid Tmax=300.075 K
+Flow time = 0.2s, time step = 40
+60 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   190  8.6643e-08  3.6330e-05  7.8344e-07  3.5980e-07  1.8358e-10  3.5274e-04  0.0000e+00  0:00:01   20
+   191  6.3609e-08  7.0608e-04  2.3305e-05  8.8459e-06  2.0101e-06  4.6448e-02  0.0000e+00  0:00:01   19
+   192  1.3542e-07  2.4058e-04  7.6085e-06  2.5912e-06  1.2683e-08  9.3705e-03  0.0000e+00  0:00:01   18
+   193  1.0905e-07  8.5377e-05  2.4308e-06  9.7578e-07  1.7647e-09  1.8144e-03  0.0000e+00  0:00:00   17
+   194  7.9816e-08  3.6287e-05  7.8003e-07  3.5437e-07  1.8051e-10  3.4848e-04  0.0000e+00  0:00:00   16
+!  194 solution is converged
+M17 audit: t=0.205 s, solid sensible=0.113322 J, latent=0 J, fluid=1.45864 J, inletH=1.6463 W, outletH=7.0739e-16 W, nativeIn=7.79222e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.57192 J, liquid_Vf=0, solid Tmax=300.076 K
+Flow time = 0.205s, time step = 41
+59 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   194  7.9816e-08  3.6287e-05  7.8003e-07  3.5437e-07  1.8051e-10  3.4848e-04  0.0000e+00  0:00:01   20
+   195  5.8457e-08  7.0674e-04  2.3447e-05  8.7172e-06  1.9893e-06  4.5691e-02  0.0000e+00  0:00:01   19
+   196  1.2549e-07  2.4026e-04  7.6277e-06  2.5585e-06  1.1862e-08  9.2268e-03  0.0000e+00  0:00:01   18
+   197  1.0058e-07  8.5231e-05  2.4306e-06  9.6133e-07  1.6837e-09  1.7897e-03  0.0000e+00  0:00:01   17
+   198  7.3658e-08  3.6238e-05  7.7793e-07  3.4929e-07  1.7704e-10  3.4439e-04  0.0000e+00  0:00:00   16
+!  198 solution is converged
+M17 audit: t=0.21 s, solid sensible=0.11617 J, latent=0 J, fluid=1.4712 J, inletH=1.65219 W, outletH=7.1732e-16 W, nativeIn=7.71574e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.58733 J, liquid_Vf=0, solid Tmax=300.077 K
+Flow time = 0.21s, time step = 42
+58 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   198  7.3658e-08  3.6238e-05  7.7793e-07  3.4929e-07  1.7704e-10  3.4439e-04  0.0000e+00  0:00:01   20
+   199  5.3888e-08  7.0717e-04  2.3575e-05  8.5983e-06  1.9698e-06  4.4970e-02  0.0000e+00  0:00:01   19
+   200  1.1655e-07  2.3988e-04  7.6446e-06  2.5284e-06  1.1141e-08  9.0897e-03  0.0000e+00  0:00:01   18
+   201  9.2926e-08  8.5068e-05  2.4316e-06  9.4782e-07  1.6070e-09  1.7661e-03  0.0000e+00  0:00:01   17
+   202  6.8086e-08  3.6184e-05  7.7655e-07  3.4446e-07  1.7347e-10  3.4046e-04  0.0000e+00  0:00:00   16
+!  202 solution is converged
+M17 audit: t=0.215 s, solid sensible=0.119003 J, latent=0 J, fluid=1.48363 J, inletH=1.65796 W, outletH=7.16846e-16 W, nativeIn=7.64363e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.6026 J, liquid_Vf=0, solid Tmax=300.078 K
+Flow time = 0.215s, time step = 43
+57 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   202  6.8086e-08  3.6184e-05  7.7655e-07  3.4446e-07  1.7347e-10  3.4046e-04  0.0000e+00  0:00:01   20
+   203  4.9875e-08  7.0737e-04  2.3687e-05  8.4882e-06  1.9513e-06  4.4282e-02  0.0000e+00  0:00:01   19
+   204  1.0846e-07  2.3945e-04  7.6580e-06  2.5004e-06  1.0562e-08  8.9587e-03  0.0000e+00  0:00:01   18
+   205  8.5983e-08  8.4889e-05  2.4328e-06  9.3514e-07  1.5343e-09  1.7435e-03  0.0000e+00  0:00:00   17
+   206  6.3031e-08  3.6126e-05  7.7547e-07  3.3977e-07  1.7042e-10  3.3668e-04  0.0000e+00  0:00:00   16
+!  206 solution is converged
+M17 audit: t=0.22 s, solid sensible=0.121821 J, latent=0 J, fluid=1.49594 J, inletH=1.66359 W, outletH=7.83493e-16 W, nativeIn=7.57557e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.61772 J, liquid_Vf=0, solid Tmax=300.079 K
+Flow time = 0.22s, time step = 44
+56 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   206  6.3031e-08  3.6126e-05  7.7547e-07  3.3977e-07  1.7042e-10  3.3668e-04  0.0000e+00  0:00:01   20
+   207  4.6864e-08  7.0734e-04  2.3785e-05  8.3863e-06  1.9339e-06  4.3625e-02  0.0000e+00  0:00:01   19
+   208  1.0107e-07  2.3897e-04  7.6682e-06  2.4744e-06  1.0019e-08  8.8336e-03  0.0000e+00  0:00:01   18
+   209  7.9931e-08  8.4693e-05  2.4339e-06  9.2317e-07  1.4654e-09  1.7218e-03  0.0000e+00  0:00:00   17
+   210  5.8428e-08  3.6062e-05  7.7462e-07  3.3529e-07  1.6714e-10  3.3304e-04  0.0000e+00  0:00:00   16
+!  210 solution is converged
+M17 audit: t=0.225 s, solid sensible=0.124627 J, latent=0 J, fluid=1.50814 J, inletH=1.66909 W, outletH=8.34043e-16 W, nativeIn=7.51128e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.63272 J, liquid_Vf=0, solid Tmax=300.08 K
+Flow time = 0.225s, time step = 45
+55 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   210  5.8428e-08  3.6062e-05  7.7462e-07  3.3529e-07  1.6714e-10  3.3304e-04  0.0000e+00  0:00:01   20
+   211  4.4625e-08  7.0708e-04  2.3870e-05  8.2914e-06  1.9175e-06  4.2997e-02  0.0000e+00  0:00:01   19
+   212  9.4458e-08  2.3843e-04  7.6753e-06  2.4502e-06  9.5104e-09  8.7139e-03  0.0000e+00  0:00:01   18
+   213  7.4691e-08  8.4481e-05  2.4347e-06  9.1184e-07  1.4000e-09  1.7010e-03  0.0000e+00  0:00:00   17
+   214  5.4225e-08  3.5993e-05  7.7397e-07  3.3099e-07  1.6404e-10  3.2955e-04  0.0000e+00  0:00:00   16
+!  214 solution is converged
+M17 audit: t=0.23 s, solid sensible=0.127423 J, latent=0 J, fluid=1.52022 J, inletH=1.67448 W, outletH=8.52553e-16 W, nativeIn=7.45049e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.6476 J, liquid_Vf=0, solid Tmax=300.081 K
+Flow time = 0.23s, time step = 46
+54 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   214  5.4225e-08  3.5993e-05  7.7397e-07  3.3099e-07  1.6404e-10  3.2955e-04  0.0000e+00  0:00:01   20
+   215  4.2685e-08  7.0660e-04  2.3943e-05  8.2029e-06  1.9019e-06  4.2397e-02  0.0000e+00  0:00:01   19
+   216  8.8492e-08  2.3783e-04  7.6793e-06  2.4275e-06  9.0327e-09  8.5994e-03  0.0000e+00  0:00:01   18
+   217  7.0320e-08  8.4253e-05  2.4352e-06  9.0105e-07  1.3380e-09  1.6810e-03  0.0000e+00  0:00:00   17
+   218  5.0376e-08  3.5919e-05  7.7355e-07  3.2682e-07  1.6153e-10  3.2618e-04  0.0000e+00  0:00:00   16
+!  218 solution is converged
+M17 audit: t=0.235 s, solid sensible=0.130211 J, latent=0 J, fluid=1.5322 J, inletH=1.67975 W, outletH=9.73147e-16 W, nativeIn=7.39297e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.66236 J, liquid_Vf=0, solid Tmax=300.082 K
+Flow time = 0.235s, time step = 47
+53 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   218  5.0376e-08  3.5919e-05  7.7355e-07  3.2682e-07  1.6153e-10  3.2618e-04  0.0000e+00  0:00:01   20
+   219  4.0948e-08  7.0591e-04  2.4003e-05  8.1198e-06  1.8872e-06  4.1823e-02  0.0000e+00  0:00:01   19
+   220  8.3001e-08  2.3719e-04  7.6805e-06  2.4063e-06  8.5838e-09  8.4897e-03  0.0000e+00  0:00:01   18
+   221  6.6349e-08  8.4010e-05  2.4353e-06  8.9076e-07  1.2790e-09  1.6619e-03  0.0000e+00  0:00:00   17
+   222  4.6992e-08  3.5840e-05  7.7366e-07  3.2278e-07  1.5886e-10  3.2294e-04  0.0000e+00  0:00:00   16
+!  222 solution is converged
+M17 audit: t=0.24 s, solid sensible=0.132992 J, latent=0 J, fluid=1.54407 J, inletH=1.68491 W, outletH=9.91696e-16 W, nativeIn=7.33851e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.67702 J, liquid_Vf=0, solid Tmax=300.083 K
+Flow time = 0.24s, time step = 48
+52 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   222  4.6992e-08  3.5840e-05  7.7366e-07  3.2278e-07  1.5886e-10  3.2294e-04  0.0000e+00  0:00:01   20
+   223  3.9373e-08  7.0501e-04  2.4052e-05  8.0417e-06  1.8733e-06  4.1274e-02  0.0000e+00  0:00:01   19
+   224  7.7935e-08  2.3650e-04  7.6788e-06  2.3862e-06  8.1615e-09  8.3847e-03  0.0000e+00  0:00:01   18
+   225  6.2687e-08  8.3752e-05  2.4352e-06  8.8136e-07  1.2255e-09  1.6435e-03  0.0000e+00  0:00:00   17
+   226  4.4265e-08  3.5756e-05  7.7406e-07  3.1881e-07  1.5607e-10  3.1982e-04  0.0000e+00  0:00:00   16
+!  226 solution is converged
+M17 audit: t=0.245 s, solid sensible=0.135768 J, latent=0 J, fluid=1.55584 J, inletH=1.68995 W, outletH=1.1473e-15 W, nativeIn=7.28689e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.69157 J, liquid_Vf=0, solid Tmax=300.084 K
+Flow time = 0.245s, time step = 49
+51 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   226  4.4265e-08  3.5756e-05  7.7406e-07  3.1881e-07  1.5607e-10  3.1982e-04  0.0000e+00  0:00:01   20
+   227  3.7937e-08  7.0390e-04  2.4089e-05  7.9677e-06  1.8601e-06  4.0747e-02  0.0000e+00  0:00:01   19
+   228  7.3253e-08  2.3576e-04  7.6743e-06  2.3672e-06  7.7637e-09  8.2840e-03  0.0000e+00  0:00:01   18
+   229  5.9301e-08  8.3480e-05  2.4347e-06  8.7456e-07  1.1770e-09  1.6258e-03  0.0000e+00  0:00:00   17
+   230  4.1938e-08  3.5668e-05  7.7458e-07  3.1490e-07  1.5327e-10  3.1681e-04  0.0000e+00  0:00:00   16
+!  230 solution is converged
+M17 audit: t=0.25 s, solid sensible=0.13854 J, latent=0 J, fluid=1.56752 J, inletH=1.6949 W, outletH=1.28056e-15 W, nativeIn=7.23793e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.70602 J, liquid_Vf=0, solid Tmax=300.085 K
+Flow time = 0.25s, time step = 50
+50 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   230  4.1938e-08  3.5668e-05  7.7458e-07  3.1490e-07  1.5327e-10  3.1681e-04  0.0000e+00  0:00:01   20
+   231  3.6624e-08  7.0259e-04  2.4116e-05  7.8974e-06  1.8476e-06  4.0243e-02  0.0000e+00  0:00:01   19
+   232  6.8916e-08  2.3497e-04  7.6672e-06  2.3490e-06  7.3984e-09  8.1873e-03  0.0000e+00  0:00:01   18
+   233  5.6190e-08  8.3193e-05  2.4339e-06  8.6926e-07  1.1357e-09  1.6088e-03  0.0000e+00  0:00:00   17
+   234  3.9797e-08  3.5575e-05  7.7510e-07  3.1103e-07  1.5097e-10  3.1392e-04  0.0000e+00  0:00:00   16
+!  234 solution is converged
+M17 audit: t=0.255 s, solid sensible=0.141309 J, latent=0 J, fluid=1.57912 J, inletH=1.69974 W, outletH=1.44248e-15 W, nativeIn=7.19148e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.72038 J, liquid_Vf=0, solid Tmax=300.085 K
+Flow time = 0.255s, time step = 51
+49 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   234  3.9797e-08  3.5575e-05  7.7510e-07  3.1103e-07  1.5097e-10  3.1392e-04  0.0000e+00  0:00:01   20
+   235  3.5878e-08  7.0109e-04  2.4133e-05  7.8302e-06  1.8357e-06  3.9758e-02  0.0000e+00  0:00:01   19
+   236  6.4921e-08  2.3414e-04  7.6579e-06  2.3316e-06  7.0829e-09  8.0946e-03  0.0000e+00  0:00:01   18
+   237  5.3322e-08  8.2894e-05  2.4327e-06  8.6398e-07  1.0980e-09  1.5925e-03  0.0000e+00  0:00:00   17
+   238  3.7828e-08  3.5478e-05  7.7566e-07  3.0719e-07  1.4858e-10  3.1113e-04  0.0000e+00  0:00:00   16
+!  238 solution is converged
+M17 audit: t=0.26 s, solid sensible=0.144078 J, latent=0 J, fluid=1.59062 J, inletH=1.70448 W, outletH=1.52465e-15 W, nativeIn=7.14735e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.73465 J, liquid_Vf=0, solid Tmax=300.086 K
+Flow time = 0.26s, time step = 52
+48 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   238  3.7828e-08  3.5478e-05  7.7566e-07  3.0719e-07  1.4858e-10  3.1113e-04  0.0000e+00  0:00:01   20
+   239  3.5323e-08  6.9940e-04  2.4141e-05  7.7655e-06  1.8244e-06  3.9294e-02  0.0000e+00  0:00:01   19
+   240  6.1169e-08  2.3326e-04  7.6463e-06  2.3174e-06  6.7933e-09  8.0056e-03  0.0000e+00  0:00:01   18
+   241  5.0632e-08  8.2581e-05  2.4312e-06  8.5867e-07  1.0654e-09  1.5768e-03  0.0000e+00  0:00:00   17
+   242  3.6009e-08  3.5376e-05  7.7625e-07  3.0336e-07  1.4612e-10  3.0844e-04  0.0000e+00  0:00:00   16
+!  242 solution is converged
+M17 audit: t=0.265 s, solid sensible=0.146845 J, latent=0 J, fluid=1.60204 J, inletH=1.70912 W, outletH=1.57827e-15 W, nativeIn=7.10542e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.74884 J, liquid_Vf=0, solid Tmax=300.087 K
+Flow time = 0.265s, time step = 53
+47 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   242  3.6009e-08  3.5376e-05  7.7625e-07  3.0336e-07  1.4612e-10  3.0844e-04  0.0000e+00  0:00:01   20
+   243  3.5563e-08  6.9754e-04  2.4141e-05  7.7147e-06  1.8137e-06  3.8848e-02  0.0000e+00  0:00:01   19
+   244  5.7704e-08  2.3234e-04  7.6326e-06  2.3121e-06  6.5592e-09  7.9200e-03  0.0000e+00  0:00:01   18
+   245  4.8131e-08  8.2256e-05  2.4294e-06  8.5332e-07  1.0337e-09  1.5617e-03  0.0000e+00  0:00:00   17
+   246  3.4309e-08  3.5270e-05  7.7687e-07  3.0308e-07  1.4359e-10  3.0585e-04  0.0000e+00  0:00:00   16
+!  246 solution is converged
+M17 audit: t=0.27 s, solid sensible=0.149614 J, latent=0 J, fluid=1.61338 J, inletH=1.71368 W, outletH=1.65111e-15 W, nativeIn=7.06554e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.76295 J, liquid_Vf=0, solid Tmax=300.088 K
+Flow time = 0.27s, time step = 54
+46 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   246  3.4309e-08  3.5270e-05  7.7687e-07  3.0308e-07  1.4359e-10  3.0585e-04  0.0000e+00  0:00:01   20
+   247  3.6300e-08  6.9550e-04  2.4132e-05  7.6918e-06  1.8035e-06  3.8419e-02  0.0000e+00  0:00:01   19
+   248  5.4784e-08  2.3138e-04  7.6167e-06  2.3079e-06  6.3454e-09  7.8378e-03  0.0000e+00  0:00:01   18
+   249  4.5860e-08  8.1919e-05  2.4272e-06  8.4788e-07  1.0028e-09  1.5471e-03  0.0000e+00  0:00:00   17
+   250  3.2770e-08  3.5160e-05  7.7743e-07  3.0434e-07  1.4101e-10  3.0335e-04  0.0000e+00  0:00:00   16
+!  250 solution is converged
+M17 audit: t=0.275 s, solid sensible=0.152383 J, latent=0 J, fluid=1.62464 J, inletH=1.71814 W, outletH=1.7557e-15 W, nativeIn=7.0276e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.77698 J, liquid_Vf=0, solid Tmax=300.089 K
+Flow time = 0.275s, time step = 55
+45 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   250  3.2770e-08  3.5160e-05  7.7743e-07  3.0434e-07  1.4101e-10  3.0335e-04  0.0000e+00  0:00:01   20
+   251  3.6899e-08  6.9330e-04  2.4116e-05  7.6698e-06  1.7938e-06  3.8007e-02  0.0000e+00  0:00:01   19
+   252  5.2292e-08  2.3038e-04  7.5991e-06  2.3035e-06  6.1811e-09  7.7588e-03  0.0000e+00  0:00:01   18
+   253  4.3660e-08  8.1570e-05  2.4247e-06  8.4236e-07  9.7276e-10  1.5331e-03  0.0000e+00  0:00:01   17
+   254  3.1305e-08  3.5046e-05  7.7800e-07  3.0559e-07  1.3840e-10  3.0094e-04  0.0000e+00  0:00:00   16
+!  254 solution is converged
+M17 audit: t=0.28 s, solid sensible=0.155155 J, latent=0 J, fluid=1.63583 J, inletH=1.72251 W, outletH=1.90215e-15 W, nativeIn=6.99147e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.79094 J, liquid_Vf=0, solid Tmax=300.09 K
+Flow time = 0.28s, time step = 56
+44 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   254  3.1305e-08  3.5046e-05  7.7800e-07  3.0559e-07  1.3840e-10  3.0094e-04  0.0000e+00  0:00:01   20
+   255  3.7397e-08  6.9094e-04  2.4092e-05  7.6473e-06  1.7846e-06  3.7611e-02  0.0000e+00  0:00:01   19
+   256  5.0191e-08  2.2934e-04  7.5797e-06  2.2988e-06  6.0232e-09  7.6827e-03  0.0000e+00  0:00:01   18
+   257  4.1636e-08  8.1211e-05  2.4218e-06  8.3670e-07  9.4351e-10  1.5196e-03  0.0000e+00  0:00:00   17
+   258  2.9961e-08  3.4928e-05  7.7847e-07  3.0694e-07  1.3577e-10  2.9861e-04  0.0000e+00  0:00:00   16
+!  258 solution is converged
+M17 audit: t=0.285 s, solid sensible=0.157929 J, latent=0 J, fluid=1.64695 J, inletH=1.72681 W, outletH=2.04185e-15 W, nativeIn=6.95705e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.80483 J, liquid_Vf=0, solid Tmax=300.09 K
+Flow time = 0.285s, time step = 57
+43 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   258  2.9961e-08  3.4928e-05  7.7847e-07  3.0694e-07  1.3577e-10  2.9861e-04  0.0000e+00  0:00:01   20
+   259  3.7799e-08  6.8843e-04  2.4062e-05  7.6239e-06  1.7758e-06  3.7230e-02  0.0000e+00  0:00:01   19
+   260  4.8425e-08  2.2827e-04  7.5585e-06  2.2938e-06  5.8711e-09  7.6095e-03  0.0000e+00  0:00:01   18
+   261  3.9746e-08  8.0840e-05  2.4185e-06  8.4349e-07  9.1506e-10  1.5066e-03  0.0000e+00  0:00:00   17
+   262  2.8710e-08  3.4807e-05  7.7882e-07  3.0899e-07  1.3312e-10  2.9636e-04  0.0000e+00  0:00:00   16
+!  262 solution is converged
+M17 audit: t=0.29 s, solid sensible=0.160706 J, latent=0 J, fluid=1.658 J, inletH=1.73102 W, outletH=2.13074e-15 W, nativeIn=6.92424e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.81866 J, liquid_Vf=0, solid Tmax=300.091 K
+Flow time = 0.29s, time step = 58
+42 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   262  2.8710e-08  3.4807e-05  7.7882e-07  3.0899e-07  1.3312e-10  2.9636e-04  0.0000e+00  0:00:01   20
+   263  3.8108e-08  6.8577e-04  2.4025e-05  7.5995e-06  1.7674e-06  3.6863e-02  0.0000e+00  0:00:01   19
+   264  4.6738e-08  2.2716e-04  7.5357e-06  2.2884e-06  5.7253e-09  7.5391e-03  0.0000e+00  0:00:01   18
+   265  3.8166e-08  8.0460e-05  2.4147e-06  8.5104e-07  8.8737e-10  1.4941e-03  0.0000e+00  0:00:00   17
+   266  2.7861e-08  3.4682e-05  7.7901e-07  3.1125e-07  1.3045e-10  2.9420e-04  0.0000e+00  0:00:00   16
+!  266 solution is converged
+M17 audit: t=0.295 s, solid sensible=0.163487 J, latent=0 J, fluid=1.66898 J, inletH=1.73515 W, outletH=2.25118e-15 W, nativeIn=6.89295e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.83242 J, liquid_Vf=0, solid Tmax=300.092 K
+Flow time = 0.295s, time step = 59
+41 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   266  2.7861e-08  3.4682e-05  7.7901e-07  3.1125e-07  1.3045e-10  2.9420e-04  0.0000e+00  0:00:01   20
+   267  3.8334e-08  6.8297e-04  2.3982e-05  7.5737e-06  1.7594e-06  3.6510e-02  0.0000e+00  0:00:01   19
+   268  4.5147e-08  2.2602e-04  7.5113e-06  2.2825e-06  5.5858e-09  7.4713e-03  0.0000e+00  0:00:01   18
+   269  3.6924e-08  8.0070e-05  2.4104e-06  8.5836e-07  8.6043e-10  1.4820e-03  0.0000e+00  0:00:00   17
+   270  2.7479e-08  3.4553e-05  7.7903e-07  3.1464e-07  1.2778e-10  2.9211e-04  0.0000e+00  0:00:00   16
+!  270 solution is converged
+M17 audit: t=0.3 s, solid sensible=0.166271 J, latent=0 J, fluid=1.6799 J, inletH=1.7392 W, outletH=2.34367e-15 W, nativeIn=6.86308e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.84612 J, liquid_Vf=0, solid Tmax=300.093 K
+Flow time = 0.3s, time step = 60
+40 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   270  2.7479e-08  3.4553e-05  7.7903e-07  3.1464e-07  1.2778e-10  2.9211e-04  0.0000e+00  0:00:01   20
+   271  3.8484e-08  6.8003e-04  2.3932e-05  7.5465e-06  1.7517e-06  3.6170e-02  0.0000e+00  0:00:01   19
+   272  4.3621e-08  2.2485e-04  7.4855e-06  2.2763e-06  5.4511e-09  7.4059e-03  0.0000e+00  0:00:01   18
+   273  3.6089e-08  7.9670e-05  2.4056e-06  8.6608e-07  8.3422e-10  1.4704e-03  0.0000e+00  0:00:00   17
+   274  2.7394e-08  3.4421e-05  7.7895e-07  3.2386e-07  1.2548e-10  2.9009e-04  0.0000e+00  0:00:00   16
+!  274 solution is converged
+M17 audit: t=0.305 s, solid sensible=0.16906 J, latent=0 J, fluid=1.69076 J, inletH=1.74318 W, outletH=2.51847e-15 W, nativeIn=6.83456e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.85977 J, liquid_Vf=0, solid Tmax=300.094 K
+Flow time = 0.305s, time step = 61
+39 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   274  2.7394e-08  3.4421e-05  7.7895e-07  3.2386e-07  1.2548e-10  2.9009e-04  0.0000e+00  0:00:01   20
+   275  3.8571e-08  6.7697e-04  2.3877e-05  7.5752e-06  1.7444e-06  3.5843e-02  0.0000e+00  0:00:01   19
+   276  4.2198e-08  2.2364e-04  7.4581e-06  2.2922e-06  5.3210e-09  7.3429e-03  0.0000e+00  0:00:01   18
+   277  3.5332e-08  7.9262e-05  2.4004e-06  8.8783e-07  8.1065e-10  1.4592e-03  0.0000e+00  0:00:00   17
+   278  2.7270e-08  3.4286e-05  7.7856e-07  3.3237e-07  1.2335e-10  2.8814e-04  0.0000e+00  0:00:00   16
+!  278 solution is converged
+M17 audit: t=0.31 s, solid sensible=0.171854 J, latent=0 J, fluid=1.70155 J, inletH=1.74708 W, outletH=2.58816e-15 W, nativeIn=6.80732e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.87336 J, liquid_Vf=0, solid Tmax=300.094 K
+Flow time = 0.31s, time step = 62
+38 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   278  2.7270e-08  3.4286e-05  7.7856e-07  3.3237e-07  1.2335e-10  2.8814e-04  0.0000e+00  0:00:01   20
+   279  3.8611e-08  6.7379e-04  2.3815e-05  7.6394e-06  1.7375e-06  3.5527e-02  0.0000e+00  0:00:01   19
+   280  4.0818e-08  2.2241e-04  7.4292e-06  2.3088e-06  5.1952e-09  7.2823e-03  0.0000e+00  0:00:01   18
+   281  3.4559e-08  7.8845e-05  2.3946e-06  9.1046e-07  7.8945e-10  1.4483e-03  0.0000e+00  0:00:00   17
+   282  2.7115e-08  3.4148e-05  7.7785e-07  3.4042e-07  1.2119e-10  2.8626e-04  0.0000e+00  0:00:00   16
+!  282 solution is converged
+M17 audit: t=0.315 s, solid sensible=0.174652 J, latent=0 J, fluid=1.71229 J, inletH=1.75092 W, outletH=2.75931e-15 W, nativeIn=6.78128e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.8869 J, liquid_Vf=0, solid Tmax=300.095 K
+Flow time = 0.315s, time step = 63
+37 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   282  2.7115e-08  3.4148e-05  7.7785e-07  3.4042e-07  1.2119e-10  2.8626e-04  0.0000e+00  0:00:01   20
+   283  3.8596e-08  6.7049e-04  2.3748e-05  7.7016e-06  1.7308e-06  3.5223e-02  0.0000e+00  0:00:01   19
+   284  3.9484e-08  2.2115e-04  7.3989e-06  2.3250e-06  5.0733e-09  7.2237e-03  0.0000e+00  0:00:01   18
+   285  3.3592e-08  7.8421e-05  2.3884e-06  9.3223e-07  7.6865e-10  1.4379e-03  0.0000e+00  0:00:00   17
+   286  2.6179e-08  3.4008e-05  7.7712e-07  3.4806e-07  1.1901e-10  2.8444e-04  0.0000e+00  0:00:00   16
+!  286 solution is converged
+M17 audit: t=0.32 s, solid sensible=0.177456 J, latent=0 J, fluid=1.72298 J, inletH=1.75468 W, outletH=2.94606e-15 W, nativeIn=6.75638e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.90039 J, liquid_Vf=0, solid Tmax=300.096 K
+Flow time = 0.32s, time step = 64
+36 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   286  2.6179e-08  3.4008e-05  7.7712e-07  3.4806e-07  1.1901e-10  2.8444e-04  0.0000e+00  0:00:01   20
+   287  3.8527e-08  6.6707e-04  2.3679e-05  7.7600e-06  1.7244e-06  3.4929e-02  0.0000e+00  0:00:01   19
+   288  3.7854e-08  2.1987e-04  7.3673e-06  2.3405e-06  4.9578e-09  7.1673e-03  0.0000e+00  0:00:01   18
+   289  2.9823e-08  7.7989e-05  2.3830e-06  9.5303e-07  7.4828e-10  1.4278e-03  0.0000e+00  0:00:00   17
+   290  2.3953e-08  3.3866e-05  7.7247e-07  3.5526e-07  1.1699e-10  2.8269e-04  0.0000e+00  0:00:00   16
+!  290 solution is converged
+M17 audit: t=0.325 s, solid sensible=0.180265 J, latent=0 J, fluid=1.73361 J, inletH=1.75838 W, outletH=3.21399e-15 W, nativeIn=6.73255e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.91383 J, liquid_Vf=0, solid Tmax=300.097 K
+Flow time = 0.325s, time step = 65
+35 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   290  2.3953e-08  3.3866e-05  7.7247e-07  3.5526e-07  1.1699e-10  2.8269e-04  0.0000e+00  0:00:01   20
+   291  3.8420e-08  6.6356e-04  2.3620e-05  7.8119e-06  1.7183e-06  3.4646e-02  0.0000e+00  0:00:01   19
+   292  3.5544e-08  2.1856e-04  7.3382e-06  2.3538e-06  4.8584e-09  7.1129e-03  0.0000e+00  0:00:01   18
+   293  2.8801e-08  7.7552e-05  2.3750e-06  9.7275e-07  7.2831e-10  1.4181e-03  0.0000e+00  0:00:00   17
+   294  2.3311e-08  3.3722e-05  7.6988e-07  3.6193e-07  1.1519e-10  2.8100e-04  0.0000e+00  0:00:00   16
+!  294 solution is converged
+M17 audit: t=0.33 s, solid sensible=0.18308 J, latent=0 J, fluid=1.7442 J, inletH=1.76202 W, outletH=3.39254e-15 W, nativeIn=6.70974e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.92723 J, liquid_Vf=0, solid Tmax=300.098 K
+Flow time = 0.33s, time step = 66
+34 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   294  2.3311e-08  3.3722e-05  7.6988e-07  3.6193e-07  1.1519e-10  2.8100e-04  0.0000e+00  0:00:01   20
+   295  3.8305e-08  6.5994e-04  2.3563e-05  7.8614e-06  1.7125e-06  3.4373e-02  0.0000e+00  0:00:01   19
+   296  3.4120e-08  2.1723e-04  7.3115e-06  2.3664e-06  4.7705e-09  7.0603e-03  0.0000e+00  0:00:01   18
+   297  2.8370e-08  7.7107e-05  2.3683e-06  9.9127e-07  7.0876e-10  1.4087e-03  0.0000e+00  0:00:00   17
+   298  2.3009e-08  3.3575e-05  7.6835e-07  3.6807e-07  1.1336e-10  2.7936e-04  0.0000e+00  0:00:00   16
+!  298 solution is converged
+M17 audit: t=0.335 s, solid sensible=0.1859 J, latent=0 J, fluid=1.75473 J, inletH=1.76559 W, outletH=3.57497e-15 W, nativeIn=6.6879e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.94058 J, liquid_Vf=0, solid Tmax=300.098 K
+Flow time = 0.335s, time step = 67
+33 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   298  2.3009e-08  3.3575e-05  7.6835e-07  3.6807e-07  1.1336e-10  2.7936e-04  0.0000e+00  0:00:01   20
+   299  3.8162e-08  6.5622e-04  2.3502e-05  7.9280e-06  1.7069e-06  3.4109e-02  0.0000e+00  0:00:01   19
+   300  3.2926e-08  2.1587e-04  7.2841e-06  2.3780e-06  4.7001e-09  7.0096e-03  0.0000e+00  0:00:01   18
+   301  2.8038e-08  7.6657e-05  2.3612e-06  1.0085e-06  6.8960e-10  1.3996e-03  0.0000e+00  0:00:00   17
+   302  2.2793e-08  3.3426e-05  7.6672e-07  3.7364e-07  1.1149e-10  2.7778e-04  0.0000e+00  0:00:00   16
+!  302 solution is converged
+M17 audit: t=0.34 s, solid sensible=0.188727 J, latent=0 J, fluid=1.76521 J, inletH=1.7691 W, outletH=3.87826e-15 W, nativeIn=6.66697e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.95389 J, liquid_Vf=0, solid Tmax=300.099 K
+Flow time = 0.34s, time step = 68
+32 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   302  2.2793e-08  3.3426e-05  7.6672e-07  3.7364e-07  1.1149e-10  2.7778e-04  0.0000e+00  0:00:01   20
+   303  3.7989e-08  6.5241e-04  2.3434e-05  8.0999e-06  1.7016e-06  3.3854e-02  0.0000e+00  0:00:01   19
+   304  3.1810e-08  2.1450e-04  7.2551e-06  2.4016e-06  4.6303e-09  6.9607e-03  0.0000e+00  0:00:00   18
+   305  2.7710e-08  7.6200e-05  2.3533e-06  1.0244e-06  6.7084e-10  1.3908e-03  0.0000e+00  0:00:00   17
+   306  2.2567e-08  3.3276e-05  7.6474e-07  3.7861e-07  1.0960e-10  2.7625e-04  0.0000e+00  0:00:00   16
+!  306 solution is converged
+M17 audit: t=0.345 s, solid sensible=0.191559 J, latent=0 J, fluid=1.77565 J, inletH=1.77254 W, outletH=4.09599e-15 W, nativeIn=6.64691e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.96716 J, liquid_Vf=0, solid Tmax=300.1 K
+Flow time = 0.345s, time step = 69
+31 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   306  2.2567e-08  3.3276e-05  7.6474e-07  3.7861e-07  1.0960e-10  2.7625e-04  0.0000e+00  0:00:01   20
+   307  3.7791e-08  6.4852e-04  2.3361e-05  8.2684e-06  1.6964e-06  3.3609e-02  0.0000e+00  0:00:01   19
+   308  3.0735e-08  2.1310e-04  7.2246e-06  2.4466e-06  4.5611e-09  6.9134e-03  0.0000e+00  0:00:01   18
+   309  2.7361e-08  7.5738e-05  2.3445e-06  1.0388e-06  6.5247e-10  1.3824e-03  0.0000e+00  0:00:00   17
+   310  2.2315e-08  3.3123e-05  7.6233e-07  3.8295e-07  1.0769e-10  2.7477e-04  0.0000e+00  0:00:00   16
+!  310 solution is converged
+M17 audit: t=0.35 s, solid sensible=0.194398 J, latent=0 J, fluid=1.78605 J, inletH=1.77593 W, outletH=4.33327e-15 W, nativeIn=6.62767e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.98039 J, liquid_Vf=0, solid Tmax=300.101 K
+Flow time = 0.35s, time step = 70
+30 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   310  2.2315e-08  3.3123e-05  7.6233e-07  3.8295e-07  1.0769e-10  2.7477e-04  0.0000e+00  0:00:01   20
+   311  3.7571e-08  6.4455e-04  2.3281e-05  8.4293e-06  1.6915e-06  3.3371e-02  0.0000e+00  0:00:01   19
+   312  2.9691e-08  2.1169e-04  7.1925e-06  2.4897e-06  4.4924e-09  6.8678e-03  0.0000e+00  0:00:01   18
+   313  2.6978e-08  7.5271e-05  2.3348e-06  1.0517e-06  6.3450e-10  1.3742e-03  0.0000e+00  0:00:00   17
+   314  2.2031e-08  3.2969e-05  7.5948e-07  3.8666e-07  1.0576e-10  2.7335e-04  0.0000e+00  0:00:02   16
+!  314 solution is converged
+M17 audit: t=0.355 s, solid sensible=0.197242 J, latent=0 J, fluid=1.7964 J, inletH=1.77927 W, outletH=4.63283e-15 W, nativeIn=6.6092e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=1.99359 J, liquid_Vf=0, solid Tmax=300.101 K
+Flow time = 0.355s, time step = 71
+29 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   314  2.2031e-08  3.2969e-05  7.5948e-07  3.8666e-07  1.0576e-10  2.7335e-04  0.0000e+00  0:00:02   20
+   315  3.7332e-08  6.4049e-04  2.3195e-05  8.5820e-06  1.6868e-06  3.3142e-02  0.0000e+00  0:00:02   19
+   316  2.8673e-08  2.1026e-04  7.1588e-06  2.5305e-06  4.4243e-09  6.8237e-03  0.0000e+00  0:00:02   18
+   317  2.6557e-08  7.4799e-05  2.3242e-06  1.0631e-06  6.1692e-10  1.3663e-03  0.0000e+00  0:00:01   17
+   318  2.1725e-08  3.2813e-05  7.5619e-07  3.8973e-07  1.0382e-10  2.7197e-04  0.0000e+00  0:00:01   16
+!  318 solution is converged
+M17 audit: t=0.36 s, solid sensible=0.200094 J, latent=0 J, fluid=1.80671 J, inletH=1.78254 W, outletH=4.88185e-15 W, nativeIn=6.59148e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.00675 J, liquid_Vf=0, solid Tmax=300.102 K
+Flow time = 0.36s, time step = 72
+28 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   318  2.1725e-08  3.2813e-05  7.5619e-07  3.8973e-07  1.0382e-10  2.7197e-04  0.0000e+00  0:00:01   20
+   319  3.7075e-08  6.3637e-04  2.3103e-05  8.7259e-06  1.6823e-06  3.2920e-02  0.0000e+00  0:00:01   19
+   320  2.7678e-08  2.0881e-04  7.1237e-06  2.5690e-06  4.3566e-09  6.7812e-03  0.0000e+00  0:00:01   18
+   321  2.6107e-08  7.4323e-05  2.3127e-06  1.0729e-06  5.9973e-10  1.3586e-03  0.0000e+00  0:00:01   17
+   322  2.1389e-08  3.2656e-05  7.5250e-07  3.9215e-07  1.0187e-10  2.7064e-04  0.0000e+00  0:00:01   16
+!  322 solution is converged
+M17 audit: t=0.365 s, solid sensible=0.202951 J, latent=0 J, fluid=1.81697 J, inletH=1.78576 W, outletH=5.14245e-15 W, nativeIn=6.57447e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.01987 J, liquid_Vf=0, solid Tmax=300.103 K
+Flow time = 0.365s, time step = 73
+27 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   322  2.1389e-08  3.2656e-05  7.5250e-07  3.9215e-07  1.0187e-10  2.7064e-04  0.0000e+00  0:00:01   20
+   323  3.6825e-08  6.3217e-04  2.3006e-05  8.8604e-06  1.6779e-06  3.2706e-02  0.0000e+00  0:00:01   19
+   324  2.6720e-08  2.0735e-04  7.0870e-06  2.6049e-06  4.2894e-09  6.7400e-03  0.0000e+00  0:00:01   18
+   325  2.5679e-08  7.3843e-05  2.3003e-06  1.0812e-06  5.8292e-10  1.3513e-03  0.0000e+00  0:00:01   17
+   326  2.1034e-08  3.2498e-05  7.4839e-07  3.9393e-07  9.9910e-11  2.6935e-04  0.0000e+00  0:00:01   16
+!  326 solution is converged
+M17 audit: t=0.37 s, solid sensible=0.205815 J, latent=0 J, fluid=1.8272 J, inletH=1.78893 W, outletH=5.40706e-15 W, nativeIn=6.55812e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.03297 J, liquid_Vf=0, solid Tmax=300.104 K
+Flow time = 0.37s, time step = 74
+26 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   326  2.1034e-08  3.2498e-05  7.4839e-07  3.9393e-07  9.9910e-11  2.6935e-04  0.0000e+00  0:00:01   20
+   327  3.6532e-08  6.2791e-04  2.2903e-05  8.9849e-06  1.6737e-06  3.2500e-02  0.0000e+00  0:00:01   19
+   328  2.5772e-08  2.0588e-04  7.0490e-06  2.6380e-06  4.2227e-09  6.7003e-03  0.0000e+00  0:00:01   18
+   329  2.5207e-08  7.3360e-05  2.2871e-06  1.0880e-06  5.6648e-10  1.3441e-03  0.0000e+00  0:00:01   17
+   330  2.0662e-08  3.2339e-05  7.4390e-07  3.9508e-07  9.7948e-11  2.6810e-04  0.0000e+00  0:00:01   16
+!  330 solution is converged
+M17 audit: t=0.375 s, solid sensible=0.208686 J, latent=0 J, fluid=1.83739 J, inletH=1.79205 W, outletH=5.65215e-15 W, nativeIn=6.5424e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.04603 J, liquid_Vf=0, solid Tmax=300.104 K
+Flow time = 0.375s, time step = 75
+25 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   330  2.0662e-08  3.2339e-05  7.4390e-07  3.9508e-07  9.7948e-11  2.6810e-04  0.0000e+00  0:00:01   20
+   331  3.6236e-08  6.2359e-04  2.2795e-05  9.0990e-06  1.6697e-06  3.2300e-02  0.0000e+00  0:00:01   19
+   332  2.4840e-08  2.0439e-04  7.0096e-06  2.6684e-06  4.1565e-09  6.6619e-03  0.0000e+00  0:00:01   18
+   333  2.4720e-08  7.2873e-05  2.2732e-06  1.0938e-06  5.5042e-10  1.3372e-03  0.0000e+00  0:00:01   17
+   334  2.0275e-08  3.2179e-05  7.3903e-07  3.9562e-07  9.6050e-11  2.6690e-04  0.0000e+00  0:00:00   16
+!  334 solution is converged
+M17 audit: t=0.38 s, solid sensible=0.211563 J, latent=0 J, fluid=1.84755 J, inletH=1.79511 W, outletH=5.92817e-15 W, nativeIn=6.5273e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.05906 J, liquid_Vf=0, solid Tmax=300.105 K
+Flow time = 0.38s, time step = 76
+24 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   334  2.0275e-08  3.2179e-05  7.3903e-07  3.9562e-07  9.6050e-11  2.6690e-04  0.0000e+00  0:00:01   20
+   335  3.5648e-08  6.1922e-04  2.2682e-05  9.2023e-06  1.6658e-06  3.2107e-02  0.0000e+00  0:00:01   19
+   336  2.3638e-08  2.0289e-04  6.9686e-06  2.6964e-06  4.0908e-09  6.6248e-03  0.0000e+00  0:00:01   18
+   337  2.4204e-08  7.2383e-05  2.2583e-06  1.0981e-06  5.3472e-10  1.3306e-03  0.0000e+00  0:00:00   17
+   338  1.9848e-08  3.2018e-05  7.3366e-07  3.9554e-07  9.4087e-11  2.6574e-04  0.0000e+00  0:00:00   16
+!  338 solution is converged
+M17 audit: t=0.385 s, solid sensible=0.214447 J, latent=0 J, fluid=1.85767 J, inletH=1.79812 W, outletH=6.21655e-15 W, nativeIn=6.51276e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.07206 J, liquid_Vf=0, solid Tmax=300.106 K
+Flow time = 0.385s, time step = 77
+23 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   338  1.9848e-08  3.2018e-05  7.3366e-07  3.9554e-07  9.4087e-11  2.6574e-04  0.0000e+00  0:00:01   20
+   339  3.5414e-08  6.1478e-04  2.2564e-05  9.2967e-06  1.6621e-06  3.1920e-02  0.0000e+00  0:00:01   19
+   340  2.2896e-08  2.0138e-04  6.9270e-06  2.7229e-06  4.0256e-09  6.5889e-03  0.0000e+00  0:00:01   18
+   341  2.3643e-08  7.1891e-05  2.2431e-06  1.1009e-06  5.1938e-10  1.3241e-03  0.0000e+00  0:00:00   17
+   342  1.9412e-08  3.1857e-05  7.2823e-07  3.9495e-07  9.2133e-11  2.6461e-04  0.0000e+00  0:00:00   16
+!  342 solution is converged
+M17 audit: t=0.39 s, solid sensible=0.217337 J, latent=0 J, fluid=1.86775 J, inletH=1.80109 W, outletH=6.62561e-15 W, nativeIn=6.49878e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.08504 J, liquid_Vf=0, solid Tmax=300.107 K
+Flow time = 0.39s, time step = 78
+22 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   342  1.9412e-08  3.1857e-05  7.2823e-07  3.9495e-07  9.2133e-11  2.6461e-04  0.0000e+00  0:00:01   20
+   343  3.5110e-08  6.1030e-04  2.2442e-05  9.3852e-06  1.6585e-06  3.1739e-02  0.0000e+00  0:00:01   19
+   344  2.2066e-08  1.9986e-04  6.8842e-06  2.7466e-06  3.9608e-09  6.5542e-03  0.0000e+00  0:00:01   18
+   345  2.3078e-08  7.1396e-05  2.2272e-06  1.1023e-06  5.0440e-10  1.3179e-03  0.0000e+00  0:00:00   17
+   346  1.8956e-08  3.1695e-05  7.2242e-07  3.9389e-07  9.0186e-11  2.6352e-04  0.0000e+00  0:00:00   16
+!  346 solution is converged
+M17 audit: t=0.395 s, solid sensible=0.220235 J, latent=0 J, fluid=1.8778 J, inletH=1.80401 W, outletH=6.87499e-15 W, nativeIn=6.48531e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.09799 J, liquid_Vf=0, solid Tmax=300.107 K
+Flow time = 0.395s, time step = 79
+21 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   346  1.8956e-08  3.1695e-05  7.2242e-07  3.9389e-07  9.0186e-11  2.6352e-04  0.0000e+00  0:00:01   20
+   347  3.4791e-08  6.0577e-04  2.2316e-05  9.4631e-06  1.6551e-06  3.1564e-02  0.0000e+00  0:00:01   19
+   348  2.1228e-08  1.9833e-04  6.8404e-06  2.7673e-06  3.8966e-09  6.5206e-03  0.0000e+00  0:00:01   18
+   349  2.2487e-08  7.0900e-05  2.2106e-06  1.1023e-06  4.8976e-10  1.3119e-03  0.0000e+00  0:00:00   17
+   350  1.8479e-08  3.1533e-05  7.1634e-07  3.9248e-07  8.8248e-11  2.6247e-04  0.0000e+00  0:00:00   16
+!  350 solution is converged
+M17 audit: t=0.4 s, solid sensible=0.223138 J, latent=0 J, fluid=1.88782 J, inletH=1.80688 W, outletH=7.28423e-15 W, nativeIn=6.47234e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.11091 J, liquid_Vf=0, solid Tmax=300.108 K
+Flow time = 0.4s, time step = 80
+20 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   350  1.8479e-08  3.1533e-05  7.1634e-07  3.9248e-07  8.8248e-11  2.6247e-04  0.0000e+00  0:00:01   20
+   351  3.4459e-08  6.0120e-04  2.2186e-05  9.5297e-06  1.6518e-06  3.1395e-02  0.0000e+00  0:00:01   19
+   352  2.0400e-08  1.9679e-04  6.7956e-06  2.7848e-06  3.8331e-09  6.4882e-03  0.0000e+00  0:00:01   18
+   353  2.1879e-08  7.0401e-05  2.1936e-06  1.1010e-06  4.7547e-10  1.3061e-03  0.0000e+00  0:00:00   17
+   354  1.7989e-08  3.1370e-05  7.1001e-07  3.9059e-07  8.6322e-11  2.6145e-04  0.0000e+00  0:00:00   16
+!  354 solution is converged
+M17 audit: t=0.405 s, solid sensible=0.226049 J, latent=0 J, fluid=1.89781 J, inletH=1.8097 W, outletH=7.54914e-15 W, nativeIn=6.45985e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.1238 J, liquid_Vf=0, solid Tmax=300.109 K
+Flow time = 0.405s, time step = 81
+19 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   354  1.7989e-08  3.1370e-05  7.1001e-07  3.9059e-07  8.6322e-11  2.6145e-04  0.0000e+00  0:00:01   20
+   355  3.4120e-08  5.9659e-04  2.2052e-05  9.5847e-06  1.6486e-06  3.1232e-02  0.0000e+00  0:00:01   19
+   356  1.9588e-08  1.9524e-04  6.7499e-06  2.7992e-06  3.7798e-09  6.4568e-03  0.0000e+00  0:00:01   18
+   357  2.1256e-08  6.9902e-05  2.1760e-06  1.0984e-06  4.6153e-10  1.3004e-03  0.0000e+00  0:00:00   17
+   358  1.7484e-08  3.1208e-05  7.0347e-07  3.8827e-07  8.4410e-11  2.6047e-04  0.0000e+00  0:00:00   16
+!  358 solution is converged
+M17 audit: t=0.41 s, solid sensible=0.228966 J, latent=0 J, fluid=1.90776 J, inletH=1.81249 W, outletH=7.90383e-15 W, nativeIn=6.44781e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.13668 J, liquid_Vf=0, solid Tmax=300.11 K
+Flow time = 0.41s, time step = 82
+18 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   358  1.7484e-08  3.1208e-05  7.0347e-07  3.8827e-07  8.4410e-11  2.6047e-04  0.0000e+00  0:00:01   20
+   359  3.3781e-08  5.9194e-04  2.1914e-05  9.6285e-06  1.6455e-06  3.1074e-02  0.0000e+00  0:00:01   19
+   360  1.8797e-08  1.9369e-04  6.7033e-06  2.8105e-06  3.7274e-09  6.4265e-03  0.0000e+00  0:00:01   18
+   361  2.0620e-08  6.9401e-05  2.1579e-06  1.0946e-06  4.4791e-10  1.2950e-03  0.0000e+00  0:00:00   17
+   362  1.6985e-08  3.1045e-05  6.9674e-07  3.8553e-07  8.2513e-11  2.5952e-04  0.0000e+00  0:00:00   16
+!  362 solution is converged
+M17 audit: t=0.415 s, solid sensible=0.23189 J, latent=0 J, fluid=1.91769 J, inletH=1.81522 W, outletH=8.30898e-15 W, nativeIn=6.43619e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.14953 J, liquid_Vf=0, solid Tmax=300.11 K
+Flow time = 0.415s, time step = 83
+17 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   362  1.6985e-08  3.1045e-05  6.9674e-07  3.8553e-07  8.2513e-11  2.5952e-04  0.0000e+00  0:00:01   20
+   363  3.3438e-08  5.8726e-04  2.1773e-05  9.6612e-06  1.6425e-06  3.0921e-02  0.0000e+00  0:00:01   19
+   364  1.8114e-08  1.9213e-04  6.6559e-06  2.8188e-06  3.6822e-09  6.3972e-03  0.0000e+00  0:00:01   18
+   365  1.9980e-08  6.8899e-05  2.1395e-06  1.0897e-06  4.3464e-10  1.2897e-03  0.0000e+00  0:00:00   17
+   366  1.6462e-08  3.0883e-05  6.8985e-07  3.8240e-07  8.0633e-11  2.5860e-04  0.0000e+00  0:00:00   16
+!  366 solution is converged
+M17 audit: t=0.42 s, solid sensible=0.234821 J, latent=0 J, fluid=1.92758 J, inletH=1.81792 W, outletH=8.7098e-15 W, nativeIn=6.42499e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.16235 J, liquid_Vf=0, solid Tmax=300.111 K
+Flow time = 0.42s, time step = 84
+16 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   366  1.6462e-08  3.0883e-05  6.8985e-07  3.8240e-07  8.0633e-11  2.5860e-04  0.0000e+00  0:00:01   20
+   367  3.3092e-08  5.8254e-04  2.1629e-05  9.6832e-06  1.6397e-06  3.0773e-02  0.0000e+00  0:00:01   19
+   368  1.7368e-08  1.9056e-04  6.6076e-06  2.8240e-06  3.6388e-09  6.3688e-03  0.0000e+00  0:00:01   18
+   369  1.9329e-08  6.8396e-05  2.1208e-06  1.0837e-06  4.2170e-10  1.2846e-03  0.0000e+00  0:00:00   17
+   370  1.5933e-08  3.0720e-05  6.8283e-07  3.7892e-07  7.8773e-11  2.5771e-04  0.0000e+00  0:00:00   16
+!  370 solution is converged
+M17 audit: t=0.425 s, solid sensible=0.237759 J, latent=0 J, fluid=1.93745 J, inletH=1.82057 W, outletH=9.17413e-15 W, nativeIn=6.41418e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.17516 J, liquid_Vf=0, solid Tmax=300.112 K
+Flow time = 0.425s, time step = 85
+15 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   370  1.5933e-08  3.0720e-05  6.8283e-07  3.7892e-07  7.8773e-11  2.5771e-04  0.0000e+00  0:00:01   20
+   371  3.2736e-08  5.7780e-04  2.1481e-05  9.6946e-06  1.6369e-06  3.0630e-02  0.0000e+00  0:00:01   19
+   372  1.6651e-08  1.8900e-04  6.5584e-06  2.8261e-06  3.5951e-09  6.3413e-03  0.0000e+00  0:00:01   18
+   373  1.8674e-08  6.7893e-05  2.1018e-06  1.0766e-06  4.0908e-10  1.2797e-03  0.0000e+00  0:00:00   17
+   374  1.5400e-08  3.0558e-05  6.7570e-07  3.7511e-07  7.7038e-11  2.5685e-04  0.0000e+00  0:00:00   16
+!  374 solution is converged
+M17 audit: t=0.43 s, solid sensible=0.240703 J, latent=0 J, fluid=1.94729 J, inletH=1.82318 W, outletH=9.53347e-15 W, nativeIn=6.40375e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.18794 J, liquid_Vf=0, solid Tmax=300.113 K
+Flow time = 0.43s, time step = 86
+14 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   374  1.5400e-08  3.0558e-05  6.7570e-07  3.7511e-07  7.7038e-11  2.5685e-04  0.0000e+00  0:00:01   20
+   375  3.2379e-08  5.7303e-04  2.1330e-05  9.6956e-06  1.6342e-06  3.0491e-02  0.0000e+00  0:00:01   19
+   376  1.6107e-08  1.8742e-04  6.5086e-06  2.8253e-06  3.5555e-09  6.3147e-03  0.0000e+00  0:00:01   18
+   377  1.8020e-08  6.7390e-05  2.0825e-06  1.0686e-06  3.9684e-10  1.2749e-03  0.0000e+00  0:00:01   17
+   378  1.4899e-08  3.0396e-05  6.6868e-07  3.7102e-07  7.5317e-11  2.5602e-04  0.0000e+00  0:00:01   16
+!  378 solution is converged
+M17 audit: t=0.435 s, solid sensible=0.243654 J, latent=0 J, fluid=1.95711 J, inletH=1.82575 W, outletH=1.00133e-14 W, nativeIn=6.39367e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.20071 J, liquid_Vf=0, solid Tmax=300.113 K
+Flow time = 0.435s, time step = 87
+13 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   378  1.4899e-08  3.0396e-05  6.6868e-07  3.7102e-07  7.5317e-11  2.5602e-04  0.0000e+00  0:00:01   20
+   379  3.2015e-08  5.6824e-04  2.1176e-05  9.6863e-06  1.6317e-06  3.0357e-02  0.0000e+00  0:00:01   19
+   380  1.5606e-08  1.8585e-04  6.4580e-06  2.8215e-06  3.5417e-09  6.2890e-03  0.0000e+00  0:00:03   18
+   381  1.7360e-08  6.6886e-05  2.0631e-06  1.0597e-06  3.8496e-10  1.2703e-03  0.0000e+00  0:00:02   17
+   382  1.4361e-08  3.0235e-05  6.6138e-07  3.6666e-07  7.3637e-11  2.5521e-04  0.0000e+00  0:00:02   16
+!  382 solution is converged
+M17 audit: t=0.44 s, solid sensible=0.246612 J, latent=0 J, fluid=1.96689 J, inletH=1.82828 W, outletH=1.03882e-14 W, nativeIn=6.38393e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.21345 J, liquid_Vf=0, solid Tmax=300.114 K
+Flow time = 0.44s, time step = 88
+12 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   382  1.4361e-08  3.0235e-05  6.6138e-07  3.6666e-07  7.3637e-11  2.5521e-04  0.0000e+00  0:00:02   20
+   383  3.1636e-08  5.6343e-04  2.1019e-05  9.6672e-06  1.6292e-06  3.0228e-02  0.0000e+00  0:00:02   19
+   384  1.5304e-08  1.8427e-04  6.4068e-06  2.8150e-06  3.5300e-09  6.2642e-03  0.0000e+00  0:00:01   18
+   385  1.6717e-08  6.6383e-05  2.0434e-06  1.0500e-06  3.7422e-10  1.2658e-03  0.0000e+00  0:00:01   17
+   386  1.3836e-08  3.0074e-05  6.5403e-07  3.6206e-07  7.1902e-11  2.5443e-04  0.0000e+00  0:00:01   16
+!  386 solution is converged
+M17 audit: t=0.445 s, solid sensible=0.249576 J, latent=0 J, fluid=1.97666 J, inletH=1.83077 W, outletH=1.08224e-14 W, nativeIn=6.37452e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.22618 J, liquid_Vf=0, solid Tmax=300.115 K
+Flow time = 0.445s, time step = 89
+11 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   386  1.3836e-08  3.0074e-05  6.5403e-07  3.6206e-07  7.1902e-11  2.5443e-04  0.0000e+00  0:00:01   20
+   387  3.1269e-08  5.5860e-04  2.0860e-05  9.6386e-06  1.6268e-06  3.0102e-02  0.0000e+00  0:00:01   19
+   388  1.5158e-08  1.8269e-04  6.3551e-06  2.8059e-06  3.5174e-09  6.2401e-03  0.0000e+00  0:00:01   18
+   389  1.6080e-08  6.5879e-05  2.0237e-06  1.0395e-06  3.6411e-10  1.2615e-03  0.0000e+00  0:00:01   17
+   390  1.3314e-08  2.9913e-05  6.4666e-07  3.5725e-07  7.0186e-11  2.5368e-04  0.0000e+00  0:00:01   16
+!  390 solution is converged
+M17 audit: t=0.45 s, solid sensible=0.252548 J, latent=0 J, fluid=1.98639 J, inletH=1.83322 W, outletH=1.13665e-14 W, nativeIn=6.36542e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.23888 J, liquid_Vf=0, solid Tmax=300.116 K
+Flow time = 0.45s, time step = 90
+10 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   390  1.3314e-08  2.9913e-05  6.4666e-07  3.5725e-07  7.0186e-11  2.5368e-04  0.0000e+00  0:00:01   20
+   391  3.0902e-08  5.5376e-04  2.0699e-05  9.6010e-06  1.6244e-06  2.9980e-02  0.0000e+00  0:00:01   19
+   392  1.5115e-08  1.8111e-04  6.3028e-06  2.7942e-06  3.5039e-09  6.2168e-03  0.0000e+00  0:00:01   18
+   393  1.5614e-08  6.5377e-05  2.0040e-06  1.0284e-06  3.5423e-10  1.2573e-03  0.0000e+00  0:00:01   17
+   394  1.2935e-08  2.9753e-05  6.3952e-07  3.5227e-07  6.8492e-11  2.5295e-04  0.0000e+00  0:00:01   16
+!  394 solution is converged
+M17 audit: t=0.455 s, solid sensible=0.255526 J, latent=0 J, fluid=1.99611 J, inletH=1.83564 W, outletH=1.1891e-14 W, nativeIn=6.35662e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.25157 J, liquid_Vf=0, solid Tmax=300.116 K
+Flow time = 0.455s, time step = 91
+9 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   394  1.2935e-08  2.9753e-05  6.3952e-07  3.5227e-07  6.8492e-11  2.5295e-04  0.0000e+00  0:00:01   20
+   395  3.0539e-08  5.4890e-04  2.0534e-05  9.5548e-06  1.6222e-06  2.9863e-02  0.0000e+00  0:00:01   19
+   396  1.5068e-08  1.7953e-04  6.2499e-06  2.7800e-06  3.4896e-09  6.1943e-03  0.0000e+00  0:00:01   18
+   397  1.5061e-08  6.4874e-05  1.9841e-06  1.0167e-06  3.4484e-10  1.2533e-03  0.0000e+00  0:00:01   17
+   398  1.2477e-08  2.9593e-05  6.3223e-07  3.4712e-07  6.6819e-11  2.5224e-04  0.0000e+00  0:00:01   16
+!  398 solution is converged
+M17 audit: t=0.46 s, solid sensible=0.25851 J, latent=0 J, fluid=2.00579 J, inletH=1.83801 W, outletH=1.24554e-14 W, nativeIn=6.34811e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.26425 J, liquid_Vf=0, solid Tmax=300.117 K
+Flow time = 0.46s, time step = 92
+8 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   398  1.2477e-08  2.9593e-05  6.3223e-07  3.4712e-07  6.6819e-11  2.5224e-04  0.0000e+00  0:00:01   20
+   399  3.0172e-08  5.4403e-04  2.0367e-05  9.5003e-06  1.6200e-06  2.9749e-02  0.0000e+00  0:00:01   19
+   400  1.5010e-08  1.7795e-04  6.1963e-06  2.7636e-06  3.4744e-09  6.1725e-03  0.0000e+00  0:00:01   18
+   401  1.4493e-08  6.4373e-05  1.9640e-06  1.0044e-06  3.3591e-10  1.2494e-03  0.0000e+00  0:00:01   17
+   402  1.2001e-08  2.9434e-05  6.2486e-07  3.4184e-07  6.5169e-11  2.5156e-04  0.0000e+00  0:00:00   16
+!  402 solution is converged
+M17 audit: t=0.465 s, solid sensible=0.261501 J, latent=0 J, fluid=2.01546 J, inletH=1.84036 W, outletH=1.3061e-14 W, nativeIn=6.33986e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.2769 J, liquid_Vf=0, solid Tmax=300.118 K
+Flow time = 0.465s, time step = 93
+7 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   402  1.2001e-08  2.9434e-05  6.2486e-07  3.4184e-07  6.5169e-11  2.5156e-04  0.0000e+00  0:00:01   20
+   403  2.9803e-08  5.3915e-04  2.0198e-05  9.4382e-06  1.6179e-06  2.9639e-02  0.0000e+00  0:00:01   19
+   404  1.4945e-08  1.7637e-04  6.1423e-06  2.7449e-06  3.4584e-09  6.1513e-03  0.0000e+00  0:00:01   18
+   405  1.3913e-08  6.3873e-05  1.9439e-06  9.9157e-07  3.2714e-10  1.2456e-03  0.0000e+00  0:00:00   17
+   406  1.1527e-08  2.9275e-05  6.1748e-07  3.3645e-07  6.3542e-11  2.5090e-04  0.0000e+00  0:00:00   16
+!  406 solution is converged
+M17 audit: t=0.47 s, solid sensible=0.264499 J, latent=0 J, fluid=2.0251 J, inletH=1.84266 W, outletH=1.36165e-14 W, nativeIn=6.33188e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.28954 J, liquid_Vf=0, solid Tmax=300.119 K
+Flow time = 0.47s, time step = 94
+6 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   406  1.1527e-08  2.9275e-05  6.1748e-07  3.3645e-07  6.3542e-11  2.5090e-04  0.0000e+00  0:00:01   20
+   407  2.9432e-08  5.3426e-04  2.0028e-05  9.3689e-06  1.6158e-06  2.9532e-02  0.0000e+00  0:00:01   19
+   408  1.4873e-08  1.7479e-04  6.0881e-06  2.7243e-06  3.4416e-09  6.1309e-03  0.0000e+00  0:00:01   18
+   409  1.3343e-08  6.3373e-05  1.9237e-06  9.7835e-07  3.1853e-10  1.2419e-03  0.0000e+00  0:00:00   17
+   410  1.1061e-08  2.9117e-05  6.1014e-07  3.3096e-07  6.1939e-11  2.5026e-04  0.0000e+00  0:00:00   16
+!  410 solution is converged
+M17 audit: t=0.475 s, solid sensible=0.267504 J, latent=0 J, fluid=2.03472 J, inletH=1.84493 W, outletH=1.42364e-14 W, nativeIn=6.32415e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.30217 J, liquid_Vf=0, solid Tmax=300.119 K
+Flow time = 0.475s, time step = 95
+5 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   410  1.1061e-08  2.9117e-05  6.1014e-07  3.3096e-07  6.1939e-11  2.5026e-04  0.0000e+00  0:00:01   20
+   411  2.9059e-08  5.2937e-04  1.9856e-05  9.2928e-06  1.6139e-06  2.9429e-02  0.0000e+00  0:00:01   19
+   412  1.4794e-08  1.7321e-04  6.0335e-06  2.7018e-06  3.4237e-09  6.1111e-03  0.0000e+00  0:00:01   18
+   413  1.2705e-08  6.2875e-05  1.9036e-06  9.6474e-07  3.1008e-10  1.2384e-03  0.0000e+00  0:00:00   17
+   414  1.0587e-08  2.8960e-05  6.0282e-07  3.2541e-07  6.0361e-11  2.4965e-04  0.0000e+00  0:00:00   16
+!  414 solution is converged
+M17 audit: t=0.48 s, solid sensible=0.270515 J, latent=0 J, fluid=2.04432 J, inletH=1.84717 W, outletH=1.48727e-14 W, nativeIn=6.31666e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.31478 J, liquid_Vf=0, solid Tmax=300.12 K
+Flow time = 0.48s, time step = 96
+4 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   414  1.0587e-08  2.8960e-05  6.0282e-07  3.2541e-07  6.0361e-11  2.4965e-04  0.0000e+00  0:00:01   20
+   415  2.8655e-08  5.2448e-04  1.9683e-05  9.2106e-06  1.6119e-06  2.9329e-02  0.0000e+00  0:00:01   19
+   416  1.4685e-08  1.7164e-04  5.9787e-06  2.6775e-06  3.4030e-09  6.0920e-03  0.0000e+00  0:00:01   18
+   417  1.2158e-08  6.2378e-05  1.8836e-06  9.5081e-07  3.0180e-10  1.2349e-03  0.0000e+00  0:00:00   17
+   418  1.0140e-08  2.8804e-05  5.9556e-07  3.1979e-07  5.8950e-11  2.4905e-04  0.0000e+00  0:00:00   16
+!  418 solution is converged
+M17 audit: t=0.485 s, solid sensible=0.273533 J, latent=0 J, fluid=2.0539 J, inletH=1.84937 W, outletH=1.55139e-14 W, nativeIn=6.3094e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.32738 J, liquid_Vf=0, solid Tmax=300.121 K
+Flow time = 0.485s, time step = 97
+3 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   418  1.0140e-08  2.8804e-05  5.9556e-07  3.1979e-07  5.8950e-11  2.4905e-04  0.0000e+00  0:00:01   20
+   419  2.8273e-08  5.1958e-04  1.9508e-05  9.1225e-06  1.6101e-06  2.9232e-02  0.0000e+00  0:00:01   19
+   420  1.4587e-08  1.7006e-04  5.9238e-06  2.6516e-06  3.3811e-09  6.0735e-03  0.0000e+00  0:00:01   18
+   421  1.1664e-08  6.1883e-05  1.8636e-06  9.3658e-07  2.9369e-10  1.2316e-03  0.0000e+00  0:00:00   17
+   422  9.7099e-09  2.8648e-05  5.8837e-07  3.1414e-07  5.7593e-11  2.4847e-04  0.0000e+00  0:00:00   16
+!  422 solution is converged
+M17 audit: t=0.49 s, solid sensible=0.276558 J, latent=0 J, fluid=2.06346 J, inletH=1.85155 W, outletH=1.62045e-14 W, nativeIn=6.30236e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.33996 J, liquid_Vf=0, solid Tmax=300.122 K
+Flow time = 0.49s, time step = 98
+2 more time steps
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   422  9.7099e-09  2.8648e-05  5.8837e-07  3.1414e-07  5.7593e-11  2.4847e-04  0.0000e+00  0:00:01   20
+   423  2.7895e-08  5.1469e-04  1.9333e-05  9.0291e-06  1.6083e-06  2.9138e-02  0.0000e+00  0:00:01   19
+   424  1.4487e-08  1.6849e-04  5.8687e-06  2.6241e-06  3.3585e-09  6.0555e-03  0.0000e+00  0:00:01   18
+   425  1.1286e-08  6.1389e-05  1.8437e-06  9.2211e-07  2.8573e-10  1.2284e-03  0.0000e+00  0:00:00   17
+   426  9.1923e-09  2.8493e-05  5.8118e-07  3.0846e-07  5.6260e-11  2.4791e-04  0.0000e+00  0:00:00   16
+!  426 solution is converged
+M17 audit: t=0.495 s, solid sensible=0.279589 J, latent=0 J, fluid=2.073 J, inletH=1.85368 W, outletH=1.68905e-14 W, nativeIn=6.29553e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.35253 J, liquid_Vf=0, solid Tmax=300.122 K
+Flow time = 0.495s, time step = 99
+1 more time step
+
+Updating solution at time level N...
+ done.
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
+   426  9.1923e-09  2.8493e-05  5.8118e-07  3.0846e-07  5.6260e-11  2.4791e-04  0.0000e+00  0:00:01   20
+   427  2.7510e-08  5.0980e-04  1.9158e-05  8.9307e-06  1.6065e-06  2.9048e-02  0.0000e+00  0:00:01   19
+   428  1.4381e-08  1.6693e-04  5.8135e-06  2.5953e-06  3.3352e-09  6.0382e-03  0.0000e+00  0:00:01   18
+   429  1.0917e-08  6.0897e-05  1.8238e-06  9.0743e-07  2.7795e-10  1.2253e-03  0.0000e+00  0:00:00   17
+   430  8.7881e-09  2.8339e-05  5.7413e-07  3.0276e-07  5.4938e-11  2.4737e-04  0.0000e+00  0:00:00   16
+!  430 solution is converged
+M17 audit: t=0.5 s, solid sensible=0.282626 J, latent=0 J, fluid=2.08251 J, inletH=1.85579 W, outletH=1.76668e-14 W, nativeIn=6.28891e-05 W, nativeOut=-1.14041e-07 W, nativeResidual=2.36508 J, liquid_Vf=0, solid Tmax=300.123 K
+Flow time = 0.5s, time step = 100
+
+> /file/write-case "m17_base_dt0005.cas.h5"
+Writing to DESKTOP-5FQBFCG:"C:\Users\admin\m17_demo\m17_base_dt0005.cas.h5" in NODE0 mode and compression level 1 ...
+Grouping cells for Laplace smoothing ...
+         228 cells,     2 zones ...
+         962 faces,    16 zones ...
+         480 nodes,     1 zone  ...
+  Done.
+Done.
+
+
+> /file/write-data "m17_base_dt0005.dat.h5"
+Additional data file quantities are not supported when writing in the default CFF format (.dat.h5 files).
+
+
+Writing to DESKTOP-5FQBFCG:"C:\Users\admin\m17_demo\m17_base_dt0005.dat.h5" in NODE0 mode and compression level 1 ...
+  Writing results.
+Done.
+
+
+> /exit Transcript Stop Time:  19:29:13, 16 Oct 2026 中国标准时间 
+Total Transcript Time: 0 Minute 43 Second.

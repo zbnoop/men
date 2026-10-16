@@ -1,0 +1,395 @@
+Transcript Start Time:  19:14:22, 16 Oct 2026 中国标准时间 
+Current Directory: "C:\Users\admin\m17_demo"
+
+Build Time: Feb  2 2026 16:32:00 EST  Build Id: 10262 
+Executable Path: C:/PROGRA~1/ANSYSI~1/v261/fluent/ntbin/win64/fluent.exe
+
+----------------------------------------------------------------------------------------
+ID    Hostname         Core   O.S.         PID    CPU Model Name                       
+----------------------------------------------------------------------------------------
+n0*   DESKTOP-5FQBFCG  1/104  Windows-x64  41660  Intel(R) Xeon(R) Platinum 8269CY     
+host  DESKTOP-5FQBFCG         Windows-x64  44292  Intel(R) Xeon(R) Platinum 8269CY     
+
+MPI Option Selected: intel
+Selected system interconnect: default
+----------------------------------------------------------------------------------------
+
+Cortex Process ID: 22148 
+License Server Path: 1055@localhost 
+
+
+> /file/read-case "C:/Users/admin/m16_demo/m16_msh_stage/m16_base.msh"
+Reading "C:/Users/admin/m16_demo/m16_msh_stage/m16_base.msh"...
+
+Buffering for file scan...
+
+      72 nodes, binary.
+     408 nodes, binary.
+     122 quadrilateral wall faces, zone  1, binary.
+     206 quadrilateral wall faces, zone  2, binary.
+     148 quadrilateral interior faces, zone  3, binary.
+     334 quadrilateral interior faces, zone  4, binary.
+      38 quadrilateral interface faces, zone  9, binary.
+      38 quadrilateral interface faces, zone 10, binary.
+      76 hexahedral cells, zone  5, binary.
+     152 hexahedral cells, zone  6, binary.
+
+
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+     zones,
+	____-trg
+	____-src
+	m16_two_region_v2_fluiddomain
+	m16_two_region_v2_soliddomain
+	interior-m16_two_region_v2_fluiddomain
+	interior-m16_two_region_v2_soliddomain
+	wall-m16_two_region_v2_fluiddomain
+	wall-m16_two_region_v2_soliddomain
+	interior-8
+	wall-11
+	wall-12
+     mesh interfaces,
+Note: Slitting sliding interface zone 8 into a coupled wall with shadow zone 13.
+
+        creating wall-8-shadow
+     parallel,
+
+Info: At least one many-to-many mesh interface is found in the case file. Such mesh interfaces will not be available in a future release of Fluent. It is recommended to convert to the current default one-to-one mesh interfaces with the following text command:
+/define/mesh-interfaces/one-to-one-pairing? yes
+
+Done.
+
+
+> /define/models/energy yes
+Compute viscous energy work? [no] no
+Include pressure work in energy equation? [no] no
+Include kinetic energy in energy equation? [no] no
+Include diffusion at inlets? [yes] yes
+
+> /define/user-defined/compiled-functions
+
+load/unload/compile? [load]> load
+UDF Library Name ["libudf"] m17_demo_lib
+
+DESKTOP-5FQBFCG: Opening library "C:\\Users\\admin\\m17_demo\\m17_demo_lib"...
+Done.
+
+DESKTOP-5FQBFCG: Opening library "C:\\Users\\admin\\m17_demo\\m17_demo_lib"...
+	m17_equivalent_cp
+	m17_thermal_conductivity
+	m17_gas_solid_energy_audit
+Done.
+
+> /define/boundary-conditions/modify-zones/sep-face-zone-angle
+face zone id/name [] 1
+significant angle (in [deg]) [90.00000010284] 5
+move faces? [yes] yes
+
+WARNING: Existing grid interfaces may be adversely affected by separation
+What would you like to do?
+(a) cancel separation
+(b) proceed at your own risk
+(c) proceed after mesh manipulation
+options: (a b c)
+enter your choice [c] c
+
+grid interfaces: (delete-all keep-all)
+enter choice [delete-all] keep-all
+
+ 38 faces in contiguous region 0
+ 38 faces in contiguous region 1
+ 4 faces in contiguous region 2
+ 38 faces in contiguous region 3
+ 4 faces in contiguous region 4
+ Separates zone 1 into 5 zone(s).
+Updating new zone information...
+  created new zone wall-m16_two_region_v2_soliddomain.1 from wall-m16_two_region_v2_soliddomain
+  created new zone wall-m16_two_region_v2_soliddomain.2 from wall-m16_two_region_v2_soliddomain
+  created new zone wall-m16_two_region_v2_soliddomain.3 from wall-m16_two_region_v2_soliddomain
+  created new zone wall-m16_two_region_v2_soliddomain.4 from wall-m16_two_region_v2_soliddomain
+done.
+
+> /define/boundary-conditions/modify-zones/sep-face-zone-angle
+face zone id/name [] 2
+significant angle (in [deg]) [90.00000010284] 5
+move faces? [yes] yes
+
+WARNING: Existing grid interfaces may be adversely affected by separation
+What would you like to do?
+(a) cancel separation
+(b) proceed at your own risk
+(c) proceed after mesh manipulation
+options: (a b c)
+enter your choice [c] c
+
+grid interfaces: (delete-all keep-all)
+enter choice [delete-all] keep-all
+
+ 76 faces in contiguous region 0
+ 76 faces in contiguous region 1
+ 38 faces in contiguous region 2
+ 8 faces in contiguous region 3
+ 8 faces in contiguous region 4
+ Separates zone 2 into 5 zone(s).
+Updating new zone information...
+  created new zone wall-m16_two_region_v2_fluiddomain.1 from wall-m16_two_region_v2_fluiddomain
+  created new zone wall-m16_two_region_v2_fluiddomain.2 from wall-m16_two_region_v2_fluiddomain
+  created new zone wall-m16_two_region_v2_fluiddomain.3 from wall-m16_two_region_v2_fluiddomain
+  created new zone wall-m16_two_region_v2_fluiddomain.4 from wall-m16_two_region_v2_fluiddomain
+done.
+
+> /define/boundary-conditions/modify-zones/zone-name
+zone id/name [] 5
+Zone name ["m16_two_region_v2_soliddomain"] solid_zone
+
+> /define/boundary-conditions/modify-zones/zone-name
+zone id/name [] 6
+Zone name ["m16_two_region_v2_fluiddomain"] fluid_zone
+
+> /define/boundary-conditions/modify-zones/zone-name
+zone id/name [] 1
+Zone name ["wall-m16_two_region_v2_soliddomain"] solid_hot_bottom
+
+> /define/boundary-conditions/modify-zones/zone-name
+zone id/name [] 17
+Zone name ["wall-m16_two_region_v2_soliddomain.1"] solid_inlet_side
+
+> /define/boundary-conditions/modify-zones/zone-name
+zone id/name [] 16
+Zone name ["wall-m16_two_region_v2_soliddomain.2"] solid_front_side
+
+> /define/boundary-conditions/modify-zones/zone-name
+zone id/name [] 15
+Zone name ["wall-m16_two_region_v2_soliddomain.3"] solid_outlet_side
+
+> /define/boundary-conditions/modify-zones/zone-name
+zone id/name [] 14
+Zone name ["wall-m16_two_region_v2_soliddomain.4"] solid_back_side
+
+> /define/boundary-conditions/modify-zones/zone-name
+zone id/name [] 21
+Zone name ["wall-m16_two_region_v2_fluiddomain.1"] fluid_inlet
+
+> /define/boundary-conditions/modify-zones/zone-name
+zone id/name [] 20
+Zone name ["wall-m16_two_region_v2_fluiddomain.2"] fluid_outlet
+
+> /define/boundary-conditions/modify-zones/zone-name
+zone id/name [] 19
+Zone name ["wall-m16_two_region_v2_fluiddomain.3"] fluid_top
+
+> /define/boundary-conditions/modify-zones/zone-name
+zone id/name [] 18
+Zone name ["wall-m16_two_region_v2_fluiddomain.4"] fluid_front_side
+
+> /define/boundary-conditions/modify-zones/zone-name
+zone id/name [] 2
+Zone name ["wall-m16_two_region_v2_fluiddomain"] fluid_back_side
+
+> /define/boundary-conditions/modify-zones/zone-name
+zone id/name [] 8
+Zone name ["wall-8"] coupled_wall_solid
+
+> /define/boundary-conditions/modify-zones/zone-name
+zone id/name [] 13
+Zone name ["wall-8-shadow"] coupled_wall_fluid
+
+> /define/boundary-conditions/zone-type
+zone id/name/list [] fluid_inlet
+
+external-type> velocity-inlet
+
+> /define/boundary-conditions/velocity-inlet
+(fluid_inlet)
+zone id/name [fluid_inlet] fluid_inlet
+Velocity Specification Method: Magnitude and Direction [no] 
+Velocity Specification Method: Components [no] 
+Velocity Specification Method: Magnitude, Normal to Boundary [yes] 
+Reference Frame: Absolute [yes] 
+Use Profile for Velocity Magnitude? [no] 
+Velocity Magnitude (constant or expression) (in [m/s]) [0] 0.01
+Use Profile for Supersonic/Initial Gauge Pressure? [no] 
+Supersonic/Initial Gauge Pressure (constant or expression) (in [Pa]) [0] 
+Use Profile for Temperature? [no] 
+Temperature (constant or expression) (in [K]) [300] 1200
+Turbulence Specification Method: K and Omega [no] 
+Turbulence Specification Method: Intensity and Length Scale [no] 
+Turbulence Specification Method: Intensity and Viscosity Ratio [yes] 
+Turbulent Intensity (constant or expression) (in [% for constant or fraction for expression]) [5] 
+Turbulent Viscosity Ratio (constant or expression) [10] 
+
+> /define/boundary-conditions/zone-type
+zone id/name/list [] fluid_outlet
+
+external-type> pressure-outlet
+
+> /define/boundary-conditions/pressure-outlet
+(fluid_outlet)
+zone id/name [fluid_outlet] fluid_outlet
+Backflow Reference Frame: Absolute [yes] 
+Use Profile for Gauge Pressure? [no] 
+Gauge Pressure (constant or expression) (in [Pa]) [0] 
+Use Profile for Backflow Total Temperature? [no] 
+Backflow Total Temperature (constant or expression) (in [K]) [300] 
+Backflow Direction Specification Method: Direction Vector [no] 
+Backflow Direction Specification Method: Normal to Boundary [yes] 
+Turbulence Specification Method: K and Omega [no] 
+Turbulence Specification Method: Intensity and Length Scale [no] 
+Turbulence Specification Method: Intensity and Viscosity Ratio [yes] 
+Backflow Turbulent Intensity (constant or expression) (in [% for constant or fraction for expression]) [5] 5
+Backflow Turbulent Viscosity Ratio (constant or expression) [10] 10
+Backflow Pressure Specification: Total Pressure [yes] yes
+Radial Equilibrium Pressure Distribution [no] no
+Average Pressure Specification? [no] no
+Specify targeted mass flow rate [no] no
+
+> /define/materials/change-create
+
+material-name> aluminum
+material name [aluminum] 
+aluminum is a solid
+change Density? [no] yes
+
+Density
+methods: (constant expression user-defined)
+new method [constant] 
+value (in [kg/m^3]) [2719] 2700
+
+change Cp (Specific Heat)? [no] yes
+
+Cp (Specific Heat)
+methods: (constant piecewise-linear piecewise-polynomial polynomial nasa-9-piecewise-polynomial user-defined)
+new method [constant] user-defined
+user-defined functions: ("m17_equivalent_cp::m17_demo_lib")
+new function ["m17_equivalent_cp::m17_demo_lib"] 
+
+change Thermal Conductivity? [no] yes
+
+Thermal Conductivity
+methods: (constant piecewise-linear piecewise-polynomial polynomial expression cyl-orthotropic orthotropic anisotropic biaxial principal-axes-values user-defined-anisotropic-k user-defined)
+new method [constant] user-defined
+user-defined functions: ("m17_thermal_conductivity::m17_demo_lib")
+new function ["m17_thermal_conductivity::m17_demo_lib"] 
+
+
+> 
+adjoint/                parallel/               server/
+define/                 parametric-study/       solve/
+display/                plot/                   surface/
+exit                    preferences/            turbo-setup/
+file/                   print-license-usage     views/
+mesh/                   report/
+
+> /define/boundary-conditions/wall
+(fluid_front_side fluid_top solid_back_side solid_outlet_side solid_front_side solid_inlet_side coupled_wall_fluid coupled_wall_solid wall-12 wall-11 solid_hot_bottom fluid_back_side)
+zone id/name [fluid_front_side] solid_hot_bottom
+Use Profile for Wall Thickness? [no] 
+Wall Thickness (constant or expression) (in [m]) [0] 
+Use Profile for Heat Generation Rate? [no] 
+Heat Generation Rate (constant or expression) (in [W/m^3]) [0] 
+material-name [aluminum]: Change current value? [no] 
+Thermal BC Type [heat-flux]: Change current value? [no] yes
+
+Thermal BC Type [heat-flux]> heat-flux
+Use Profile for Heat Flux? [no] no
+Heat Flux (constant or expression) (in [W/m^2]) [0] 0
+Enable shell conduction? [no] 
+Use Profile for Convective Augmentation Factor? [no] 
+Convective Augmentation Factor (constant or expression) [1] 
+
+> /define/boundary-conditions/wall
+(fluid_front_side fluid_top solid_back_side solid_outlet_side solid_front_side solid_inlet_side coupled_wall_fluid coupled_wall_solid wall-12 wall-11 solid_hot_bottom fluid_back_side)
+zone id/name [fluid_front_side] solid_inlet_side
+Use Profile for Wall Thickness? [no] 
+Wall Thickness (constant or expression) (in [m]) [0] 
+Use Profile for Heat Generation Rate? [no] 
+Heat Generation Rate (constant or expression) (in [W/m^3]) [0] 
+material-name [aluminum]: Change current value? [no] 
+Thermal BC Type [heat-flux]: Change current value? [no] yes
+
+Thermal BC Type [heat-flux]> heat-flux
+Use Profile for Heat Flux? [no] no
+Heat Flux (constant or expression) (in [W/m^2]) [0] 0
+Enable shell conduction? [no] 
+Use Profile for Convective Augmentation Factor? [no] 
+Convective Augmentation Factor (constant or expression) [1] 
+
+> /define/boundary-conditions/wall
+(fluid_front_side fluid_top solid_back_side solid_outlet_side solid_front_side solid_inlet_side coupled_wall_fluid coupled_wall_solid wall-12 wall-11 solid_hot_bottom fluid_back_side)
+zone id/name [fluid_front_side] solid_front_side
+Use Profile for Wall Thickness? [no] 
+Wall Thickness (constant or expression) (in [m]) [0] 
+Use Profile for Heat Generation Rate? [no] 
+Heat Generation Rate (constant or expression) (in [W/m^3]) [0] 
+material-name [aluminum]: Change current value? [no] 
+Thermal BC Type [heat-flux]: Change current value? [no] yes
+
+Thermal BC Type [heat-flux]> heat-flux
+Use Profile for Heat Flux? [no] no
+Heat Flux (constant or expression) (in [W/m^2]) [0] 0
+Enable shell conduction? [no] 
+Use Profile for Convective Augmentation Factor? [no] 
+Convective Augmentation Factor (constant or expression) [1] 
+
+> /define/boundary-conditions/wall
+(fluid_front_side fluid_top solid_back_side solid_outlet_side solid_front_side solid_inlet_side coupled_wall_fluid coupled_wall_solid wall-12 wall-11 solid_hot_bottom fluid_back_side)
+zone id/name [fluid_front_side] solid_outlet_side
+Use Profile for Wall Thickness? [no] 
+Wall Thickness (constant or expression) (in [m]) [0] 
+Use Profile for Heat Generation Rate? [no] 
+Heat Generation Rate (constant or expression) (in [W/m^3]) [0] 
+material-name [aluminum]: Change current value? [no] 
+Thermal BC Type [heat-flux]: Change current value? [no] yes
+
+Thermal BC Type [heat-flux]> heat-flux
+Use Profile for Heat Flux? [no] no
+Heat Flux (constant or expression) (in [W/m^2]) [0] 0
+Enable shell conduction? [no] 
+Use Profile for Convective Augmentation Factor? [no] 
+Convective Augmentation Factor (constant or expression) [1] 
+
+> /define/boundary-conditions/wall
+(fluid_front_side fluid_top solid_back_side solid_outlet_side solid_front_side solid_inlet_side coupled_wall_fluid coupled_wall_solid wall-12 wall-11 solid_hot_bottom fluid_back_side)
+zone id/name [fluid_front_side] solid_back_side
+Use Profile for Wall Thickness? [no] 
+Wall Thickness (constant or expression) (in [m]) [0] 
+Use Profile for Heat Generation Rate? [no] 
+Heat Generation Rate (constant or expression) (in [W/m^3]) [0] 
+material-name [aluminum]: Change current value? [no] 
+Thermal BC Type [heat-flux]: Change current value? [no] yes
+
+Thermal BC Type [heat-flux]> heat-flux
+Use Profile for Heat Flux? [no] no
+Heat Flux (constant or expression) (in [W/m^2]) [0] 0
+Enable shell conduction? [no] 
+Use Profile for Convective Augmentation Factor? [no] 
+Convective Augmentation Factor (constant or expression) [1] 
+
+> /define/user-defined/function-hooks execute-at-end
+Enter Execute at End 1 from list: ("m17_gas_solid_energy_audit::m17_demo_lib" "")
+Execute at End [""] m17_gas_solid_energy_audit::m17_demo_lib
+Enter Execute at End 2 from list: ("m17_gas_solid_energy_audit::m17_demo_lib" "")
+Execute at End [""] 
+
+> /define/models/unsteady-1st-order? yes
+Pressure-Velocity Coupling scheme is set to SIMPLE
+
+> /file/write-case "C:/Users/admin/m17_demo/m17_setup.cas.h5"Fast-loading "C:\PROGRA~1\ANSYSI~1\v261\fluent\fluent26.1.0\\addons\afd\lib\hdfio.bin"
+Done.
+
+Writing to DESKTOP-5FQBFCG:"C:/Users/admin/m17_demo/m17_setup.cas.h5" in NODE0 mode and compression level 1 ...
+Grouping cells for Laplace smoothing ...
+         228 cells,     2 zones ...
+         962 faces,    16 zones ...
+         480 nodes,     1 zone  ...
+  Done.
+Done.
+
+
+> /exit Transcript Stop Time:  19:14:39, 16 Oct 2026 中国标准时间 
+Total Transcript Time: 0 Minute 16 Second.
