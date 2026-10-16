@@ -1,0 +1,7 @@
+/file/start-transcript "m15_transient_probe2.trn"
+/file/read-case "m15_init_probe.cas.h5"
+/define/user-defined/compiled-functions
+load
+m15_retry_lib
+/define/models/unsteady-1st-order? yes
+/solve/set/transient-controls/fixed-user-specified

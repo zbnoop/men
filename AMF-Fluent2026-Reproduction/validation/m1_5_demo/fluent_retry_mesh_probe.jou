@@ -1,0 +1,6 @@
+/file/start-transcript "m15_fluent_retry_mesh_probe_2.trn"
+/file/cff-files? no
+/file/read-case "C:/Users/admin/m15_retry_demo/FFF.msh"
+/mesh/check
+/file/write-case "m15_retry_mesh_loaded.cas.h5"
+/exit yes

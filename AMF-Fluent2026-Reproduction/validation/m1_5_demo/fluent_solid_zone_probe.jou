@@ -1,0 +1,13 @@
+/file/start-transcript "m15_solid_zone_probe.trn"
+/file/cff-files? no
+/file/read-case "C:/Users/admin/m15_retry_demo/FFF.msh"
+/mesh/scale 1000 1000
+/define/models/energy yes
+no
+no
+no
+yes
+/define/boundary-conditions/zone-type
+2
+solid
+/define/boundary-conditions/solid

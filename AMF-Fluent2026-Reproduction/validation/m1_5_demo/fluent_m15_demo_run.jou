@@ -1,0 +1,82 @@
+/file/start-transcript "m15_fluent_demo_run2.trn"
+/file/cff-files? no
+/file/read-case "C:/Users/admin/m15_retry_demo/FFF.msh"
+/mesh/scale 1000 1000
+/define/models/energy yes
+no
+no
+no
+yes
+/define/user-defined/compiled-functions
+load
+m15_demo_lib
+/define/materials/change-create
+aluminum
+
+yes
+
+2700
+yes
+user-defined
+
+yes
+user-defined
+
+/define/boundary-conditions/zone-type
+2
+solid
+/define/boundary-conditions/solid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/define/boundary-conditions/wall
+5
+
+
+
+
+
+yes
+heat-flux
+yes
+yes
+
+
+
+
+
+
+
+
+
+
+
+/define/user-defined/function-hooks execute-at-end
+m15_energy_audit::m15_demo_lib
+
+/define/models/unsteady-1st-order? yes
+/solve/set/transient-controls/fixed-user-specified
+yes
+/solve/set/transient-controls/time-step-size
+0.2
+/solve/set/transient-controls/number-of-time-steps
+350
+/solve/set/transient-controls/max-iterations-per-time-step
+10
+/solve/initialize/initialize-flow
+/solve/dual-time-iterate
+350
+10
+/file/write-case-data "m15_fluent_demo_final2.cas.h5"
+/exit yes

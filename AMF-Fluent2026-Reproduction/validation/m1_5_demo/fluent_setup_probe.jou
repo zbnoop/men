@@ -1,0 +1,11 @@
+/file/start-transcript "m15_fluent_setup_probe_3.trn"
+/file/cff-files? no
+/file/read-case "C:/Users/admin/m15_retry_demo/FFF.msh"
+/mesh/scale 1000 1000
+/define/models/energy yes
+no
+no
+no
+yes
+/define/materials/list-materials
+/define/boundary-conditions/solid

@@ -1,0 +1,6 @@
+/file/start-transcript "m15_gmsh_mesh_probe.trn"
+/file/cff-files? no
+/file/read-case "C:/Users/admin/m15_retry_demo/gmsh.msh"
+/mesh/check
+/file/write-case "m15_gmsh_mesh_loaded.cas.h5"
+/exit yes

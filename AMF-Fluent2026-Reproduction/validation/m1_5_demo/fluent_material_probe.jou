@@ -1,0 +1,14 @@
+/file/start-transcript "m15_material_probe.trn"
+/file/cff-files? no
+/file/read-case "C:/Users/admin/m15_retry_demo/FFF.msh"
+/mesh/scale 1000 1000
+/define/models/energy yes
+no
+no
+no
+yes
+/define/user-defined/compiled-functions
+load
+m15_retry_lib
+/define/materials/change-create
+aluminum

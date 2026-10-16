@@ -1,0 +1,7 @@
+/file/start-transcript "m15_fluent_scale_probe_2.trn"
+/file/cff-files? no
+/file/read-case "C:/Users/admin/m15_retry_demo/FFF.msh"
+/mesh/scale 1000 1000
+/mesh/check
+/file/write-case "m15_retry_scaled.cas.h5"
+/exit yes

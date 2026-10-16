@@ -1,0 +1,6 @@
+/file/start-transcript "m15_transient_probe.trn"
+/file/read-case "m15_init_probe.cas.h5"
+/define/user-defined/compiled-functions
+load
+m15_retry_lib
+/solve/set/transient-controls/fixed-user-specified

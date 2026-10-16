@@ -1,5 +1,10 @@
 m15_lib/
 m15_batch_lib/
+m15_demo_lib/
+m15_retry_lib*/
+workbench_retry/
+fluent_hook_probe2.jou
+fluent_wall_profile_probe.jou
 *.trn
 *.log
 cleanup-fluent-*.bat

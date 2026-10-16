@@ -1,0 +1,8 @@
+/file/start-transcript "m15_split_wall_probe.trn"
+/file/cff-files? no
+/file/read-case "C:/Users/admin/m15_retry_demo/FFF.msh"
+/mesh/scale 1000 1000
+/boundary/separate/sep-face-zone-by-angle 5 89
+/boundary/manage/list
+/file/write-case "m15_split_wall.cas.h5"
+/exit yes

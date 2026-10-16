@@ -20,6 +20,8 @@
 #define M15_K_LIQUID 62.8
 #define M15_RHO 2700.0
 #define M15_INITIAL_T 300.0
+#define M15_DEMO_HEAT_FLUX 5.0e6
+#define M15_HOT_X_TOL 1.0e-8
 
 static real m15_cp_value(real T)
 {
@@ -67,65 +69,106 @@ DEFINE_PROPERTY(m15_thermal_conductivity, c, t)
 }
 
 /*
+ * The Workbench retry mesh exports the rectangle as one wall zone.  This
+ * DEMO-only profile therefore supplies heat only on the x=0 face and zero
+ * heat flux on the other three faces, preserving a one-dimensional slab
+ * problem without changing the production geometry or UDF.
+ */
+DEFINE_PROFILE(m15_demo_wall_heat_flux, t, i)
+{
+    face_t f;
+    begin_f_loop(f, t)
+    {
+        real xyz[ND_ND];
+        F_CENTROID(xyz, f, t);
+        F_PROFILE(f, t, i) = (xyz[0] <= M15_HOT_X_TOL)
+                           ? M15_DEMO_HEAT_FLUX : 0.0;
+    }
+    end_f_loop(f, t)
+}
+
+/*
  * Host-side CSV audit. The cell and face sums are formed on compute nodes and
  * reduced with Fluent's parallel-safe reductions. The hot-wall sign is
  * defined here as positive heat entering the solid domain.
  */
 DEFINE_EXECUTE_AT_END(m15_energy_audit)
 {
-    Domain *domain = Get_Domain(1);
+    /* Fluent 2026 can call execute-at-end once at t=0 before cell data are
+     * initialized.  Do not touch cell/face fields during that callback. */
+    if (CURRENT_TIME <= 0.0) return;
+
+    Domain *domain = NULL;
     Thread *t;
-    cell_t c;
     face_t f;
     real volume = 0.0;
     real delta_h = 0.0;
+    real latent_energy = 0.0;
     real liquid_volume = 0.0;
     real t_min = 1.0e30;
     real t_max = -1.0e30;
     real hot_q_in = 0.0;
+    Thread *probe_t;
+    cell_t probe_c;
     static real cumulative_q_in = 0.0;
     static real previous_time = 0.0;
 
-#if RP_NODE
-    thread_loop_c(t, domain)
+#if !RP_HOST
+    domain = Get_Domain(1);
+    thread_loop_c(probe_t, domain)
     {
-        begin_c_loop(c, t)
+        begin_c_loop(probe_c, probe_t)
         {
-            const real temp = C_T(c, t);
-            const real cell_volume = C_VOLUME(c, t);
-            real rho = C_R(c, t);
+            const real temp = C_T(probe_c, probe_t);
+            const real cell_volume = C_VOLUME(probe_c, probe_t);
+            real rho = C_R(probe_c, probe_t);
             if (rho <= 0.0) rho = M15_RHO;
             volume += cell_volume;
             delta_h += rho * cell_volume
                      * (m15_integrated_h(temp) - m15_integrated_h(M15_INITIAL_T));
+            latent_energy += rho * cell_volume * M15_LATENT_HEAT
+                           * m15_fraction(temp);
             liquid_volume += cell_volume * m15_fraction(temp);
             if (temp < t_min) t_min = temp;
             if (temp > t_max) t_max = temp;
         }
-        end_c_loop(c, t)
+        end_c_loop(probe_c, probe_t)
     }
 
     thread_loop_f(t, domain)
     {
-        if (THREAD_NAME(t) != NULL && strcmp(THREAD_NAME(t), "hot_wall") == 0)
+        if (BOUNDARY_FACE_THREAD_P(t) && THREAD_TYPE(t) == THREAD_F_WALL)
         {
             begin_f_loop(f, t)
             {
                 real area[ND_ND];
                 F_AREA(area, f, t);
-                hot_q_in += -WALL_HEAT_FLUX(f, t) * NV_MAG(area);
+                real xyz[ND_ND];
+                F_CENTROID(xyz, f, t);
+                if (xyz[0] <= M15_HOT_X_TOL)
+                    hot_q_in += M15_DEMO_HEAT_FLUX * NV_MAG(area);
             }
             end_f_loop(f, t)
         }
     }
+
 #endif
 
+#if !RP_HOST
     volume = PRF_GRSUM1(volume);
     delta_h = PRF_GRSUM1(delta_h);
+    latent_energy = PRF_GRSUM1(latent_energy);
     liquid_volume = PRF_GRSUM1(liquid_volume);
     hot_q_in = PRF_GRSUM1(hot_q_in);
     t_min = PRF_GRLOW1(t_min);
     t_max = PRF_GRHIGH1(t_max);
+#endif
+
+    /* Global reductions complete on compute nodes; explicitly send the
+     * audit ledger to the host before writing the CSV and Message output. */
+    node_to_host_real_4(volume, delta_h, liquid_volume, hot_q_in);
+    node_to_host_real_1(latent_energy);
+    node_to_host_real_2(t_min, t_max);
 
 #if RP_HOST
     if (CURRENT_TIME > previous_time)
@@ -137,10 +180,10 @@ DEFINE_EXECUTE_AT_END(m15_energy_audit)
         if (fp != NULL)
         {
             if (CURRENT_TIME <= CURRENT_TIMESTEP)
-                fprintf(fp, "time_s,volume_m3,delta_enthalpy_J,hot_q_in_W,cumulative_hot_input_J,energy_residual_J,liquid_volume_fraction,Tmin_K,Tmax_K\n");
-            fprintf(fp, "%.12g,%.12g,%.12g,%.12g,%.12g,%.12g,%.12g,%.12g,%.12g\n",
-                    CURRENT_TIME, volume, delta_h, hot_q_in, cumulative_q_in,
-                    delta_h - cumulative_q_in,
+                fprintf(fp, "time_s,volume_m3,delta_enthalpy_J,latent_energy_J,hot_q_in_W,cumulative_hot_input_J,energy_residual_J,liquid_volume_fraction,Tmin_K,Tmax_K\n");
+            fprintf(fp, "%.12g,%.12g,%.12g,%.12g,%.12g,%.12g,%.12g,%.12g,%.12g,%.12g\n",
+                    CURRENT_TIME, volume, delta_h, latent_energy, hot_q_in,
+                    cumulative_q_in, delta_h - cumulative_q_in,
                     (volume > 0.0) ? liquid_volume / volume : 0.0,
                     t_min, t_max);
             fclose(fp);

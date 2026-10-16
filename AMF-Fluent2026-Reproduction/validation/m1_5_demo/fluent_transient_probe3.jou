@@ -1,0 +1,18 @@
+/file/start-transcript "m15_transient_probe3.trn"
+/file/read-case "m15_init_probe.cas.h5"
+/define/user-defined/compiled-functions
+load
+m15_retry_lib
+/define/models/unsteady-1st-order? yes
+/solve/set/transient-controls/fixed-user-specified
+yes
+/solve/set/transient-controls/time-step-size
+0.2
+/solve/set/transient-controls/number-of-time-steps
+5
+/solve/set/transient-controls/max-iterations-per-time-step
+10
+/solve/dual-time-iterate
+5
+10
+/exit yes

@@ -1,0 +1,70 @@
+/file/start-transcript "m15_init_probe_retry2.trn"
+/file/cff-files? no
+/file/read-case "C:/Users/admin/m15_retry_demo/FFF.msh"
+/mesh/scale 1000 1000
+/define/models/energy yes
+no
+no
+no
+yes
+/define/user-defined/compiled-functions
+load
+m15_retry_lib
+/define/materials/change-create
+aluminum
+
+yes
+
+2700
+yes
+user-defined
+
+yes
+user-defined
+
+/define/boundary-conditions/zone-type
+2
+solid
+/define/boundary-conditions/solid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/define/boundary-conditions/wall
+5
+
+
+
+
+
+yes
+heat-flux
+yes
+yes
+
+
+
+
+
+
+
+
+
+
+
+/define/user-defined/function-hooks execute-at-end
+m15_energy_audit::m15_retry_lib
+
+/solve/initialize/initialize-flow
+/file/write-case "m15_init_probe.cas.h5"
+/exit yes

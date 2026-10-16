@@ -9,3 +9,6 @@
 # OS and Obsidian trash files
 .DS_Store
 .trash/
+
+# Local build output from the repository's offline material tests
+.build/

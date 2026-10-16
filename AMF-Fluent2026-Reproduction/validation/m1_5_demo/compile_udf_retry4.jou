@@ -1,0 +1,13 @@
+/file/set-tui-version "26.1"
+/file/start-transcript "m15_udf_compile_retry4.trn"
+/define/user-defined/compiled-functions
+compile
+m15_retry_lib4
+yes
+m15_demo_udf.c
+
+
+/define/user-defined/compiled-functions
+load
+m15_retry_lib4
+/exit yes
