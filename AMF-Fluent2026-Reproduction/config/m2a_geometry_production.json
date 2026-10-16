@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "mode": "production",
+  "units": "m",
+  "audit_file": "m2a_geometry_audit.json",
+  "geometry_family": "paper_furnace",
+  "critical_dimensions": {
+    "inner_length": null,
+    "inner_width": null,
+    "inner_height": null,
+    "charge_profile": null,
+    "burner_centers": null,
+    "nozzle_profiles": null,
+    "auxiliary_flue": null
+  },
+  "approved_source_records": [],
+  "output_model": null,
+  "report_path": null
+}

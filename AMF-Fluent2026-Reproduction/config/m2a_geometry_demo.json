@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "mode": "DEMO",
+  "demo_only": true,
+  "units": "m",
+  "geometry_family": "two_boxes",
+  "source": "assumption: standalone topology fixture; NOT paper furnace",
+  "solid_bbox": [
+    0,
+    0,
+    0,
+    0.12,
+    0.015,
+    0.02
+  ],
+  "fluid_bbox": [
+    0,
+    0.015,
+    0,
+    0.12,
+    0.05,
+    0.02
+  ],
+  "tolerance_m": 1e-8,
+  "output_model": null,
+  "report_path": null
+}

@@ -1,0 +1,13 @@
+test_bad_inputs (test_m2a_geometry.GeometryGateTests.test_bad_inputs) ... ok
+test_demo_volume_contact (test_m2a_geometry.GeometryGateTests.test_demo_volume_contact) ... ok
+test_missing_production (test_m2a_geometry.GeometryGateTests.test_missing_production) ... ok
+test_overlap_gap_partial_and_nonfinite (test_m2a_geometry.GeometryGateTests.test_overlap_gap_partial_and_nonfinite) ... ok
+test_package_matches_source (test_m2a_geometry.GeometryGateTests.test_package_matches_source) ... ok
+test_production_adapter_not_silently_demo (test_m2a_geometry.GeometryGateTests.test_production_adapter_not_silently_demo) ... ok
+test_production_material_gate_preserved (test_m2a_geometry.GeometryGateTests.test_production_material_gate_preserved) ... ok
+test_provenance (test_m2a_geometry.GeometryGateTests.test_provenance) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.006s
+
+OK

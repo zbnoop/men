@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-10-16",
+  "production_approved": false,
+  "policy": "Candidates do not overwrite config/paper_parameters.json or unlock production UDF.",
+  "sources": [
+    {
+      "id": "Qiu2018",
+      "citation": "Qiu L., Feng Y., Chen Z., Li Y., Zhang X. Applied Thermal Engineering 145 (2018) 315–327.",
+      "url": "https://doi.org/10.1016/j.applthermaleng.2018.09.060",
+      "access": "user-owned original PDF fully text-extracted; Fig1 visually checked",
+      "state": "7050, temper/composition unspecified",
+      "location": "p3 eq4/7; p4 §2.3.5",
+      "values": {
+        "k_solid_W_mK": 235,
+        "k_liquid_W_mK": 62.8,
+        "solidus_K": 748,
+        "liquidus_K": 911,
+        "rho_kg_m3": null,
+        "cp_solid_J_kgK": null,
+        "cp_liquid_J_kgK": null,
+        "latent_J_kg": null
+      },
+      "temperature_scope": "phase constants; mushy k interpolated over 748–911 K",
+      "decision": "paper baseline retained; missing cp/rho/L; not externally validated"
+    },
+    {
+      "id": "Ridolfi2020",
+      "citation": "Ridolfi M.R., Folgarait P., Di Schino A. Laser Operating Windows Prediction in Selective Laser-Melting Processing of Metallic Powders: Development and Validation of a Computational Fluid Dynamics-Based Model. Materials 13(6) (2020) 1424.",
+      "url": "https://doi.org/10.3390/ma13061424",
+      "table_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7142783/",
+      "access": "indexed full Table1 retrieved by search; direct PMC captcha and publisher HTTP429; source-chain ref29 not verified",
+      "state": "Al7050 SLM model; temper/lot unspecified, not furnace feed qualification",
+      "location": "Table1 Al7050 column",
+      "values": {
+        "rho_kg_m3": 2810,
+        "solidus_K": 787,
+        "liquidus_K": 906,
+        "cp_J_kgK": [
+          860,
+          1050,
+          1120
+        ],
+        "k_W_mK": [
+          117,
+          156,
+          87
+        ],
+        "temperature_points": [
+          "ambient (numeric T unspecified)",
+          787,
+          906
+        ],
+        "latent_J_m3": 1050000000,
+        "latent_J_kg_derived": 373665.48042704625
+      },
+      "temperature_scope": "three tabulated points only; no extrapolation; latent volumetric-to-mass conversion uses same source rho",
+      "decision": "candidate only; not direct experimental evidence; reject automatic mixing with Qiu endpoints"
+    },
+    {
+      "id": "Lalpoor2010",
+      "citation": "Lalpoor M., Eskin D.G., Katgerman L. Cold Cracking Development in AA7050 Direct Chill–Cast Billets under Various Casting Conditions. Metallurgical and Materials Transactions A 41 (2010) 2425–2434.",
+      "url": "https://doi.org/10.1007/s11661-010-0256-9",
+      "table_url": "https://citeseerx.ist.psu.edu/document?doi=86265fc604bee23e82af6d0786128cfea6d070e0&repid=rep1&type=pdf",
+      "access": "publisher metadata verified; indexed original-paper tables retrieved; direct PDF HTTP403; table images not verified",
+      "state": "AA7050 direct-chill casting; modeled alloy; JMat-Pro liquid-fraction table, not this furnace lot",
+      "location": "printed p2427 Tables IV/V (table IV numbering requires full PDF visual confirmation)",
+      "values": {
+        "T_K": [
+          293,
+          673,
+          773,
+          873,
+          905,
+          973
+        ],
+        "rho_kg_m3": [
+          2825.8,
+          2744.1,
+          2699.8,
+          2629.9,
+          2515,
+          2491.6
+        ],
+        "k_W_mK": [
+          149.4,
+          173,
+          160.9,
+          124.5,
+          80.8,
+          83.2
+        ],
+        "cp_J_kgK": [
+          857,
+          1020,
+          1373,
+          4125,
+          1115,
+          1141
+        ],
+        "latent_J_kg": 376140,
+        "latent_reference_K": 734,
+        "liquid_fraction_zero_K": 733,
+        "liquid_fraction_one_K": 905
+      },
+      "temperature_scope": "selected points 293–973 K, not full table; 773/873 K cp may include phase effects: do NOT add L again",
+      "decision": "provisional candidate requiring full paper/definition audit; 733 versus 734 K retained; no inferred sensible cp in mushy zone"
+    },
+    {
+      "id": "MatWeb7050",
+      "citation": "MatWeb, Aluminum 7050-T7451 (7050-T73651), material GUID 142262cf7fbc4c83917ca5c3d17df1ed. References identify Aluminum Association Standards and Data 2000/2001 and ASM Metals Handbook Vol2, 10th ed (1990).",
+      "url": "https://matweb.com/search/datasheet_print.aspx?matguid=142262cf7fbc4c83917ca5c3d17df1ed",
+      "reference_url": "https://asm.matweb.com/search/GetReference.asp?bassnum=ma7050t745",
+      "access": "indexed datasheet thermal rows and reference page; direct print endpoint HTTP403",
+      "state": "7050-T7451/T73651 wrought; melting range typical composition for >=1/4 inch products",
+      "location": "Thermal Properties",
+      "values": {
+        "cp_J_gC": 0.86,
+        "cp_J_kgK_derived": 860,
+        "k_W_mK": 157,
+        "solidus_C": 488,
+        "liquidus_C": 629.4,
+        "solidus_K_derived": 761.15,
+        "liquidus_K_derived": 902.55
+      },
+      "temperature_scope": "cp and k row temperatures unspecified in retrieved sheet; cannot assume full-temperature constants",
+      "decision": "database candidate; original handbook not inspected; not production high-T property law"
+    }
+  ]
+}

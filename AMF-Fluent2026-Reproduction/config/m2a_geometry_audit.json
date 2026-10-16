@@ -1,0 +1,476 @@
+{
+  "schema_version": 1,
+  "source": {
+    "id": "Qiu2018",
+    "doi": "10.1016/j.applthermaleng.2018.09.060",
+    "pdf_sha256": "7d830720cf64e18f744117d4000892c6640d1dd62be83af1167ea956fa7d31f2",
+    "page_convention": "PDF page = printed page - 314",
+    "audit_date": "2026-10-16"
+  },
+  "production_ready": false,
+  "parameters": [
+    {
+      "id": "furnace_form",
+      "value": "rectangular regenerative furnace",
+      "unit": "1",
+      "status": "paper",
+      "location": "p2 §2.1; p3 Fig1a",
+      "note": "Qualitative envelope; inclined lower region visible",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "furnace_inner_length",
+      "value": null,
+      "unit": "m",
+      "status": "unknown",
+      "location": "p3 Fig1a",
+      "note": "No dimensioned inner envelope",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "furnace_inner_width",
+      "value": null,
+      "unit": "m",
+      "status": "unknown",
+      "location": "p3 Fig1a",
+      "note": "Do not scale perspective image",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "furnace_inner_height",
+      "value": null,
+      "unit": "m",
+      "status": "unknown",
+      "location": "p3 Fig1a",
+      "note": "Section coordinates are not envelope bounds",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "outer_envelope",
+      "value": null,
+      "unit": "m",
+      "status": "unknown",
+      "location": "p3 Fig1a",
+      "note": "Inner versus outer wall dimensions not supplied",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "wall_layers_thickness",
+      "value": null,
+      "unit": "m",
+      "status": "unknown",
+      "location": "p2 §2.2; p4 §2.3.4",
+      "note": "Adiabatic condition does not define wall thickness",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "burner_count",
+      "value": 4,
+      "unit": "1",
+      "status": "derived",
+      "location": "p2 §2.1",
+      "note": "Two pairs; 2*2=4",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "active_burner_count",
+      "value": 2,
+      "unit": "1",
+      "status": "derived",
+      "location": "p2 §2.1",
+      "note": "One pair operates at a time",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "burner_layout",
+      "value": "two opposed sides; cross-arranged pairs",
+      "unit": "1",
+      "status": "paper",
+      "location": "p2 §2.1; p3 Fig1a",
+      "note": "Exact centers and pairing IDs unknown",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "burner_centers",
+      "value": null,
+      "unit": "m",
+      "status": "unknown",
+      "location": "p3 Fig1a; p4 §3.1",
+      "note": "Need four XYZ centers; sections not automatically nozzle centers",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "burner_height_H",
+      "value": 1790,
+      "unit": "mm",
+      "status": "paper",
+      "location": "p10 Table3 design; p12 Table5 design",
+      "note": "Datum unresolved; not absolute y",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "burner_angle_A",
+      "value": 10,
+      "unit": "deg",
+      "status": "paper",
+      "location": "p10 Table3 design; p12 Table5 design",
+      "note": "Reference direction/sign require CAD confirmation",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "burner_spacing_B",
+      "value": 2200,
+      "unit": "mm",
+      "status": "paper",
+      "location": "p10 Table3 design; p12 Table5 design",
+      "note": "Pair and center-to-center datum unresolved",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "burner_H_levels",
+      "value": [
+        1400,
+        1625,
+        1850,
+        2075,
+        2300
+      ],
+      "unit": "mm",
+      "status": "paper",
+      "location": "p9 Table2",
+      "note": "Design ranges only; no optimization executed",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "burner_A_levels",
+      "value": [
+        5,
+        10,
+        15,
+        20,
+        25
+      ],
+      "unit": "deg",
+      "status": "paper",
+      "location": "p9 Table2",
+      "note": "Not a dimension closure",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "burner_B_levels",
+      "value": [
+        1000,
+        1450,
+        1900,
+        2350,
+        2800
+      ],
+      "unit": "mm",
+      "status": "paper",
+      "location": "p9 Table2",
+      "note": "Not four absolute coordinates",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "nozzle_gas_label",
+      "value": "diameter 40",
+      "unit": "unit unstated",
+      "status": "paper",
+      "location": "p3 Fig1b",
+      "note": "Visible raw figure label; SI conversion blocked",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "nozzle_primary_label",
+      "value": "diameter 20 / 6 (line wrap; candidate 206)",
+      "unit": "unit unstated",
+      "status": "paper",
+      "location": "p3 Fig1b",
+      "note": "Not accepted as 20.6 or 206 without confirmation",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "nozzle_outer_label",
+      "value": "diameter 52 / 1 (line wrap; candidate 521)",
+      "unit": "unit unstated",
+      "status": "paper",
+      "location": "p3 Fig1b",
+      "note": "Outer burner outline is not automatically an inlet",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "nozzle_radius_label",
+      "value": "R1 / 82 (line wrap; candidate R182)",
+      "unit": "unit unstated",
+      "status": "paper",
+      "location": "p3 Fig1b",
+      "note": "Radius leader interpretation requires source drawing",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "secondary_sector_angle",
+      "value": 55,
+      "unit": "deg",
+      "status": "paper",
+      "location": "p3 Fig1b",
+      "note": "Two opposed annular-sector openings shown; radial bounds unresolved",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "nozzle_axial_lengths",
+      "value": null,
+      "unit": "m",
+      "status": "unknown",
+      "location": "p3 Fig1b",
+      "note": "Face sketch gives no axial duct profile",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "primary_hydraulic_diameter",
+      "value": 0.167,
+      "unit": "m",
+      "status": "paper",
+      "location": "p4 §2.3.2",
+      "note": "Hydraulic diameter; not circular opening diameter",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "secondary_hydraulic_diameter",
+      "value": 0.115,
+      "unit": "m",
+      "status": "paper",
+      "location": "p4 §2.3.2",
+      "note": "Sector Dh=4A/P; insufficient to determine section alone",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "main_flue",
+      "value": "inactive burner pair",
+      "unit": "1",
+      "status": "paper",
+      "location": "p2 §2.1",
+      "note": "Do not invent a permanent separate main chimney",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "main_flue_external_duct",
+      "value": null,
+      "unit": "m",
+      "status": "unknown",
+      "location": "p2 §2.1",
+      "note": "Regenerator/duct truncation unknown",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "auxiliary_flue_count",
+      "value": 1,
+      "unit": "1",
+      "status": "paper",
+      "location": "p2 §2.1; Fig1a",
+      "note": "Sidewall pressure-regulating flue",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "auxiliary_flue_section",
+      "value": null,
+      "unit": "m",
+      "status": "unknown",
+      "location": "p3 Fig1a",
+      "note": "Rectangular-looking section; no width/height/length",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "auxiliary_section_x",
+      "value": 0.275,
+      "unit": "m",
+      "status": "paper",
+      "location": "p4 §3.1",
+      "note": "Section through flue; not complete port center",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "auxiliary_section_y",
+      "value": -0.924,
+      "unit": "m",
+      "status": "paper",
+      "location": "p4 §3.1",
+      "note": "Section crossing flue; not proved center",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "charge_form",
+      "value": "lower continuous pool-like domain with inclined edge",
+      "unit": "1",
+      "status": "paper",
+      "location": "p2 §2.1; p3 Fig1a; p5 §3.2",
+      "note": "No evidence of individual ingot stack geometry",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "charge_length",
+      "value": null,
+      "unit": "m",
+      "status": "unknown",
+      "location": "Fig1a; §3.2",
+      "note": "No explicit length",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "charge_width",
+      "value": null,
+      "unit": "m",
+      "status": "unknown",
+      "location": "Fig1a; §3.2",
+      "note": "No explicit width",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "charge_depth",
+      "value": null,
+      "unit": "m",
+      "status": "unknown",
+      "location": "Fig1a; §3.2",
+      "note": "Do not use near-surface y=-1.9 as exact surface",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "charge_slope_profile",
+      "value": null,
+      "unit": "m,deg",
+      "status": "unknown",
+      "location": "p5 §3.2; Fig1a",
+      "note": "Slope vertices/angle required",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "charge_mass",
+      "value": null,
+      "unit": "kg",
+      "status": "unknown",
+      "location": "§2.1; §3.2",
+      "note": "Not inferred from fuel per ton",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "charging_method",
+      "value": null,
+      "unit": "1",
+      "status": "unknown",
+      "location": "Fig1a oven door; §2.1",
+      "note": "Door shown; batch count, stacking, gaps, sequence unspecified",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "oxide_thickness",
+      "value": 5,
+      "unit": "mm",
+      "status": "paper",
+      "location": "p2 §2.2 assumption (2)",
+      "note": "Paper modeling assumption, not a measurement",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "oxide_porosity",
+      "value": 0.2,
+      "unit": "1",
+      "status": "paper",
+      "location": "p2 §2.2 assumption (2)",
+      "note": "Paper modeling assumption",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "oxide_extent",
+      "value": "top of aluminum",
+      "unit": "1",
+      "status": "paper",
+      "location": "p2 §2.2",
+      "note": "Explicit-layer versus thermal-resistance implementation unresolved",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "oxide_implementation",
+      "value": null,
+      "unit": "1",
+      "status": "unknown",
+      "location": "p2 introduction; §2.2",
+      "note": "Thickness evolution UDF mentioned but no replayable law",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "interface_model",
+      "value": "gas-aluminum thermal coupling; conduction-only aluminum",
+      "unit": "1",
+      "status": "paper",
+      "location": "p3 §2.2.3 eq8; p4 §2.3.4",
+      "note": "Finite contact resistance not specified",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "interface_area",
+      "value": null,
+      "unit": "m2",
+      "status": "unknown",
+      "location": "Fig1a; eq8",
+      "note": "Need closed geometry before evaluating",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "charge_floor_contact",
+      "value": null,
+      "unit": "1",
+      "status": "unknown",
+      "location": "Fig1a; §2.3.4",
+      "note": "Contact area/resistance and wall solid treatment unresolved",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "coordinate_frame",
+      "value": "origin furnace center; +y up; +z toward door",
+      "unit": "1",
+      "status": "paper",
+      "location": "p2 §2.1",
+      "note": "Meaning of center needs reconciliation with negative y sections",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "section_x",
+      "value": [
+        -3.2,
+        -1.8,
+        0.275,
+        1.8,
+        3.2
+      ],
+      "unit": "m",
+      "status": "paper",
+      "location": "p4 §3.1",
+      "note": "Sampling planes only",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "section_y",
+      "value": [
+        -0.275,
+        -0.924,
+        -1.9
+      ],
+      "unit": "m",
+      "status": "paper",
+      "location": "p4 §3.1",
+      "note": "Near roof/flue/charge; not surfaces",
+      "source": "Qiu2018 user-owned original PDF"
+    },
+    {
+      "id": "section_z",
+      "value": [
+        0.901,
+        -1.299
+      ],
+      "unit": "m",
+      "status": "paper",
+      "location": "p4 §3.1",
+      "note": "Sampling planes only",
+      "source": "Qiu2018 user-owned original PDF"
+    }
+  ]
+}

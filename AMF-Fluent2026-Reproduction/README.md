@@ -5,7 +5,7 @@
 ## 范围与状态
 目标：**论文 A 路线**——炉气 Fluid Zone（湍流、燃烧、P1 辐射）＋Coupled Wall（CHT）＋铝料固定 Solid Zone（只导热，等效比热容 UDF 处理潜热）。**不**使用内置 Solidification/Melting、VOF、铝液流动或动态网格。
 
-当前仅为方案、参数摘录与预备性 UDF/测试。尚未建立 Fluent 网格或 .cas.h5；未做 Fluent 2026 编译、收敛或论文结果复现。演示 cp/潜热不是真实 7050 物性，正式编译被安全限制。
+M1.5–M1.7 已有隔离 DEMO 的真实 Fluent 验证，证据及限制见 docs/09–11。M2-A 已完成原文几何审计、候选物性登记及参数化脚本初版，见 [M2-A报告](docs/13_Codex_M2-A几何与物性审计报告.md) 和 [建模测试说明](geometry/README_M2A.md)。正式几何仍因关键尺寸缺失而阻塞；本轮未运行CAD内核或网格测试。演示物性和外部候选数据均未获准进入正式7050模型，生产UDF门禁保留。
 
 ## 给 Codex 的使用说明
 1. 阅读 AGENTS.md、CODEX_START_HERE.md、docs/03_论文疑点与输入缺口.md。

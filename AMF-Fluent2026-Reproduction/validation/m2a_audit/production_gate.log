@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "D:\工作公用\men-amf-fluent2026\AMF-Fluent2026-Reproduction\geometry\m2a_spaceclaim.py", line 160, in <module>
+    main()
+    ~~~~^^
+  File "D:\工作公用\men-amf-fluent2026\AMF-Fluent2026-Reproduction\geometry\m2a_spaceclaim.py", line 154, in main
+    print(json.dumps(validate_config(c), sort_keys=True))
+                     ~~~~~~~~~~~~~~~^^^
+  File "D:\工作公用\men-amf-fluent2026\AMF-Fluent2026-Reproduction\geometry\m2a_spaceclaim.py", line 34, in validate_config
+    require(not missing, "Missing production dimensions: " + ", ".join(missing))
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\工作公用\men-amf-fluent2026\AMF-Fluent2026-Reproduction\geometry\m2a_spaceclaim.py", line 18, in require
+    raise ValueError(message)
+ValueError: Missing production dimensions: inner_length, inner_width, inner_height, charge_profile, burner_centers, nozzle_profiles, auxiliary_flue
